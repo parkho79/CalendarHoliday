@@ -11,7 +11,6 @@
       { "date": "03-12", "name": "Cuti Bersama" },
       { "date": "03-14", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "04-02", "name": "Wafat Isa Almasih" },
-      { "date": "04-04", "name": "Hari Paskah" },
       { "date": "05-01", "name": "Hari Buruh Internasional / Pekerja" },
       { "date": "05-12", "name": "Cuti Bersama Idul Fitri" },
       { "date": "05-13", "name": "Kenaikan Isa Al Masih" },
@@ -23,16 +22,12 @@
       { "date": "05-26", "name": "Hari Raya Waisak" },
       { "date": "06-01", "name": "Hari Lahir Pancasila" },
       { "date": "07-20", "name": "Idul Adha (Lebaran Haji)" },
-      { "date": "08-10", "name": "Satu Muharam / Tahun Baru Hijriah" },
       { "date": "08-11", "name": "Satu Muharam / Tahun Baru Hijriah" },
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
       { "date": "10-19", "name": "Maulid Nabi Muhammad" },
       { "date": "10-20", "name": "Maulid Nabi Muhammad" },
-      { "date": "11-04", "name": "Diwali" },
-      { "date": "12-24", "name": "Malam Natal" },
       { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-27", "name": "Cuti Bersama Natal (Hari Tinju)" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-27", "name": "Cuti Bersama Natal (Hari Tinju)" }
     ],
     "2022": [
       { "date": "01-01", "name": "Hari Tahun Baru" },
@@ -40,7 +35,6 @@
       { "date": "02-28", "name": "Isra Mikraj Nabi Muhammad" },
       { "date": "03-03", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "04-15", "name": "Wafat Isa Almasih" },
-      { "date": "04-17", "name": "Hari Paskah" },
       { "date": "04-29", "name": "Cuti Bersama Idul Fitri" },
       { "date": "05-01", "name": "Hari Buruh Internasional / Pekerja" },
       { "date": "05-02", "name": "Hari Idul Fitri" },
@@ -55,11 +49,8 @@
       { "date": "07-30", "name": "Satu Muharam / Tahun Baru Hijriah" },
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
       { "date": "10-08", "name": "Maulid Nabi Muhammad" },
-      { "date": "10-24", "name": "Diwali" },
-      { "date": "12-24", "name": "Malam Natal" },
       { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" }
     ],
     "2023": [
       { "date": "01-01", "name": "Hari Tahun Baru" },
@@ -67,10 +58,8 @@
       { "date": "01-23", "name": "Cuti Bersama Tahun Baru Imlek" },
       { "date": "02-18", "name": "Isra Mikraj Nabi Muhammad" },
       { "date": "03-22", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
-      { "date": "03-23", "name": "1 Ramadan" },
       { "date": "03-23", "name": "Cuti Bersama Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "04-07", "name": "Wafat Isa Almasih" },
-      { "date": "04-09", "name": "Hari Paskah" },
       { "date": "04-19", "name": "Cuti Bersama Idul Fitri" },
       { "date": "04-20", "name": "Cuti Bersama Idul Fitri" },
       { "date": "04-21", "name": "Cuti Bersama Idul Fitri" },
@@ -87,11 +76,8 @@
       { "date": "07-19", "name": "Satu Muharam / Tahun Baru Hijriah" },
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
       { "date": "09-28", "name": "Maulid Nabi Muhammad" },
-      { "date": "11-12", "name": "Diwali" },
-      { "date": "12-24", "name": "Malam Natal" },
       { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" }
     ],
     "2024": [
       { "date": "01-01", "name": "Hari Tahun Baru" },
@@ -100,7 +86,6 @@
       { "date": "02-10", "name": "Tahun Baru Imlek" },
       { "date": "02-14", "name": "Hari Pemilihan" },
       { "date": "03-11", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
-      { "date": "03-12", "name": "1 Ramadan" },
       { "date": "03-12", "name": "Cuti Bersama Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "03-29", "name": "Wafat Isa Almasih" },
       { "date": "03-31", "name": "Hari Paskah" },
@@ -121,18 +106,14 @@
       { "date": "07-07", "name": "Satu Muharam / Tahun Baru Hijriah" },
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
       { "date": "09-16", "name": "Maulid Nabi Muhammad" },
-      { "date": "11-01", "name": "Diwali" },
-      { "date": "12-24", "name": "Malam Natal" },
       { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" }
     ],
     "2025": [
       { "date": "01-01", "name": "Hari Tahun Baru" },
       { "date": "01-27", "name": "Isra Mikraj Nabi Muhammad" },
       { "date": "01-28", "name": "Cuti Bersama Tahun Baru Imlek" },
       { "date": "01-29", "name": "Tahun Baru Imlek" },
-      { "date": "03-01", "name": "1 Ramadan" },
       { "date": "03-28", "name": "Cuti Bersama Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "03-29", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "03-31", "name": "Hari Idul Fitri" },
@@ -155,18 +136,14 @@
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
       { "date": "08-18", "name": "Hari Proklamasi Kemerdekaan R.I. observed" },
       { "date": "09-05", "name": "Maulid Nabi Muhammad" },
-      { "date": "10-21", "name": "Diwali" },
-      { "date": "12-24", "name": "Malam Natal" },
       { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-26", "name": "Cuti Bersama Natal (Hari Tinju)" }
     ],
     "2026": [
       { "date": "01-01", "name": "Hari Tahun Baru" },
       { "date": "01-16", "name": "Isra Mikraj Nabi Muhammad" },
       { "date": "02-16", "name": "Cuti Bersama Tahun Baru Imlek" },
       { "date": "02-17", "name": "Tahun Baru Imlek" },
-      { "date": "02-19", "name": "1 Ramadan" },
       { "date": "03-18", "name": "Cuti Bersama Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "03-19", "name": "Hari Suci Nyepi (Tahun Baru Saka)" },
       { "date": "03-20", "name": "Cuti Bersama Idul Fitri" },
@@ -179,16 +156,11 @@
       { "date": "05-01", "name": "Hari Buruh Internasional / Pekerja" },
       { "date": "05-14", "name": "Kenaikan Isa Al Masih" },
       { "date": "05-15", "name": "Cuti Bersama Kenaikan Isa Al Masih" },
-      { "date": "05-27", "name": "Idul Adha (Lebaran Haji) (belum pasti)" },
       { "date": "05-28", "name": "Idul Adha (Lebaran Haji)" },
-      { "date": "05-31", "name": "Hari Raya Waisak (belum pasti)" },
       { "date": "06-01", "name": "Hari Lahir Pancasila" },
-      { "date": "06-16", "name": "Satu Muharam / Tahun Baru Hijriah (belum pasti)" },
       { "date": "08-17", "name": "Hari Proklamasi Kemerdekaan R.I." },
-      { "date": "08-25", "name": "Maulid Nabi Muhammad (belum pasti)" },
       { "date": "12-24", "name": "Cuti Bersama Natal (Malam Natal)" },
-      { "date": "12-25", "name": "Hari Raya Natal" },
-      { "date": "12-31", "name": "Malam Tahun Baru" }
+      { "date": "12-25", "name": "Hari Raya Natal" }
     ],
     "2027": [
     ],
