@@ -4,7 +4,7 @@ import os
 import urllib.parse
 
 # 💡 여기에 발급받은 Google API Key를 입력하세요.
-API_KEY = 'AIzaSyAX2iIktJEYN0GBya4B6KGb5EudVyynXPk'
+API_KEY = ''
 
 # 지원할 국가 및 캘린더 ID 설정 (국가코드(소문자)를 키로 사용)
 CALENDARS = {
