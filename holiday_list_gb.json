@@ -5,134 +5,112 @@
   },
   "holidays": {
     "2021": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "04-02", "name": "Good Friday" },
-      { "date": "04-05", "name": "Easter Monday (regional holiday)" },
       { "date": "05-03", "name": "Early May Bank Holiday" },
       { "date": "05-31", "name": "Spring Bank Holiday" },
-      { "date": "08-30", "name": "Summer Bank Holiday (regional holiday)" },
-      { "date": "12-25", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" },
-      { "date": "12-27", "name": "Substitute Bank Holiday for Christmas Day" },
-      { "date": "12-28", "name": "Substitute Bank Holiday for Boxing Day" }
+      { "date": "12-27", "name": "Christmas Day" },
+      { "date": "12-28", "name": "Boxing Day" }
     ],
     "2022": [
-      { "date": "01-01", "name": "New Year's Day" },
-      { "date": "01-03", "name": "New Year's Day observed" },
       { "date": "04-15", "name": "Good Friday" },
-      { "date": "04-18", "name": "Easter Monday (regional holiday)" },
       { "date": "05-02", "name": "Early May Bank Holiday" },
       { "date": "06-02", "name": "Spring Bank Holiday" },
-      { "date": "06-03", "name": "Queen Elizabeth II's Platinum Jubilee" },
-      { "date": "08-29", "name": "Summer Bank Holiday (regional holiday)" },
-      { "date": "09-19", "name": "State Funeral of Queen Elizabeth II" },
-      { "date": "12-25", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" },
-      { "date": "12-27", "name": "Substitute Bank Holiday for Christmas Day" }
+      { "date": "06-03", "name": "Queen’s Platinum Jubilee" },
+      { "date": "09-19", "name": "Queen’s State Funeral" },
+      { "date": "12-27", "name": "Christmas Day" },
+      { "date": "12-26", "name": "Boxing Day" }
     ],
     "2023": [
-      { "date": "01-01", "name": "New Year's Day" },
-      { "date": "01-02", "name": "New Year's Day observed" },
       { "date": "04-07", "name": "Good Friday" },
-      { "date": "04-10", "name": "Easter Monday (regional holiday)" },
       { "date": "05-01", "name": "Early May Bank Holiday" },
-      { "date": "05-08", "name": "Bank Holiday for the Coronation of King Charles III" },
+      { "date": "05-08", "name": "Coronation Bank Holiday" },
       { "date": "05-29", "name": "Spring Bank Holiday" },
-      { "date": "08-28", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2024": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "03-29", "name": "Good Friday" },
-      { "date": "04-01", "name": "Easter Monday (regional holiday)" },
       { "date": "05-06", "name": "Early May Bank Holiday" },
       { "date": "05-27", "name": "Spring Bank Holiday" },
-      { "date": "08-26", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2025": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "04-18", "name": "Good Friday" },
-      { "date": "04-21", "name": "Easter Monday (regional holiday)" },
       { "date": "05-05", "name": "Early May Bank Holiday" },
       { "date": "05-26", "name": "Spring Bank Holiday" },
-      { "date": "08-25", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2026": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "04-03", "name": "Good Friday" },
-      { "date": "04-06", "name": "Easter Monday (regional holiday)" },
       { "date": "05-04", "name": "Early May Bank Holiday" },
       { "date": "05-25", "name": "Spring Bank Holiday" },
-      { "date": "08-31", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" },
-      { "date": "12-28", "name": "Substitute Bank Holiday for Boxing Day" }
+      { "date": "12-28", "name": "Boxing Day" }
     ],
     "2027": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "03-26", "name": "Good Friday" },
-      { "date": "03-29", "name": "Easter Monday (regional holiday)" },
       { "date": "05-03", "name": "Early May Bank Holiday" },
       { "date": "05-31", "name": "Spring Bank Holiday" },
-      { "date": "08-30", "name": "Summer Bank Holiday (regional holiday)" },
-      { "date": "12-25", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" },
-      { "date": "12-27", "name": "Substitute Bank Holiday for Christmas Day" },
-      { "date": "12-28", "name": "Substitute Bank Holiday for Boxing Day" }
+      { "date": "12-27", "name": "Christmas Day" },
+      { "date": "12-28", "name": "Boxing Day" }
     ],
     "2028": [
-      { "date": "01-01", "name": "New Year's Day" },
-      { "date": "01-03", "name": "New Year's Day observed" },
       { "date": "04-14", "name": "Good Friday" },
-      { "date": "04-17", "name": "Easter Monday (regional holiday)" },
       { "date": "05-01", "name": "Early May Bank Holiday" },
       { "date": "05-29", "name": "Spring Bank Holiday" },
-      { "date": "08-28", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2029": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "03-30", "name": "Good Friday" },
-      { "date": "04-02", "name": "Easter Monday (regional holiday)" },
       { "date": "05-07", "name": "Early May Bank Holiday" },
       { "date": "05-28", "name": "Spring Bank Holiday" },
-      { "date": "08-27", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2030": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "04-19", "name": "Good Friday" },
-      { "date": "04-22", "name": "Easter Monday (regional holiday)" },
       { "date": "05-06", "name": "Early May Bank Holiday" },
       { "date": "05-27", "name": "Spring Bank Holiday" },
-      { "date": "08-26", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2031": [
-      { "date": "01-01", "name": "New Year's Day" },
       { "date": "04-11", "name": "Good Friday" },
-      { "date": "04-14", "name": "Easter Monday (regional holiday)" },
       { "date": "05-05", "name": "Early May Bank Holiday" },
       { "date": "05-26", "name": "Spring Bank Holiday" },
-      { "date": "08-25", "name": "Summer Bank Holiday (regional holiday)" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-26", "name": "Boxing Day" }
     ],
     "2032": [
+      { "date": "03-26", "name": "Good Friday" },
+      { "date": "05-03", "name": "Early May Bank Holiday" },
+      { "date": "05-31", "name": "Spring Bank Holiday" },
+      { "date": "12-27", "name": "Christmas Day" },
+      { "date": "12-28", "name": "Boxing Day" }
     ],
     "2033": [
+      { "date": "04-15", "name": "Good Friday" },
+      { "date": "05-02", "name": "Early May Bank Holiday" },
+      { "date": "05-30", "name": "Spring Bank Holiday" },
+      { "date": "12-27", "name": "Christmas Day" },
+      { "date": "12-26", "name": "Boxing Day" }
     ],
     "2034": [
+      { "date": "04-07", "name": "Good Friday" },
+      { "date": "05-01", "name": "Early May Bank Holiday" },
+      { "date": "05-29", "name": "Spring Bank Holiday" },
+      { "date": "12-25", "name": "Christmas Day" },
+      { "date": "12-26", "name": "Boxing Day" }
     ],
     "2035": [
+      { "date": "03-23", "name": "Good Friday" },
+      { "date": "05-07", "name": "Early May Bank Holiday" },
+      { "date": "05-28", "name": "Spring Bank Holiday" },
+      { "date": "12-25", "name": "Christmas Day" },
+      { "date": "12-26", "name": "Boxing Day" }
     ]
   }
 }

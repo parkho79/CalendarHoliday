@@ -1,0 +1,98 @@
+{
+  "meta": {
+    "country": "CH",
+    "version": 1
+  },
+  "holidays": {
+    "2021": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-13", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2022": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-26", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2023": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-18", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2024": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-09", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2025": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-29", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2026": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-14", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2027": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-06", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2028": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-25", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2029": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-10", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2030": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-30", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2031": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-22", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2032": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-06", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2033": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-26", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2034": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-18", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2035": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-03", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ]
+  }
+}

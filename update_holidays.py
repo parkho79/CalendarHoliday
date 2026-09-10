@@ -1,180 +1,268 @@
-import requests
+"""
+국가별 공휴일 JSON(holiday_list_{code}.json) 생성 스크립트.
+
+이 저장소(CalendarHoliday)가 공휴일 데이터의 단일 소스다. 여기서 생성 → 커밋 → GitHub push
+하면 raw.githubusercontent.com을 통해 MyCalendar 앱이 런타임에 그대로 받아간다. MyCalendar
+저장소에는 더 이상 생성 로직이 없고, 앱에 내장할 스냅샷이 필요할 때
+`sync_holidays_from_calendarholiday.py`(MyCalendar 저장소)로 이 저장소의 결과물을 복사해간다.
+
+- Nager.Date(date.nager.at)가 지원하는 39개국은 Nager를 우선 사용 (global=true & Public
+  타입만 채택 — 문화적 기념일이 섞이지 않은 정제된 데이터).
+- Nager 미지원 7개국(tw, th, my, in, il, sa, ae)은 Google Calendar 공휴일 캘린더에서 생성.
+- holiday_overrides.json에 등록된 국가/연도별 예외(임시공휴일 등 두 소스 모두 놓치는 항목)를
+  마지막에 병합.
+
+API 키는 코드에 넣지 않고 GOOGLE_API_KEY 환경변수 또는 .google_api_key 파일(git 추적 제외)에서
+읽는다.
+"""
 import json
 import os
+import sys
+import time
 import urllib.parse
+from pathlib import Path
 
-# 💡 여기에 발급받은 Google API Key를 입력하세요.
-API_KEY = 'AIzaSyAX2iIktJEYN0GBya4B6KGb5EudVyynXPk'
+import requests
 
-# 지원할 국가 및 캘린더 ID 설정 (국가코드(소문자)를 키로 사용)
-CALENDARS = {
-    # 아시아 / 태평양
-    'kr': {'id': 'ko.south_korea#holiday@group.v.calendar.google.com'},
-    'jp': {'id': 'ja.japanese#holiday@group.v.calendar.google.com'},
-    'cn': {'id': 'zh.china#holiday@group.v.calendar.google.com'},
-    'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
-    'hk': {'id': 'zh-hk.hong_kong#holiday@group.v.calendar.google.com'},
-    'vn': {'id': 'vi.vietnamese#holiday@group.v.calendar.google.com'},
-    'th': {'id': 'th.th#holiday@group.v.calendar.google.com'},
-    'id': {'id': 'id.indonesian#holiday@group.v.calendar.google.com'},
-    'my': {'id': 'ms.malaysian#holiday@group.v.calendar.google.com'},
-    'sg': {'id': 'en.singapore#holiday@group.v.calendar.google.com'},
-    'ph': {'id': 'en.philippines#holiday@group.v.calendar.google.com'},
-    'in': {'id': 'en.indian#holiday@group.v.calendar.google.com'},
-    'au': {'id': 'en.australian#holiday@group.v.calendar.google.com'},
-    'nz': {'id': 'en.new_zealand#holiday@group.v.calendar.google.com'},
-
-    # 북미 / 남미
-    'us': {'id': 'en.usa#holiday@group.v.calendar.google.com'},
-    'ca': {'id': 'en.canadian#holiday@group.v.calendar.google.com'},
-    'mx': {'id': 'es.mexican#holiday@group.v.calendar.google.com'},
-    'br': {'id': 'pt.brazilian#holiday@group.v.calendar.google.com'},
-    'ar': {'id': 'es.argentina#holiday@group.v.calendar.google.com'},
-    'cl': {'id': 'es.chilean#holiday@group.v.calendar.google.com'},
-    'co': {'id': 'es.colombian#holiday@group.v.calendar.google.com'},
-    'pe': {'id': 'es.peruvian#holiday@group.v.calendar.google.com'},
-
-    # 유럽
-    'gb': {'id': 'en.uk#holiday@group.v.calendar.google.com'},
-    'ie': {'id': 'en.irish#holiday@group.v.calendar.google.com'},
-    'fr': {'id': 'fr.french#holiday@group.v.calendar.google.com'},
-    'de': {'id': 'de.german#holiday@group.v.calendar.google.com'},
-    'at': {'id': 'de.austrian#holiday@group.v.calendar.google.com'},
-    'ch': {'id': 'de.swiss#holiday@group.v.calendar.google.com'},
-    'it': {'id': 'it.italian#holiday@group.v.calendar.google.com'},
-    'es': {'id': 'es.spain#holiday@group.v.calendar.google.com'},
-    'pt': {'id': 'pt.portuguese#holiday@group.v.calendar.google.com'},
-    'nl': {'id': 'nl.dutch#holiday@group.v.calendar.google.com'},
-    'be': {'id': 'nl.belgian#holiday@group.v.calendar.google.com'},
-    'se': {'id': 'sv.swedish#holiday@group.v.calendar.google.com'},
-    'no': {'id': 'no.norwegian#holiday@group.v.calendar.google.com'},
-    'dk': {'id': 'da.danish#holiday@group.v.calendar.google.com'},
-    'fi': {'id': 'fi.finnish#holiday@group.v.calendar.google.com'},
-    'ru': {'id': 'ru.russian#holiday@group.v.calendar.google.com'},
-    'ua': {'id': 'uk.ukrainian#holiday@group.v.calendar.google.com'},
-    'pl': {'id': 'pl.polish#holiday@group.v.calendar.google.com'},
-    'tr': {'id': 'tr.turkish#holiday@group.v.calendar.google.com'},
-
-    # 중동 / 아프리카
-    'il': {'id': 'iw.jewish#holiday@group.v.calendar.google.com'},
-    'sa': {'id': 'ar.saudiarabian#holiday@group.v.calendar.google.com'},
-    'ae': {'id': 'ar.uae#holiday@group.v.calendar.google.com'},
-    'eg': {'id': 'ar.egyptian#holiday@group.v.calendar.google.com'},
-    'za': {'id': 'en.sa#holiday@group.v.calendar.google.com'},
-}
+SCRIPT_DIR = Path(__file__).resolve().parent
+OUTPUT_DIR = SCRIPT_DIR  # 이 저장소 루트 = raw.githubusercontent가 서빙하는 경로
+OVERRIDES_FILE = SCRIPT_DIR / 'holiday_overrides.json'
+API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 
 START_YEAR = 2021
 END_YEAR = 2035
-OUTPUT_DIR = '/'
 
-def is_public_holiday(event, calendar_id):
-    """
-    구글 캘린더의 이벤트가 진짜 '공휴일(Public Holiday)'인지 판별합니다.
-    글로벌 언어에 대응하여 법정 기념일(Observance)을 필터링합니다.
-    """
-    desc = event.get('description', '').strip()
+# Nager.Date 지원 39개국: 우리 국가코드 -> Nager countryCode
+NAGER_COUNTRIES = {
+    'kr': 'KR', 'jp': 'JP', 'cn': 'CN', 'hk': 'HK', 'vn': 'VN', 'id': 'ID',
+    'sg': 'SG', 'ph': 'PH', 'au': 'AU', 'nz': 'NZ',
+    'us': 'US', 'ca': 'CA', 'mx': 'MX', 'br': 'BR', 'ar': 'AR', 'cl': 'CL',
+    'co': 'CO', 'pe': 'PE',
+    'gb': 'GB', 'ie': 'IE', 'fr': 'FR', 'de': 'DE', 'at': 'AT', 'ch': 'CH',
+    'it': 'IT', 'es': 'ES', 'pt': 'PT', 'nl': 'NL', 'be': 'BE', 'se': 'SE',
+    'no': 'NO', 'dk': 'DK', 'fi': 'FI', 'ru': 'RU', 'ua': 'UA', 'pl': 'PL',
+    'tr': 'TR',
+    'eg': 'EG', 'za': 'ZA',
+}
 
-    # 1. 한국 캘린더('ko.')의 경우 가장 명확하게 '공휴일' 텍스트만 허용
-    if calendar_id.startswith('ko.'):
-        return desc == '공휴일'
+# Nager 미지원 7개국: Google Calendar 방식
+GOOGLE_ONLY_CALENDARS = {
+    'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
+    'th': {'id': 'th.th#holiday@group.v.calendar.google.com'},
+    'my': {'id': 'en.malaysia#holiday@group.v.calendar.google.com'},
+    'in': {'id': 'en.indian#holiday@group.v.calendar.google.com'},
+    'il': {'id': 'iw.jewish#holiday@group.v.calendar.google.com'},
+    'sa': {'id': 'ar.saudiarabian#holiday@group.v.calendar.google.com'},
+    'ae': {'id': 'ar.ae#holiday@group.v.calendar.google.com'},
+}
 
-    # 2. 타국가의 경우: 기념일은 구글이 "Observance\nTo hide observances..." 처럼
-    # 항상 줄바꿈(\n)을 포함한 숨기기 안내 문구를 넣습니다.
-    # 진짜 공휴일은 보통 "Public holiday", "祝日" 등 1줄로만 표기됩니다.
-    if '\n' in desc:
-        return False
 
-    # 3. 추가 방어 로직 (1줄짜리 기념일 키워드 방어)
-    desc_lower = desc.lower()
-    ignore_keywords = ['observance', '기념일', 'season', '記念日']
-    for kw in ignore_keywords:
-        if kw == desc_lower:
-            return False
+def load_google_api_key():
+    env_key = os.environ.get('GOOGLE_API_KEY', '').strip()
+    if env_key:
+        return env_key
+    if API_KEY_FILE.is_file():
+        key = API_KEY_FILE.read_text(encoding='utf-8').strip()
+        if key:
+            return key
+    return None
 
-    return True
 
-def fetch_holidays(calendar_id, year):
-    safe_calendar_id = urllib.parse.quote(calendar_id)
-    url = f'https://www.googleapis.com/calendar/v3/calendars/{safe_calendar_id}/events'
-    params = {
-        'key': API_KEY,
-        'timeMin': f'{year}-01-01T00:00:00Z',
-        'timeMax': f'{year}-12-31T23:59:59Z',
-        'singleEvents': 'true',
-        'orderBy': 'startTime',
-        'maxResults': '2500'  # 💡 데이터 누락 방지를 위해 최대치 설정
-    }
+def load_overrides():
+    if not OVERRIDES_FILE.is_file():
+        return {}
+    with open(OVERRIDES_FILE, encoding='utf-8') as f:
+        return json.load(f)
 
-    response = requests.get(url, params=params)
-    response.raise_for_status()
-    return response.json().get('items', [])
 
-def generate_json(country_code, config):
-    print(f"Fetching data for Country: {country_code.upper()}...")
+def apply_overrides(holidays_by_year, country_overrides):
+    for year, extra_list in country_overrides.items():
+        existing = holidays_by_year.setdefault(year, [])
+        seen = {(h['date'], h['name']) for h in existing}
+        for extra in extra_list:
+            key = (extra['date'], extra['name'])
+            if key not in seen:
+                existing.append(extra)
+                seen.add(key)
+        existing.sort(key=lambda h: h['date'])
 
-    holidays_by_year = {}
-    for year in range(START_YEAR, END_YEAR + 1):
-        try:
-            events = fetch_holidays(config['id'], year)
-        except requests.exceptions.HTTPError as e:
-            if e.response.status_code == 404:
-                print(f"  👉 [건너뜀] 지원하지 않는 캘린더 ID입니다: {config['id']}")
-                return # 에러난 국가는 파일 생성 없이 종료하고 다음 국가로 넘어감
-            raise # 404 이외의 에러(401 인증 에러 등)는 그대로 발생시킴
 
-        year_holidays = []
+def _escape(text):
+    return text.replace('\\', '\\\\').replace('"', '\\"')
 
-        for event in events:
-            # 💡 [핵심] 진짜 공휴일이 아니면 스킵합니다.
-            if not is_public_holiday(event, config['id']):
-                continue
 
-            start_date = event['start'].get('date')
-            if not start_date: continue
-
-            summary = event.get('summary', '').replace('"', '\\"')
-            year_holidays.append({"date": start_date[5:], "name": summary})
-
-        holidays_by_year[str(year)] = year_holidays
-
-    lines = []
-    lines.append('{')
-    lines.append('  "meta": {')
-    lines.append(f'    "country": "{country_code.upper()}",')
-    lines.append('    "version": 1')
-    lines.append('  },')
-    lines.append('  "holidays": {')
+def write_json(country_code, holidays_by_year):
+    """휴일 한 건 = 한 줄 형식으로 사람이 보기 편하게 저장."""
+    lines = [
+        '{',
+        '  "meta": {',
+        f'    "country": "{country_code.upper()}",',
+        '    "version": 1',
+        '  },',
+        '  "holidays": {',
+    ]
 
     years = list(holidays_by_year.keys())
     for i, year in enumerate(years):
         lines.append(f'    "{year}": [')
         days = holidays_by_year[year]
         for j, day in enumerate(days):
-            comma = "," if j < len(days) - 1 else ""
-            lines.append(f'      {{ "date": "{day["date"]}", "name": "{day["name"]}" }}{comma}')
-
-        year_comma = "," if i < len(years) - 1 else ""
+            comma = ',' if j < len(days) - 1 else ''
+            lines.append(
+                f'      {{ "date": "{_escape(day["date"])}", "name": "{_escape(day["name"])}" }}{comma}'
+            )
+        year_comma = ',' if i < len(years) - 1 else ''
         lines.append(f'    ]{year_comma}')
 
     lines.append('  }')
     lines.append('}')
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    # 파일명을 국가코드 기반으로 생성 (예: holiday_list_kr.json)
-    file_path = os.path.join(OUTPUT_DIR, f'holiday_list_{country_code}.json')
-
-    with open(file_path, 'w', encoding='utf-8') as f:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    path = OUTPUT_DIR / f'holiday_list_{country_code}.json'
+    with open(path, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
+        f.write('\n')
+    return path
 
-    print(f"Saved: {file_path}")
+
+# --- Nager.Date 소스 ---
+
+def fetch_nager_year(nager_code, year):
+    url = f'https://date.nager.at/api/v3/PublicHolidays/{year}/{nager_code}'
+    response = requests.get(url, timeout=15)
+    if response.status_code == 204:
+        return []  # 해당 연도 데이터 없음(주로 먼 미래)
+    response.raise_for_status()
+    result = []
+    for item in response.json():
+        if not item.get('global', False):
+            continue
+        if 'Public' not in item.get('types', []):
+            continue
+        date = item.get('date', '')  # "YYYY-MM-DD"
+        name = item.get('localName') or item.get('name', '')
+        if len(date) == 10:
+            result.append({'date': date[5:], 'name': name})
+    return result
+
+
+def build_nager_holidays(nager_code):
+    holidays_by_year = {}
+    for year in range(START_YEAR, END_YEAR + 1):
+        try:
+            holidays_by_year[str(year)] = fetch_nager_year(nager_code, year)
+        except requests.exceptions.RequestException as e:
+            print(f'  ⚠️ {year}년 조회 실패, 빈 목록으로 처리: {e}')
+            holidays_by_year[str(year)] = []
+        time.sleep(0.15)
+    return holidays_by_year
+
+
+# --- Google Calendar 소스 (Nager 미지원 국가 전용) ---
+
+def is_public_holiday(event, calendar_id):
+    """구글 캘린더 이벤트가 진짜 '공휴일'인지 판별 (기념일/옵저번스 제외)."""
+    desc = event.get('description', '').strip()
+
+    if calendar_id.startswith('ko.'):
+        return desc == '공휴일'
+
+    # 기념일은 구글이 줄바꿈을 포함한 "숨기기 안내" 문구를 넣는다.
+    if '\n' in desc:
+        return False
+
+    desc_lower = desc.lower()
+    ignore_keywords = ['observance', '기념일', 'season', '記念日']
+    return desc_lower not in ignore_keywords
+
+
+def fetch_google_events(calendar_id, year, api_key):
+    safe_calendar_id = urllib.parse.quote(calendar_id)
+    url = f'https://www.googleapis.com/calendar/v3/calendars/{safe_calendar_id}/events'
+    params = {
+        'key': api_key,
+        'timeMin': f'{year}-01-01T00:00:00Z',
+        'timeMax': f'{year}-12-31T23:59:59Z',
+        'singleEvents': 'true',
+        'orderBy': 'startTime',
+        'maxResults': '2500',
+    }
+    response = requests.get(url, params=params, timeout=20)
+    response.raise_for_status()
+    return response.json().get('items', [])
+
+
+def build_google_holidays(calendar_id, api_key):
+    """Nager 미지원 국가용. 지원하지 않는 캘린더 ID면 None 반환."""
+    holidays_by_year = {}
+    for year in range(START_YEAR, END_YEAR + 1):
+        try:
+            events = fetch_google_events(calendar_id, year, api_key)
+        except requests.exceptions.HTTPError as e:
+            if e.response is not None and e.response.status_code == 404:
+                return None
+            raise
+        year_holidays = []
+        for event in events:
+            if not is_public_holiday(event, calendar_id):
+                continue
+            start_date = event['start'].get('date')
+            if not start_date:
+                continue
+            summary = event.get('summary', '')
+            year_holidays.append({'date': start_date[5:], 'name': summary})
+        holidays_by_year[str(year)] = year_holidays
+        time.sleep(0.1)
+    return holidays_by_year
+
 
 def main():
-    if API_KEY == 'YOUR_GOOGLE_API_KEY':
-        print("⚠️ API_KEY를 먼저 입력해주세요.")
-        return
+    overrides = load_overrides()
+    ok_countries = []
+    failed_countries = []
 
-    for country_code, config in CALENDARS.items():
-        generate_json(country_code, config)
+    for code, nager_code in NAGER_COUNTRIES.items():
+        print(f'[Nager] {code.upper()} 조회 중...')
+        try:
+            holidays_by_year = build_nager_holidays(nager_code)
+            apply_overrides(holidays_by_year, overrides.get(code, {}))
+            path = write_json(code, holidays_by_year)
+            ok_countries.append(code)
+            print(f'  ✅ 저장: {path}')
+        except Exception as e:
+            failed_countries.append(code)
+            print(f'  ❌ 실패: {e}')
+
+    api_key = load_google_api_key()
+    if GOOGLE_ONLY_CALENDARS and api_key is None:
+        print()
+        print('⚠️ Google API 키를 찾을 수 없어 나머지 7개국은 건너뜁니다.')
+        print(f'   GOOGLE_API_KEY 환경변수를 설정하거나 {API_KEY_FILE.name} 파일에 키를 저장하세요.')
+        failed_countries.extend(GOOGLE_ONLY_CALENDARS.keys())
+    else:
+        for code, config in GOOGLE_ONLY_CALENDARS.items():
+            print(f'[Google] {code.upper()} 조회 중...')
+            try:
+                holidays_by_year = build_google_holidays(config['id'], api_key)
+                if holidays_by_year is None:
+                    print(f'  ⏭️ 건너뜀: 지원하지 않는 캘린더 ID ({config["id"]})')
+                    failed_countries.append(code)
+                    continue
+                apply_overrides(holidays_by_year, overrides.get(code, {}))
+                path = write_json(code, holidays_by_year)
+                ok_countries.append(code)
+                print(f'  ✅ 저장: {path}')
+            except Exception as e:
+                failed_countries.append(code)
+                print(f'  ❌ 실패: {e}')
+
+    print()
+    print(f'성공 {len(ok_countries)}개국 / 실패 {len(failed_countries)}개국')
+    if failed_countries:
+        print('실패한 국가:', ', '.join(c.upper() for c in failed_countries))
+        return 1
+    return 0
+
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

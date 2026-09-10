@@ -71,7 +71,8 @@
       { "date": "09-13", "name": "Rosh Hashana (Day 2)" },
       { "date": "09-21", "name": "Yom Kippur" },
       { "date": "09-26", "name": "Sukkot (Day 1)" },
-      { "date": "10-03", "name": "Shemini Atzeret / Simchat Torah" }
+      { "date": "10-03", "name": "Shemini Atzeret / Simchat Torah" },
+      { "date": "10-27", "name": "Election Day" }
     ],
     "2027": [
       { "date": "04-22", "name": "Passover (Day 1)" },

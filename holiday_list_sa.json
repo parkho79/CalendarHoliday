@@ -89,6 +89,10 @@
       { "date": "03-20", "name": "Eid al-Fitr" },
       { "date": "03-21", "name": "Eid al-Fitr Holiday" },
       { "date": "03-22", "name": "Eid al-Fitr Holiday" },
+      { "date": "05-26", "name": "Arafat Day" },
+      { "date": "05-27", "name": "Eid al-Adha" },
+      { "date": "05-28", "name": "Eid al-Adha Holiday" },
+      { "date": "05-29", "name": "Eid al-Adha Holiday" },
       { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2027": [
