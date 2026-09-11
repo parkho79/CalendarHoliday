@@ -11,6 +11,8 @@
 - Nager 미지원 또는 데이터 결측 8개국(tw, th, my, in, il, sa, ae, vn)은 Google Calendar
   공휴일 캘린더에서 생성. vn은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이
   통째로 빠져있어 여기로 옮김.
+- holiday_excludes.json에 등록된 이름과 일치하는 항목은 모든 연도에서 제거(원본이 실제로는
+  공휴일이 아닌데 진짜 공휴일과 구분 안 되게 태깅한 경우, 사람이 한 번 확인해서 등록).
 - holiday_overrides.json에 등록된 국가/연도별 예외(임시공휴일 등 두 소스 모두 놓치는 항목)를
   마지막에 병합.
 
@@ -29,6 +31,7 @@ import requests
 SCRIPT_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = SCRIPT_DIR  # 이 저장소 루트 = raw.githubusercontent가 서빙하는 경로
 OVERRIDES_FILE = SCRIPT_DIR / 'holiday_overrides.json'
+EXCLUDES_FILE = SCRIPT_DIR / 'holiday_excludes.json'
 API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 
 START_YEAR = 2021
@@ -79,6 +82,23 @@ def load_overrides():
         return {}
     with open(OVERRIDES_FILE, encoding='utf-8') as f:
         return json.load(f)
+
+
+def load_excludes():
+    if not EXCLUDES_FILE.is_file():
+        return {}
+    with open(EXCLUDES_FILE, encoding='utf-8') as f:
+        return json.load(f)
+
+
+def apply_excludes(holidays_by_year, names_to_exclude):
+    """국가 원본 소스가 실제로는 공휴일이 아닌데 같은 방식으로 태깅해버린, 사람이 한 번
+    확인해서 등록한 이름을 모든 연도에서 걷어낸다 (자동 필터로 못 잡는 항목용, holiday_excludes.json 참고)."""
+    if not names_to_exclude:
+        return
+    exclude_set = set(names_to_exclude)
+    for year, entries in holidays_by_year.items():
+        holidays_by_year[year] = [h for h in entries if h['name'] not in exclude_set]
 
 
 def apply_overrides(holidays_by_year, country_overrides):
@@ -167,7 +187,15 @@ def build_nager_holidays(nager_code):
 # --- Google Calendar 소스 (Nager 미지원 국가 전용) ---
 
 def is_public_holiday(event, calendar_id):
-    """구글 캘린더 이벤트가 진짜 '공휴일'인지 판별 (기념일/옵저번스 제외)."""
+    """구글 캘린더 이벤트가 진짜 '공휴일'인지 판별 (기념일/옵저번스/지역 한정 공휴일 제외)."""
+    summary = event.get('summary', '')
+
+    # 특정 주(州)/지역에만 적용되는 공휴일은 구글이 이름에 "(regional holiday)"를 붙인다
+    # (말레이시아, 미국 등 여러 나라 캘린더에서 공통으로 쓰는 표기 — 2026-09-11 확인).
+    # 앱 스키마엔 지역 구분이 없어 전국 공휴일처럼 보이게 되므로 아예 제외한다.
+    if 'regional holiday' in summary.lower():
+        return False
+
     desc = event.get('description', '').strip()
 
     if calendar_id.startswith('ko.'):
@@ -224,6 +252,7 @@ def build_google_holidays(calendar_id, api_key):
 
 def main():
     overrides = load_overrides()
+    excludes = load_excludes()
     ok_countries = []
     failed_countries = []
 
@@ -231,6 +260,7 @@ def main():
         print(f'[Nager] {code.upper()} 조회 중...')
         try:
             holidays_by_year = build_nager_holidays(nager_code)
+            apply_excludes(holidays_by_year, excludes.get(code, []))
             apply_overrides(holidays_by_year, overrides.get(code, {}))
             path = write_json(code, holidays_by_year)
             ok_countries.append(code)
@@ -254,6 +284,7 @@ def main():
                     print(f'  ⏭️ 건너뜀: 지원하지 않는 캘린더 ID ({config["id"]})')
                     failed_countries.append(code)
                     continue
+                apply_excludes(holidays_by_year, excludes.get(code, []))
                 apply_overrides(holidays_by_year, overrides.get(code, {}))
                 path = write_json(code, holidays_by_year)
                 ok_countries.append(code)

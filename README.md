@@ -30,7 +30,10 @@ python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고,
 
 - **Nager.Date**(date.nager.at, 무료·키 불필요) 지원국 중 38개국은 이걸 우선 사용합니다.
   `global == true && "Public" in types`만 채택해서, 문화적 기념일(밸런타인데이, 부활절 등)이
-  섞여 들어오는 걸 막습니다.
+  섞여 들어오는 걸 막습니다. 단, Nager가 실제로는 전국 공휴일인데 `global: false`로 잘못
+  분류해둔 경우가 있음을 2026-09-12에 38개국 전수 확인으로 발견함(영국 New Year's Day, 호주
+  Anzac Day) — 이런 것과 Nager 원본에 아예 없는 항목(중국 청명절)은 `holiday_overrides.json`
+  으로 보정한다.
 - Nager 미지원 또는 데이터 결측 8개국(`tw`, `th`, `my`, `in`, `il`, `sa`, `ae`, `vn`)은
   Google Calendar 공휴일 캘린더 API로 생성합니다. `.google_api_key` 파일(이 저장소 루트,
   git 추적 제외)이나 `GOOGLE_API_KEY` 환경변수에 키가 있어야 합니다. 키가 없으면 이 8개국만
@@ -39,6 +42,11 @@ python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고,
   베트남만의 결측으로 확인됨.)
 - 두 소스 모두 놓치는 예외(그해에만 지정된 임시공휴일, 특정 대체공휴일 등)는
   `holiday_overrides.json`에 국가/연도별로 수동 등록하면 생성 결과에 자동 병합됩니다.
+- 특정 주(州)/지역에만 적용되는 공휴일(구글이 이름에 `"(regional holiday)"`라고 표시)은
+  `is_public_holiday()`가 자동으로 제외합니다.
+- 원본이 실제로는 공휴일이 아닌데 진짜 공휴일과 모든 필드가 동일하게 태깅되어 있어 자동으로
+  못 거르는 항목(예: 베트남 `Ngày Văn hoá Việt Nam`)은 `holiday_excludes.json`에 국가별로
+  이름을 등록하면 모든 연도에서 제거됩니다.
 
 생성 후에는:
 

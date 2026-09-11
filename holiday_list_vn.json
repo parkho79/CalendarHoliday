@@ -110,8 +110,7 @@
       { "date": "05-01", "name": "Ngày Quốc tế Lao động" },
       { "date": "08-31", "name": "Quốc khánh (ngày lễ bổ sung)" },
       { "date": "09-01", "name": "Quốc khánh (ngày lễ bổ sung)" },
-      { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-02", "name": "Quốc khánh" }
     ],
     "2027": [
       { "date": "01-01", "name": "Tết dương lịch" },
@@ -125,8 +124,7 @@
       { "date": "04-30", "name": "Ngày giải phóng" },
       { "date": "05-01", "name": "Ngày Quốc tế Lao động" },
       { "date": "05-03", "name": "ngày nghỉ Ngày Quốc tế Lao động" },
-      { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-02", "name": "Quốc khánh" }
     ],
     "2028": [
       { "date": "01-01", "name": "Tết dương lịch" },
@@ -143,8 +141,7 @@
       { "date": "05-01", "name": "ngày nghỉ Ngày giải phóng" },
       { "date": "05-02", "name": "ngày nghỉ Ngày Quốc tế Lao động" },
       { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "09-04", "name": "Quốc khánh quan sát" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-04", "name": "Quốc khánh quan sát" }
     ],
     "2029": [
       { "date": "01-01", "name": "Tết dương lịch" },
@@ -158,8 +155,7 @@
       { "date": "04-30", "name": "Ngày giải phóng" },
       { "date": "05-01", "name": "Ngày Quốc tế Lao động" },
       { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "09-03", "name": "Quốc khánh quan sát" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-03", "name": "Quốc khánh quan sát" }
     ],
     "2030": [
       { "date": "01-01", "name": "Tết dương lịch" },
@@ -172,8 +168,7 @@
       { "date": "04-12", "name": "Giỗ tổ Hùng Vương" },
       { "date": "04-30", "name": "Ngày giải phóng" },
       { "date": "05-01", "name": "Ngày Quốc tế Lao động" },
-      { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-02", "name": "Quốc khánh" }
     ],
     "2031": [
       { "date": "01-01", "name": "Tết dương lịch" },
@@ -186,8 +181,7 @@
       { "date": "04-01", "name": "Giỗ tổ Hùng Vương" },
       { "date": "04-30", "name": "Ngày giải phóng" },
       { "date": "05-01", "name": "Ngày Quốc tế Lao động" },
-      { "date": "09-02", "name": "Quốc khánh" },
-      { "date": "11-24", "name": "Ngày Văn hoá Việt Nam" }
+      { "date": "09-02", "name": "Quốc khánh" }
     ],
     "2032": [
     ],

@@ -1,0 +1,6 @@
+{
+  "_readme": "국가코드(소문자) -> [이름]. Google Calendar 원본이 실제로는 공휴일이 아닌 항목을 진짜 공휴일과 동일하게 태깅해서(description/transparency 등 모든 필드 동일) 자동 필터로 못 거르는 경우, 사람이 한 번 확인한 뒤 이름으로 등록한다. update_holidays.py가 모든 연도에서 이 이름과 일치하는 항목을 제거한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음.",
+  "vn": [
+    "Ngày Văn hoá Việt Nam"
+  ]
+}

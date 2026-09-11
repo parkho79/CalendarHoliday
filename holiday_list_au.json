@@ -9,6 +9,7 @@
       { "date": "01-26", "name": "Australia Day" },
       { "date": "04-02", "name": "Good Friday" },
       { "date": "04-05", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-27", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],
@@ -19,8 +20,8 @@
       { "date": "04-18", "name": "Easter Monday" },
       { "date": "04-25", "name": "Anzac Day" },
       { "date": "09-22", "name": "National Day of Mourning" },
-      { "date": "12-27", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" }
+      { "date": "12-26", "name": "Boxing Day" },
+      { "date": "12-27", "name": "Christmas Day" }
     ],
     "2023": [
       { "date": "01-02", "name": "New Year's Day" },
@@ -54,6 +55,7 @@
       { "date": "01-26", "name": "Australia Day" },
       { "date": "04-03", "name": "Good Friday" },
       { "date": "04-06", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],
@@ -62,6 +64,7 @@
       { "date": "01-26", "name": "Australia Day" },
       { "date": "03-26", "name": "Good Friday" },
       { "date": "03-29", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-27", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],
@@ -106,6 +109,7 @@
       { "date": "01-26", "name": "Australia Day" },
       { "date": "03-26", "name": "Good Friday" },
       { "date": "03-29", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-27", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],
@@ -115,8 +119,8 @@
       { "date": "04-15", "name": "Good Friday" },
       { "date": "04-18", "name": "Easter Monday" },
       { "date": "04-25", "name": "Anzac Day" },
-      { "date": "12-27", "name": "Christmas Day" },
-      { "date": "12-26", "name": "Boxing Day" }
+      { "date": "12-26", "name": "Boxing Day" },
+      { "date": "12-27", "name": "Christmas Day" }
     ],
     "2034": [
       { "date": "01-02", "name": "New Year's Day" },
