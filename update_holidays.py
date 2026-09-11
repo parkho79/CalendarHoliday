@@ -6,9 +6,11 @@
 저장소에는 더 이상 생성 로직이 없고, 앱에 내장할 스냅샷이 필요할 때
 `sync_holidays_from_calendarholiday.py`(MyCalendar 저장소)로 이 저장소의 결과물을 복사해간다.
 
-- Nager.Date(date.nager.at)가 지원하는 39개국은 Nager를 우선 사용 (global=true & Public
-  타입만 채택 — 문화적 기념일이 섞이지 않은 정제된 데이터).
-- Nager 미지원 7개국(tw, th, my, in, il, sa, ae)은 Google Calendar 공휴일 캘린더에서 생성.
+- Nager.Date(date.nager.at)가 지원하는 국가 중 38개국은 Nager를 우선 사용 (global=true &
+  Public 타입만 채택 — 문화적 기념일이 섞이지 않은 정제된 데이터).
+- Nager 미지원 또는 데이터 결측 8개국(tw, th, my, in, il, sa, ae, vn)은 Google Calendar
+  공휴일 캘린더에서 생성. vn은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이
+  통째로 빠져있어 여기로 옮김.
 - holiday_overrides.json에 등록된 국가/연도별 예외(임시공휴일 등 두 소스 모두 놓치는 항목)를
   마지막에 병합.
 
@@ -32,9 +34,12 @@ API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 START_YEAR = 2021
 END_YEAR = 2035
 
-# Nager.Date 지원 39개국: 우리 국가코드 -> Nager countryCode
+# Nager.Date 지원국 중 실제 채택 38개국: 우리 국가코드 -> Nager countryCode
+# (vn 제외: Nager에 베트남 음력 공휴일(뗏 연휴, 훙브엉기념일)이 전혀 없어서 Google Calendar로
+#  되돌림. 2026-09-11 확인: CN/HK 등 다른 음력 국가는 Nager에도 정상 반영되어 있어 VN만의
+#  결측으로 보임.)
 NAGER_COUNTRIES = {
-    'kr': 'KR', 'jp': 'JP', 'cn': 'CN', 'hk': 'HK', 'vn': 'VN', 'id': 'ID',
+    'kr': 'KR', 'jp': 'JP', 'cn': 'CN', 'hk': 'HK', 'id': 'ID',
     'sg': 'SG', 'ph': 'PH', 'au': 'AU', 'nz': 'NZ',
     'us': 'US', 'ca': 'CA', 'mx': 'MX', 'br': 'BR', 'ar': 'AR', 'cl': 'CL',
     'co': 'CO', 'pe': 'PE',
@@ -45,13 +50,14 @@ NAGER_COUNTRIES = {
     'eg': 'EG', 'za': 'ZA',
 }
 
-# Nager 미지원 7개국: Google Calendar 방식
+# Nager 미지원(또는 데이터 결측으로 제외) 8개국: Google Calendar 방식
 GOOGLE_ONLY_CALENDARS = {
     'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
     'th': {'id': 'th.th#holiday@group.v.calendar.google.com'},
     'my': {'id': 'en.malaysia#holiday@group.v.calendar.google.com'},
     'in': {'id': 'en.indian#holiday@group.v.calendar.google.com'},
     'il': {'id': 'iw.jewish#holiday@group.v.calendar.google.com'},
+    'vn': {'id': 'vi.vietnamese#holiday@group.v.calendar.google.com'},
     'sa': {'id': 'ar.saudiarabian#holiday@group.v.calendar.google.com'},
     'ae': {'id': 'ar.ae#holiday@group.v.calendar.google.com'},
 }

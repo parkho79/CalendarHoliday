@@ -28,12 +28,15 @@ python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고,
 
 내부적으로:
 
-- **Nager.Date**(date.nager.at, 무료·키 불필요) 지원 39개국은 이걸 우선 사용합니다.
+- **Nager.Date**(date.nager.at, 무료·키 불필요) 지원국 중 38개국은 이걸 우선 사용합니다.
   `global == true && "Public" in types`만 채택해서, 문화적 기념일(밸런타인데이, 부활절 등)이
   섞여 들어오는 걸 막습니다.
-- Nager 미지원 7개국(`tw`, `th`, `my`, `in`, `il`, `sa`, `ae`)은 Google Calendar 공휴일
-  캘린더 API로 생성합니다. `.google_api_key` 파일(이 저장소 루트, git 추적 제외)이나
-  `GOOGLE_API_KEY` 환경변수에 키가 있어야 합니다. 키가 없으면 이 7개국만 건너뜁니다.
+- Nager 미지원 또는 데이터 결측 8개국(`tw`, `th`, `my`, `in`, `il`, `sa`, `ae`, `vn`)은
+  Google Calendar 공휴일 캘린더 API로 생성합니다. `.google_api_key` 파일(이 저장소 루트,
+  git 추적 제외)이나 `GOOGLE_API_KEY` 환경변수에 키가 있어야 합니다. 키가 없으면 이 8개국만
+  건너뜁니다. (`vn`은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이 통째로 빠져
+  있어 2026-09-11에 여기로 옮김 — 다른 음력 국가(중국/홍콩)는 Nager에 정상 반영되어 있어
+  베트남만의 결측으로 확인됨.)
 - 두 소스 모두 놓치는 예외(그해에만 지정된 임시공휴일, 특정 대체공휴일 등)는
   `holiday_overrides.json`에 국가/연도별로 수동 등록하면 생성 결과에 자동 병합됩니다.
 
