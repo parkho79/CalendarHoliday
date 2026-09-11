@@ -47,6 +47,12 @@ push하는 순간 **이미 설치된 사용자들에게도** 다음 `updateCheck
 MyCalendar 앱에 새로 번들할 스냅샷까지 갱신하려면(신규 설치 사용자의 오프라인 최초 경험),
 MyCalendar 저장소에서 `python3 sync_holidays_from_calendarholiday.py`를 추가로 실행합니다.
 
+**참고**: 이 동기화를 깜빡해도 조용히 넘어가지 않습니다 — MyCalendar의 릴리스 빌드
+(`assembleRelease`/`bundleRelease`)는 `checkHolidayDataFreshness` Gradle 태스크가 이 저장소의
+최신 커밋과 MyCalendar에 커밋된 마지막 동기화 커밋을 비교해서, 뒤처져 있으면 빌드 자체를
+실패시킵니다. 그러니 여기 push한 뒤 MyCalendar 쪽 동기화를 안 하고 릴리스를 시도하면 그
+시점에 바로 알게 됩니다.
+
 ## 알아둘 것
 
 - Nager.Date는 대체공휴일이 있으면 **실제로 쉬는 날(효력 발생 날짜) 하나만** 표시합니다.
