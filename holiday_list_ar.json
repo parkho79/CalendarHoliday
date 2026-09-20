@@ -311,6 +311,22 @@
       { "date": "12-25", "name": "Navidad" }
     ],
     "1993": [
+      { "date": "01-01", "name": "Año Nuevo" },
+      { "date": "02-22", "name": "Carnaval" },
+      { "date": "02-23", "name": "Carnaval" },
+      { "date": "03-24", "name": "Día Nacional de la Memoria por la Verdad y la Justicia" },
+      { "date": "04-02", "name": "Día del Veterano y de los Caídos en la Guerra de Malvinas" },
+      { "date": "04-09", "name": "Viernes Santo" },
+      { "date": "05-01", "name": "Día del Trabajador" },
+      { "date": "05-25", "name": "Día de la Revolución de Mayo" },
+      { "date": "06-21", "name": "Paso a la Inmortalidad del General Martín Miguel de Güemes" },
+      { "date": "06-20", "name": "Paso a la Inmortalidad del General Manuel Belgrano" },
+      { "date": "07-09", "name": "Día de la Independencia" },
+      { "date": "08-16", "name": "Paso a la Inmortalidad del General José de San Martín" },
+      { "date": "10-11", "name": "Día del Respeto a la Diversidad Cultural" },
+      { "date": "11-20", "name": "Día de la Soberanía Nacional" },
+      { "date": "12-08", "name": "Día de la Inmaculada Concepción de María" },
+      { "date": "12-25", "name": "Navidad" }
     ],
     "1994": [
       { "date": "01-01", "name": "Año Nuevo" },

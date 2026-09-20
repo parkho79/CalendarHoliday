@@ -113,6 +113,31 @@ def apply_overrides(holidays_by_year, country_overrides):
         existing.sort(key=lambda h: h['date'])
 
 
+def load_committed_holidays(country_code):
+    """이전에 커밋된 결과물을 읽어온다(없으면 빈 dict) — 이번 조회가 빈 응답으로 와서
+    덮어쓰기 전에 비교할 기준."""
+    path = OUTPUT_DIR / f'holiday_list_{country_code}.json'
+    if not path.is_file():
+        return {}
+    with open(path, encoding='utf-8') as f:
+        return json.load(f).get('holidays', {})
+
+
+def restore_empty_years(country_code, holidays_by_year):
+    """소스가 '그 해엔 진짜 공휴일이 없다'와 '그 해 데이터를 못 준다'(연도 범위 밖, 일시적
+    실패 등)를 구분하지 않고 둘 다 빈 배열로 응답하는 경우가 있다. 새로 받은 값이 비어 있는데
+    이전에 커밋된 값엔 데이터가 있었다면, 실제로 공휴일이 없어진 게 아니라 이번 조회가 그 해
+    데이터를 못 준 것으로 보고 기존 값을 유지한다(덮어쓰기로 인한 데이터 유실 방지)."""
+    committed = load_committed_holidays(country_code)
+    restored_years = []
+    for year, entries in holidays_by_year.items():
+        if not entries and committed.get(year):
+            holidays_by_year[year] = committed[year]
+            restored_years.append(year)
+    if restored_years:
+        print(f'  ℹ️ 빈 응답이라 기존 데이터 유지: {", ".join(restored_years)}')
+
+
 def _escape(text):
     return text.replace('\\', '\\\\').replace('"', '\\"')
 
@@ -260,6 +285,7 @@ def main():
         print(f'[Nager] {code.upper()} 조회 중...')
         try:
             holidays_by_year = build_nager_holidays(nager_code)
+            restore_empty_years(code, holidays_by_year)
             apply_excludes(holidays_by_year, excludes.get(code, []))
             apply_overrides(holidays_by_year, overrides.get(code, {}))
             path = write_json(code, holidays_by_year)
@@ -284,6 +310,7 @@ def main():
                     print(f'  ⏭️ 건너뜀: 지원하지 않는 캘린더 ID ({config["id"]})')
                     failed_countries.append(code)
                     continue
+                restore_empty_years(code, holidays_by_year)
                 apply_excludes(holidays_by_year, excludes.get(code, []))
                 apply_overrides(holidays_by_year, overrides.get(code, {}))
                 path = write_json(code, holidays_by_year)
