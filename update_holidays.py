@@ -37,6 +37,15 @@ API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 START_YEAR = 1976
 END_YEAR = 2035
 
+# 국가 자체가 이 연도 이전엔 지금 형태로 존재하지 않았던 경우(소련 해체 등)만 국가 전체를
+# 컷오프한다. 단순히 공휴일 한두 개가 최근에 생긴 경우는 국가를 통째로 자르면 멀쩡한 나머지
+# 데이터까지 버리게 되므로, 그런 경우는 holiday_excludes.json의 from_year로 개별 처리한다
+# (2026-09-20 46개국 역사 조사 결과 — 상세 근거는 refactoring-log.md 참고).
+COUNTRY_START_YEAR_OVERRIDES = {
+    'ru': 1992,  # 소련 해체(1991.12) 이전엔 "러시아 연방" 자체가 없었음
+    'ua': 1991,  # 소련에서 독립(1991.8)
+}
+
 # Nager.Date 지원국 중 실제 채택 38개국: 우리 국가코드 -> Nager countryCode
 # (vn 제외: Nager에 베트남 음력 공휴일(뗏 연휴, 훙브엉기념일)이 전혀 없어서 Google Calendar로
 #  되돌림. 2026-09-11 확인: CN/HK 등 다른 음력 국가는 Nager에도 정상 반영되어 있어 VN만의
@@ -91,14 +100,29 @@ def load_excludes():
         return json.load(f)
 
 
-def apply_excludes(holidays_by_year, names_to_exclude):
-    """국가 원본 소스가 실제로는 공휴일이 아닌데 같은 방식으로 태깅해버린, 사람이 한 번
-    확인해서 등록한 이름을 모든 연도에서 걷어낸다 (자동 필터로 못 잡는 항목용, holiday_excludes.json 참고)."""
-    if not names_to_exclude:
+def apply_excludes(holidays_by_year, exclude_rules):
+    """국가 원본 소스가 실제로는 공휴일이 아닌데 같은 방식으로 태깅해버린 항목, 또는 실제로는
+    특정 연도부터 제정된 공휴일인데 소스가 모든 연도에 동일하게 보여주는 항목(예: 독일 통일의
+    날은 1990년부터인데 소스는 1976년에도 보여줌)을 걷어낸다. 각 항목은 이름 문자열(모든
+    연도에서 제거) 또는 {"name": ..., "from_year": N}(그 연도부터는 유지, 이전 연도에서만
+    제거) 둘 다 가능 (holiday_excludes.json 참고)."""
+    if not exclude_rules:
         return
-    exclude_set = set(names_to_exclude)
+    always_exclude = set()
+    from_year_by_name = {}
+    for rule in exclude_rules:
+        if isinstance(rule, str):
+            always_exclude.add(rule)
+        else:
+            from_year_by_name[rule['name']] = rule['from_year']
+
     for year, entries in holidays_by_year.items():
-        holidays_by_year[year] = [h for h in entries if h['name'] not in exclude_set]
+        year_int = int(year)
+        holidays_by_year[year] = [
+            h for h in entries
+            if h['name'] not in always_exclude
+            and not (h['name'] in from_year_by_name and year_int < from_year_by_name[h['name']])
+        ]
 
 
 def apply_overrides(holidays_by_year, country_overrides):
@@ -197,9 +221,9 @@ def fetch_nager_year(nager_code, year):
     return result
 
 
-def build_nager_holidays(nager_code):
+def build_nager_holidays(nager_code, start_year=START_YEAR):
     holidays_by_year = {}
-    for year in range(START_YEAR, END_YEAR + 1):
+    for year in range(start_year, END_YEAR + 1):
         try:
             holidays_by_year[str(year)] = fetch_nager_year(nager_code, year)
         except requests.exceptions.RequestException as e:
@@ -284,7 +308,8 @@ def main():
     for code, nager_code in NAGER_COUNTRIES.items():
         print(f'[Nager] {code.upper()} 조회 중...')
         try:
-            holidays_by_year = build_nager_holidays(nager_code)
+            country_start_year = COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR)
+            holidays_by_year = build_nager_holidays(nager_code, country_start_year)
             restore_empty_years(code, holidays_by_year)
             apply_excludes(holidays_by_year, excludes.get(code, []))
             apply_overrides(holidays_by_year, overrides.get(code, {}))
