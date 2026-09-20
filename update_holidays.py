@@ -34,7 +34,7 @@ OVERRIDES_FILE = SCRIPT_DIR / 'holiday_overrides.json'
 EXCLUDES_FILE = SCRIPT_DIR / 'holiday_excludes.json'
 API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 
-START_YEAR = 2021
+START_YEAR = 1976
 END_YEAR = 2035
 
 # Nager.Date 지원국 중 실제 채택 38개국: 우리 국가코드 -> Nager countryCode

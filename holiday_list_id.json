@@ -4,6 +4,456 @@
     "version": 1
   },
   "holidays": {
+    "1976": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-16", "name": "Wafat Isa Almasih" },
+      { "date": "04-18", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-27", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1977": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-08", "name": "Wafat Isa Almasih" },
+      { "date": "04-10", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-19", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1978": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-24", "name": "Wafat Isa Almasih" },
+      { "date": "03-26", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-04", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1979": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-13", "name": "Wafat Isa Almasih" },
+      { "date": "04-15", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-24", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1980": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-04", "name": "Wafat Isa Almasih" },
+      { "date": "04-06", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-15", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1981": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-17", "name": "Wafat Isa Almasih" },
+      { "date": "04-19", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-28", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1982": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-09", "name": "Wafat Isa Almasih" },
+      { "date": "04-11", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-20", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1983": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-01", "name": "Wafat Isa Almasih" },
+      { "date": "04-03", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-12", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1984": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-20", "name": "Wafat Isa Almasih" },
+      { "date": "04-22", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-31", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1985": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-05", "name": "Wafat Isa Almasih" },
+      { "date": "04-07", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-16", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1986": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-28", "name": "Wafat Isa Almasih" },
+      { "date": "03-30", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-08", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1987": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-17", "name": "Wafat Isa Almasih" },
+      { "date": "04-19", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-28", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1988": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-01", "name": "Wafat Isa Almasih" },
+      { "date": "04-03", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-12", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1989": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-24", "name": "Wafat Isa Almasih" },
+      { "date": "03-26", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-04", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1990": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-13", "name": "Wafat Isa Almasih" },
+      { "date": "04-15", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-24", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1991": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-29", "name": "Wafat Isa Almasih" },
+      { "date": "03-31", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-09", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1992": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-17", "name": "Wafat Isa Almasih" },
+      { "date": "04-19", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-28", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1993": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-09", "name": "Wafat Isa Almasih" },
+      { "date": "04-11", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-20", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1994": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-01", "name": "Wafat Isa Almasih" },
+      { "date": "04-03", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-12", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1995": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-14", "name": "Wafat Isa Almasih" },
+      { "date": "04-16", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-25", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1996": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-05", "name": "Wafat Isa Almasih" },
+      { "date": "04-07", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-16", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1997": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-28", "name": "Wafat Isa Almasih" },
+      { "date": "03-30", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-08", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1998": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-10", "name": "Wafat Isa Almasih" },
+      { "date": "04-12", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-21", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "1999": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-02", "name": "Wafat Isa Almasih" },
+      { "date": "04-04", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-13", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2000": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-21", "name": "Wafat Isa Almasih" },
+      { "date": "04-23", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "06-01", "name": "Kenaikan Isa Almasih" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2001": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-13", "name": "Wafat Isa Almasih" },
+      { "date": "04-15", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-24", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2002": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-29", "name": "Wafat Isa Almasih" },
+      { "date": "03-31", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-09", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2003": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-18", "name": "Wafat Isa Almasih" },
+      { "date": "04-20", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-29", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2004": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-09", "name": "Wafat Isa Almasih" },
+      { "date": "04-11", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-20", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2005": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-25", "name": "Wafat Isa Almasih" },
+      { "date": "03-27", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-05", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2006": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-14", "name": "Wafat Isa Almasih" },
+      { "date": "04-16", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-25", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2007": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-06", "name": "Wafat Isa Almasih" },
+      { "date": "04-08", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-17", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2008": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-21", "name": "Wafat Isa Almasih" },
+      { "date": "03-23", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-01", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2009": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-10", "name": "Wafat Isa Almasih" },
+      { "date": "04-12", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-21", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2010": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-02", "name": "Wafat Isa Almasih" },
+      { "date": "04-04", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-13", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2011": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-22", "name": "Wafat Isa Almasih" },
+      { "date": "04-24", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "06-02", "name": "Kenaikan Isa Almasih" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2012": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-06", "name": "Wafat Isa Almasih" },
+      { "date": "04-08", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-17", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2013": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-29", "name": "Wafat Isa Almasih" },
+      { "date": "03-31", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-09", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2014": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-18", "name": "Wafat Isa Almasih" },
+      { "date": "04-20", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-29", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2015": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-03", "name": "Wafat Isa Almasih" },
+      { "date": "04-05", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-14", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2016": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-25", "name": "Wafat Isa Almasih" },
+      { "date": "03-27", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-05", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2017": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-14", "name": "Wafat Isa Almasih" },
+      { "date": "04-16", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-25", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2018": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "03-30", "name": "Wafat Isa Almasih" },
+      { "date": "04-01", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-10", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2019": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-19", "name": "Wafat Isa Almasih" },
+      { "date": "04-21", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-30", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
+    "2020": [
+      { "date": "01-01", "name": "Tahun Baru Masehi" },
+      { "date": "04-10", "name": "Wafat Isa Almasih" },
+      { "date": "04-12", "name": "Paskah" },
+      { "date": "05-01", "name": "Hari Buruh Internasional" },
+      { "date": "05-21", "name": "Kenaikan Isa Almasih" },
+      { "date": "06-01", "name": "Hari Lahir Pancasila" },
+      { "date": "08-17", "name": "Hari Ulang Tahun Kemerdekaan Republik Indonesia" },
+      { "date": "12-25", "name": "Hari Raya Natal" }
+    ],
     "2021": [
       { "date": "01-01", "name": "Tahun Baru Masehi" },
       { "date": "04-02", "name": "Wafat Isa Almasih" },

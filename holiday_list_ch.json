@@ -4,6 +4,276 @@
     "version": 1
   },
   "holidays": {
+    "1976": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-27", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1977": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-19", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1978": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-04", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1979": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-24", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1980": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-15", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1981": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-28", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1982": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-20", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1983": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-12", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1984": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-31", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1985": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-16", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1986": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-08", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1987": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-28", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1988": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-12", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1989": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-04", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1990": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-24", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1991": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-09", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1992": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-28", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1993": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-20", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1994": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-12", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1995": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-25", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1996": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-16", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1997": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-08", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1998": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-21", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "1999": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-13", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2000": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "06-01", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2001": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-24", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2002": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-09", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2003": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-29", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2004": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-20", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2005": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-05", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2006": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-25", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2007": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-17", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2008": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-01", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2009": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-21", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2010": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-13", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2011": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "06-02", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2012": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-17", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2013": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-09", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2014": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-29", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2015": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-14", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2016": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-05", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2017": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-25", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2018": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-10", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2019": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-30", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
+    "2020": [
+      { "date": "01-01", "name": "Neujahr" },
+      { "date": "05-21", "name": "Auffahrt" },
+      { "date": "08-01", "name": "Bundesfeier" },
+      { "date": "12-25", "name": "Weihnachten" }
+    ],
     "2021": [
       { "date": "01-01", "name": "Neujahr" },
       { "date": "05-13", "name": "Auffahrt" },
