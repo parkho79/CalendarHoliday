@@ -11,10 +11,10 @@
 - Nager 미지원 또는 데이터 결측 8개국(tw, th, my, in, il, sa, ae, vn)은 Google Calendar
   공휴일 캘린더에서 생성. vn은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이
   통째로 빠져있어 여기로 옮김.
-- holiday_excludes.json에 등록된 이름과 일치하는 항목은 모든 연도에서 제거(원본이 실제로는
-  공휴일이 아닌데 진짜 공휴일과 구분 안 되게 태깅한 경우, 사람이 한 번 확인해서 등록).
-- holiday_overrides.json에 등록된 국가/연도별 예외(임시공휴일 등 두 소스 모두 놓치는 항목)를
-  마지막에 병합.
+- holiday_corrections.json에 등록된 국가별 add/remove 규칙을 마지막에 적용한다. 원본이 실제로는
+  공휴일이 아닌 걸 잘못 태깅한 경우, 특정 연도부터만 제정된 공휴일을 소스가 모든 연도에 똑같이
+  보여주는 경우, 소스가 특정 연도 하나만 날짜를 잘못 계산한 경우, 두 소스 모두 놓친 임시공휴일
+  등을 사람이 한 번 확인해서 등록한다(스키마는 파일 안 _readme 참고).
 
 API 키는 코드에 넣지 않고 GOOGLE_API_KEY 환경변수 또는 .google_api_key 파일(git 추적 제외)에서
 읽는다.
@@ -30,8 +30,7 @@ import requests
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = SCRIPT_DIR  # 이 저장소 루트 = raw.githubusercontent가 서빙하는 경로
-OVERRIDES_FILE = SCRIPT_DIR / 'holiday_overrides.json'
-EXCLUDES_FILE = SCRIPT_DIR / 'holiday_excludes.json'
+CORRECTIONS_FILE = SCRIPT_DIR / 'holiday_corrections.json'
 API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 
 START_YEAR = 2015
@@ -39,7 +38,7 @@ END_YEAR = 2035
 
 # 국가 자체가 이 연도 이전엔 지금 형태로 존재하지 않았던 경우(소련 해체 등)만 국가 전체를
 # 컷오프한다. 단순히 공휴일 한두 개가 최근에 생긴 경우는 국가를 통째로 자르면 멀쩡한 나머지
-# 데이터까지 버리게 되므로, 그런 경우는 holiday_excludes.json의 from_year로 개별 처리한다
+# 데이터까지 버리게 되므로, 그런 경우는 holiday_corrections.json의 from_year로 개별 처리한다
 # (2026-09-20 46개국 역사 조사 결과 — 상세 근거는 refactoring-log.md 참고).
 COUNTRY_START_YEAR_OVERRIDES = {
     'ru': 1992,  # 소련 해체(1991.12) 이전엔 "러시아 연방" 자체가 없었음
@@ -86,47 +85,60 @@ def load_google_api_key():
     return None
 
 
-def load_overrides():
-    if not OVERRIDES_FILE.is_file():
+def load_corrections():
+    if not CORRECTIONS_FILE.is_file():
         return {}
-    with open(OVERRIDES_FILE, encoding='utf-8') as f:
-        return json.load(f)
+    with open(CORRECTIONS_FILE, encoding='utf-8') as f:
+        data = json.load(f)
+    data.pop('_readme', None)
+    return data
 
 
-def load_excludes():
-    if not EXCLUDES_FILE.is_file():
-        return {}
-    with open(EXCLUDES_FILE, encoding='utf-8') as f:
-        return json.load(f)
-
-
-def apply_excludes(holidays_by_year, exclude_rules):
-    """국가 원본 소스가 실제로는 공휴일이 아닌데 같은 방식으로 태깅해버린 항목, 또는 실제로는
-    특정 연도부터 제정된 공휴일인데 소스가 모든 연도에 동일하게 보여주는 항목(예: 독일 통일의
-    날은 1990년부터인데 소스는 1976년에도 보여줌)을 걷어낸다. 각 항목은 이름 문자열(모든
-    연도에서 제거) 또는 {"name": ..., "from_year": N}(그 연도부터는 유지, 이전 연도에서만
-    제거) 둘 다 가능 (holiday_excludes.json 참고)."""
-    if not exclude_rules:
+def apply_corrections(holidays_by_year, country_rules):
+    """소스 데이터 오류를 정정한다. country_rules는 규칙 리스트, 각 규칙은
+    {"action": "remove"|"add", "name": ..., ...}:
+    - remove, name만: 모든 연도에서 그 이름과 일치하는 항목 제거(원본이 실제로는 공휴일이
+      아닌데 같은 방식으로 태깅한 경우)
+    - remove, from_year 포함: 그 연도 이전에서만 제거, 그 연도부터는 유지(특정 연도부터
+      제정된 공휴일인데 소스가 모든 연도에 동일하게 보여주는 경우 — 예: 독일 통일의 날은
+      1990년부터인데 소스는 1976년에도 보여줌)
+    - remove, year+date 포함: 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도
+      하나만 날짜를 잘못 계산한 경우 — 보통 올바른 날짜를 add로 같이 등록함)
+    - add, year+date: 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 위 remove로
+      지운 잘못된 날짜 대신 올바른 날짜를 넣을 때)
+    관련된 remove/add를 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉽다
+    (holiday_corrections.json 참고)."""
+    if not country_rules:
         return
-    always_exclude = set()
+
+    always_remove = set()
     from_year_by_name = {}
-    for rule in exclude_rules:
-        if isinstance(rule, str):
-            always_exclude.add(rule)
+    exact_removals = set()
+    additions_by_year = {}
+
+    for rule in country_rules:
+        name = rule['name']
+        if rule['action'] == 'add':
+            additions_by_year.setdefault(rule['year'], []).append(
+                {'date': rule['date'], 'name': name}
+            )
+        elif 'date' in rule and 'year' in rule:
+            exact_removals.add((rule['year'], rule['date'], name))
+        elif 'from_year' in rule:
+            from_year_by_name[name] = rule['from_year']
         else:
-            from_year_by_name[rule['name']] = rule['from_year']
+            always_remove.add(name)
 
     for year, entries in holidays_by_year.items():
         year_int = int(year)
         holidays_by_year[year] = [
             h for h in entries
-            if h['name'] not in always_exclude
+            if h['name'] not in always_remove
+            and (year, h['date'], h['name']) not in exact_removals
             and not (h['name'] in from_year_by_name and year_int < from_year_by_name[h['name']])
         ]
 
-
-def apply_overrides(holidays_by_year, country_overrides):
-    for year, extra_list in country_overrides.items():
+    for year, extra_list in additions_by_year.items():
         existing = holidays_by_year.setdefault(year, [])
         seen = {(h['date'], h['name']) for h in existing}
         for extra in extra_list:
@@ -300,8 +312,7 @@ def build_google_holidays(calendar_id, api_key):
 
 
 def main():
-    overrides = load_overrides()
-    excludes = load_excludes()
+    corrections = load_corrections()
     ok_countries = []
     failed_countries = []
 
@@ -315,8 +326,7 @@ def main():
             country_start_year = max(START_YEAR, COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR))
             holidays_by_year = build_nager_holidays(nager_code, country_start_year)
             restore_empty_years(code, holidays_by_year)
-            apply_excludes(holidays_by_year, excludes.get(code, []))
-            apply_overrides(holidays_by_year, overrides.get(code, {}))
+            apply_corrections(holidays_by_year, corrections.get(code, []))
             path = write_json(code, holidays_by_year)
             ok_countries.append(code)
             print(f'  ✅ 저장: {path}')
@@ -340,8 +350,7 @@ def main():
                     failed_countries.append(code)
                     continue
                 restore_empty_years(code, holidays_by_year)
-                apply_excludes(holidays_by_year, excludes.get(code, []))
-                apply_overrides(holidays_by_year, overrides.get(code, {}))
+                apply_corrections(holidays_by_year, corrections.get(code, []))
                 path = write_json(code, holidays_by_year)
                 ok_countries.append(code)
                 print(f'  ✅ 저장: {path}')
