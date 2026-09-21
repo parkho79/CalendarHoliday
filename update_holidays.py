@@ -34,7 +34,7 @@ OVERRIDES_FILE = SCRIPT_DIR / 'holiday_overrides.json'
 EXCLUDES_FILE = SCRIPT_DIR / 'holiday_excludes.json'
 API_KEY_FILE = SCRIPT_DIR / '.google_api_key'
 
-START_YEAR = 1976
+START_YEAR = 2015
 END_YEAR = 2035
 
 # 국가 자체가 이 연도 이전엔 지금 형태로 존재하지 않았던 경우(소련 해체 등)만 국가 전체를
@@ -308,7 +308,11 @@ def main():
     for code, nager_code in NAGER_COUNTRIES.items():
         print(f'[Nager] {code.upper()} 조회 중...')
         try:
-            country_start_year = COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR)
+            # max() — COUNTRY_START_YEAR_OVERRIDES는 "이 나라는 이 연도보다 앞설 수 없다"는
+            # 하한선이라, 전역 START_YEAR가 그 값보다 나중이면(예: 2015 > 1992) 전역값을
+            # 따라야 한다. 그냥 override 우선이면 전역 START_YEAR를 낮췄을 때 이 나라만
+            # 도로 옛날로 튀는 버그가 생김.
+            country_start_year = max(START_YEAR, COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR))
             holidays_by_year = build_nager_holidays(nager_code, country_start_year)
             restore_empty_years(code, holidays_by_year)
             apply_excludes(holidays_by_year, excludes.get(code, []))
