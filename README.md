@@ -24,7 +24,11 @@ MyCalendar 앱(안드로이드 캘린더 앱)이 표시하는 공휴일 데이�
 
 `generate_holidays.command`(Mac) 또는 `generate_holidays.bat`(Windows)를 더블클릭하면
 python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고, 끝나면 **OK/NOK**를
-표시하고 아무 키나 누르면 창이 닫힙니다.
+표시하고 아무 키나 누르면 창이 닫힙니다(46개국 전체).
+
+터미널에서 직접 `python3 update_holidays.py`를 실행할 때는 국가 코드를 인자로 줘서 그
+나라들만 처리할 수 있습니다(예: `python3 update_holidays.py kr pe`) — 정정 하나 검증하려고
+매번 46개국 API를 전부 호출할 필요 없게. 인자 없이 실행하면 기존대로 전체를 처리합니다.
 
 내부적으로:
 

@@ -18,6 +18,10 @@
 
 API 키는 코드에 넣지 않고 GOOGLE_API_KEY 환경변수 또는 .google_api_key 파일(git 추적 제외)에서
 읽는다.
+
+사용법: `python3 update_holidays.py` (인자 없음, 46개국 전체 — 더블클릭 런처도 이 방식)
+        `python3 update_holidays.py kr pe` (국가 코드를 인자로 주면 그 나라들만 처리 — 정정
+        하나 검증하려고 매번 46개국을 다 돌릴 필요 없게)
 """
 import json
 import os
@@ -327,11 +331,30 @@ def build_google_holidays(calendar_id, api_key):
 
 
 def main():
+    # 인자 없이 실행(더블클릭 런처 포함)하면 기존대로 46개국 전체. 국가 코드를 인자로 주면
+    # 그 나라들만 처리 — 수정 하나 검증하려고 46개국 API를 매번 전부 호출할 필요 없게.
+    # 예: python3 update_holidays.py kr pe
+    requested = {code.lower() for code in sys.argv[1:]}
+    if requested:
+        unknown = requested - set(NAGER_COUNTRIES) - set(GOOGLE_ONLY_CALENDARS)
+        if unknown:
+            print(f'❌ 모르는 국가 코드: {", ".join(sorted(unknown))}')
+            return 1
+
     corrections = load_corrections()
     ok_countries = []
     failed_countries = []
 
-    for code, nager_code in NAGER_COUNTRIES.items():
+    nager_targets = {
+        code: nager_code for code, nager_code in NAGER_COUNTRIES.items()
+        if not requested or code in requested
+    }
+    google_targets = {
+        code: config for code, config in GOOGLE_ONLY_CALENDARS.items()
+        if not requested or code in requested
+    }
+
+    for code, nager_code in nager_targets.items():
         print(f'[Nager] {code.upper()} 조회 중...')
         try:
             # max() — COUNTRY_START_YEAR_OVERRIDES는 "이 나라는 이 연도보다 앞설 수 없다"는
@@ -350,13 +373,13 @@ def main():
             print(f'  ❌ 실패: {e}')
 
     api_key = load_google_api_key()
-    if GOOGLE_ONLY_CALENDARS and api_key is None:
+    if google_targets and api_key is None:
         print()
-        print('⚠️ Google API 키를 찾을 수 없어 나머지 7개국은 건너뜁니다.')
+        print(f'⚠️ Google API 키를 찾을 수 없어 나머지 {len(google_targets)}개국은 건너뜁니다.')
         print(f'   GOOGLE_API_KEY 환경변수를 설정하거나 {API_KEY_FILE.name} 파일에 키를 저장하세요.')
-        failed_countries.extend(GOOGLE_ONLY_CALENDARS.keys())
+        failed_countries.extend(google_targets.keys())
     else:
-        for code, config in GOOGLE_ONLY_CALENDARS.items():
+        for code, config in google_targets.items():
             print(f'[Google] {code.upper()} 조회 중...')
             try:
                 holidays_by_year = build_google_holidays(config['id'], api_key)
