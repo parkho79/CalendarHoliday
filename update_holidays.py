@@ -96,7 +96,7 @@ def load_corrections():
 
 def apply_corrections(holidays_by_year, country_rules):
     """소스 데이터 오류를 정정한다. country_rules는 규칙 리스트, 각 규칙은
-    {"action": "remove"|"add", "name": ..., ...}:
+    {"action": "remove"|"add"|"modify", "name": ..., ...}:
     - remove, name만: 모든 연도에서 그 이름과 일치하는 항목 제거(원본이 실제로는 공휴일이
       아닌데 같은 방식으로 태깅한 경우)
     - remove, from_year 포함: 그 연도 이전에서만 제거, 그 연도부터는 유지(특정 연도부터
@@ -106,7 +106,11 @@ def apply_corrections(holidays_by_year, country_rules):
       하나만 날짜를 잘못 계산한 경우 — 보통 올바른 날짜를 add로 같이 등록함)
     - add, year+date: 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 위 remove로
       지운 잘못된 날짜 대신 올바른 날짜를 넣을 때)
-    관련된 remove/add를 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉽다
+    - modify, name+to+year+date: 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만
+      `to`로 바꾼다(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는
+      경우(예: 어린이날이 주말과 겹쳐 날짜가 옮겨져도 이름은 그대로 "어린이날") remove+add
+      없이 이름만 고칠 때 사용
+    관련된 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉽다
     (holiday_corrections.json 참고)."""
     if not country_rules:
         return
@@ -115,13 +119,17 @@ def apply_corrections(holidays_by_year, country_rules):
     from_year_by_name = {}
     exact_removals = set()
     additions_by_year = {}
+    renames = {}
 
     for rule in country_rules:
         name = rule['name']
-        if rule['action'] == 'add':
+        action = rule['action']
+        if action == 'add':
             additions_by_year.setdefault(rule['year'], []).append(
                 {'date': rule['date'], 'name': name}
             )
+        elif action == 'modify':
+            renames[(rule['year'], rule['date'], name)] = rule['to']
         elif 'date' in rule and 'year' in rule:
             exact_removals.add((rule['year'], rule['date'], name))
         elif 'from_year' in rule:
@@ -131,12 +139,19 @@ def apply_corrections(holidays_by_year, country_rules):
 
     for year, entries in holidays_by_year.items():
         year_int = int(year)
-        holidays_by_year[year] = [
-            h for h in entries
-            if h['name'] not in always_remove
-            and (year, h['date'], h['name']) not in exact_removals
-            and not (h['name'] in from_year_by_name and year_int < from_year_by_name[h['name']])
-        ]
+        kept = []
+        for h in entries:
+            if h['name'] in always_remove:
+                continue
+            if (year, h['date'], h['name']) in exact_removals:
+                continue
+            if h['name'] in from_year_by_name and year_int < from_year_by_name[h['name']]:
+                continue
+            rename_key = (year, h['date'], h['name'])
+            if rename_key in renames:
+                h = {'date': h['date'], 'name': renames[rename_key]}
+            kept.append(h)
+        holidays_by_year[year] = kept
 
     for year, extra_list in additions_by_year.items():
         existing = holidays_by_year.setdefault(year, [])
