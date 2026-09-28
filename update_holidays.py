@@ -65,6 +65,17 @@ NAGER_COUNTRIES = {
     'eg': 'EG', 'za': 'ZA',
 }
 
+# Nager는 영국처럼 지역별로 다른 공휴일이 있는 나라를 global=false + counties=[...]로 태깅한다
+# (예: Easter Monday/Summer Bank Holiday는 잉글랜드·웨일스·북아일랜드엔 있고 스코틀랜드엔
+# 없음). 우리 global==true만 채택하는 기본 필터는 이런 "전국은 아니지만 사실상 대표 지역
+# (잉글랜드) 공휴일"까지 다 걸러버려서, 2026-09-23 검증에서 Easter Monday/Summer Bank
+# Holiday가 GB 데이터 전 연도에서 통째로 누락된 게 발견됨. 국가별로 "이 지역 코드가
+# counties에 있으면 global=false여도 채택" 예외를 둔다 — 매년 수작업으로 날짜를 추가하는
+# 것보다 소스 자체에서 정확하게 가져오는 게 유지보수가 쉬움.
+NAGER_INCLUDE_COUNTY = {
+    'GB': 'GB-ENG',  # 잉글랜드 기준(인구 대다수) — New Year's Day/Easter Monday/Summer Bank Holiday 등
+}
+
 # Nager 미지원(또는 데이터 결측으로 제외) 8개국: Google Calendar 방식
 GOOGLE_ONLY_CALENDARS = {
     'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
@@ -234,6 +245,7 @@ def write_json(country_code, holidays_by_year):
 # --- Nager.Date 소스 ---
 
 def fetch_nager_year(nager_code, year):
+    include_county = NAGER_INCLUDE_COUNTY.get(nager_code)
     url = f'https://date.nager.at/api/v3/PublicHolidays/{year}/{nager_code}'
     response = requests.get(url, timeout=15)
     if response.status_code == 204:
@@ -241,7 +253,9 @@ def fetch_nager_year(nager_code, year):
     response.raise_for_status()
     result = []
     for item in response.json():
-        if not item.get('global', False):
+        is_global = item.get('global', False)
+        matches_county = include_county and include_county in (item.get('counties') or [])
+        if not is_global and not matches_county:
             continue
         if 'Public' not in item.get('types', []):
             continue
