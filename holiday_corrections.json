@@ -2515,6 +2515,13 @@
     },
     {
       "action": "modify",
+      "name": "天皇誕生日",
+      "to": "振替休日",
+      "year": "2018",
+      "date": "12-24"
+    },
+    {
+      "action": "modify",
       "name": "建国記念の日",
       "to": "振替休日",
       "year": "2018",
@@ -2526,6 +2533,12 @@
       "to": "振替休日",
       "year": "2018",
       "date": "04-30"
+    },
+    {
+      "action": "add",
+      "name": "天皇誕生日",
+      "year": "2018",
+      "date": "12-23"
     },
     {
       "action": "add",
@@ -2622,10 +2635,23 @@
     },
     {
       "action": "modify",
+      "name": "天皇誕生日",
+      "to": "振替休日",
+      "year": "2020",
+      "date": "02-24"
+    },
+    {
+      "action": "modify",
       "name": "憲法記念日",
       "to": "振替休日",
       "year": "2020",
       "date": "05-06"
+    },
+    {
+      "action": "add",
+      "name": "天皇誕生日",
+      "year": "2020",
+      "date": "02-23"
     },
     {
       "action": "add",
@@ -2754,10 +2780,36 @@
       "date": "05-06"
     },
     {
+      "action": "modify",
+      "name": "勤労感謝の日",
+      "to": "振替休日",
+      "year": "2025",
+      "date": "11-24"
+    },
+    {
+      "action": "modify",
+      "name": "天皇誕生日",
+      "to": "振替休日",
+      "year": "2025",
+      "date": "02-24"
+    },
+    {
       "action": "add",
       "name": "みどりの日",
       "year": "2025",
       "date": "05-04"
+    },
+    {
+      "action": "add",
+      "name": "勤労感謝の日",
+      "year": "2025",
+      "date": "11-23"
+    },
+    {
+      "action": "add",
+      "name": "天皇誕生日",
+      "year": "2025",
+      "date": "02-23"
     },
     {
       "action": "modify",
@@ -2803,6 +2855,12 @@
       "name": "建国記念の日",
       "year": "2029",
       "date": "02-11"
+    },
+    {
+      "action": "add",
+      "name": "振替休日",
+      "year": "2029",
+      "date": "09-24"
     },
     {
       "action": "add",
@@ -2857,10 +2915,48 @@
       "date": "05-06"
     },
     {
+      "action": "modify",
+      "name": "勤労感謝の日",
+      "to": "振替休日",
+      "year": "2031",
+      "date": "11-24"
+    },
+    {
+      "action": "modify",
+      "name": "天皇誕生日",
+      "to": "振替休日",
+      "year": "2031",
+      "date": "02-24"
+    },
+    {
       "action": "add",
       "name": "みどりの日",
       "year": "2031",
       "date": "05-04"
+    },
+    {
+      "action": "add",
+      "name": "勤労感謝の日",
+      "year": "2031",
+      "date": "11-23"
+    },
+    {
+      "action": "add",
+      "name": "天皇誕生日",
+      "year": "2031",
+      "date": "02-23"
+    },
+    {
+      "action": "add",
+      "name": "国民の休日",
+      "year": "2032",
+      "date": "09-21"
+    },
+    {
+      "action": "add",
+      "name": "振替休日",
+      "year": "2033",
+      "date": "03-21"
     },
     {
       "action": "modify",
@@ -2894,6 +2990,12 @@
       "name": "建国記念の日",
       "year": "2035",
       "date": "02-11"
+    },
+    {
+      "action": "add",
+      "name": "振替休日",
+      "year": "2035",
+      "date": "09-24"
     },
     {
       "action": "add",
