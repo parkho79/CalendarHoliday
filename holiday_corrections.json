@@ -3470,9 +3470,39 @@
   "us": [
     {
       "action": "add",
+      "name": "Independence Day",
+      "year": "2015",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2016",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2017",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2017",
+      "date": "11-11"
+    },
+    {
+      "action": "add",
       "name": "Christmas Eve",
       "year": "2018",
       "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2018",
+      "date": "11-11"
     },
     {
       "action": "add",
@@ -3488,6 +3518,36 @@
     },
     {
       "action": "add",
+      "name": "Independence Day",
+      "year": "2020",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2021",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "Inauguration Day",
+      "year": "2021",
+      "date": "01-20"
+    },
+    {
+      "action": "add",
+      "name": "Independence Day",
+      "year": "2021",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Juneteenth National Independence Day",
+      "year": "2021",
+      "date": "06-19"
+    },
+    {
+      "action": "add",
       "name": "New Year's Day",
       "year": "2021",
       "date": "12-31"
@@ -3497,6 +3557,36 @@
       "name": "New Year's Day",
       "year": "2022",
       "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2022",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "Juneteenth National Independence Day",
+      "year": "2022",
+      "date": "06-19"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2022",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2023",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2023",
+      "date": "11-11"
     },
     {
       "action": "add",
@@ -3524,6 +3614,30 @@
     },
     {
       "action": "add",
+      "name": "Independence Day",
+      "year": "2026",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2027",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "Independence Day",
+      "year": "2027",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Juneteenth National Independence Day",
+      "year": "2027",
+      "date": "06-19"
+    },
+    {
+      "action": "add",
       "name": "New Year's Day",
       "year": "2027",
       "date": "12-31"
@@ -3537,6 +3651,42 @@
     {
       "action": "add",
       "name": "New Year's Day",
+      "year": "2028",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2028",
+      "date": "11-11"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2029",
+      "date": "11-11"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2032",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "Independence Day",
+      "year": "2032",
+      "date": "07-04"
+    },
+    {
+      "action": "add",
+      "name": "Juneteenth National Independence Day",
+      "year": "2032",
+      "date": "06-19"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
       "year": "2032",
       "date": "12-31"
     },
@@ -3545,6 +3695,42 @@
       "name": "New Year's Day",
       "year": "2033",
       "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Day",
+      "year": "2033",
+      "date": "12-25"
+    },
+    {
+      "action": "add",
+      "name": "Juneteenth National Independence Day",
+      "year": "2033",
+      "date": "06-19"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2033",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2034",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2034",
+      "date": "11-11"
+    },
+    {
+      "action": "add",
+      "name": "Veterans Day",
+      "year": "2035",
+      "date": "11-11"
     }
   ]
 }
