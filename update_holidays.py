@@ -76,6 +76,14 @@ NAGER_INCLUDE_COUNTY = {
     'GB': 'GB-ENG',  # 잉글랜드 기준(인구 대다수) — New Year's Day/Easter Monday/Summer Bank Holiday 등
 }
 
+# 일부 나라는 연방 공식 공휴일인데도 Nager가 "Public" 대신 다른 타입으로만 태깅해서
+# 기본 필터(Public 타입만 채택)에 걸러지는 경우가 있다 — 2026-10-01 검증에서 미국 Columbus Day가
+# 매년 global=true인데 타입이 "Bank"뿐이라(또는 "Public"+"Bank" 둘 다인 정상 항목과 달리
+# "Bank" 단독) 전부 누락된 걸 발견. 국가별로 "이 타입도 Public과 동급으로 채택" 예외를 둔다.
+NAGER_INCLUDE_TYPE = {
+    'US': 'Bank',  # Columbus Day — 연방/은행 공휴일이지만 Nager가 Public으로 안 태깅함
+}
+
 # Nager 미지원(또는 데이터 결측으로 제외) 8개국: Google Calendar 방식
 GOOGLE_ONLY_CALENDARS = {
     'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
@@ -246,6 +254,7 @@ def write_json(country_code, holidays_by_year):
 
 def fetch_nager_year(nager_code, year):
     include_county = NAGER_INCLUDE_COUNTY.get(nager_code)
+    include_type = NAGER_INCLUDE_TYPE.get(nager_code)
     url = f'https://date.nager.at/api/v3/PublicHolidays/{year}/{nager_code}'
     response = requests.get(url, timeout=15)
     if response.status_code == 204:
@@ -257,7 +266,8 @@ def fetch_nager_year(nager_code, year):
         matches_county = include_county and include_county in (item.get('counties') or [])
         if not is_global and not matches_county:
             continue
-        if 'Public' not in item.get('types', []):
+        types = item.get('types', [])
+        if 'Public' not in types and not (include_type and include_type in types):
             continue
         date = item.get('date', '')  # "YYYY-MM-DD"
         name = item.get('localName') or item.get('name', '')

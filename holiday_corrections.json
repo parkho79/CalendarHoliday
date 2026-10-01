@@ -3466,5 +3466,85 @@
       "year": "2035",
       "date": "04-29"
     }
+  ],
+  "us": [
+    {
+      "action": "add",
+      "name": "Christmas Eve",
+      "year": "2018",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Eve",
+      "year": "2019",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Eve",
+      "year": "2020",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2021",
+      "date": "12-31"
+    },
+    {
+      "action": "remove",
+      "name": "New Year's Day",
+      "year": "2022",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Eve",
+      "year": "2024",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Christmas Eve",
+      "year": "2025",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Day After Christmas",
+      "year": "2025",
+      "date": "12-26"
+    },
+    {
+      "action": "add",
+      "name": "National Day of Mourning",
+      "year": "2025",
+      "date": "01-09"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2027",
+      "date": "12-31"
+    },
+    {
+      "action": "remove",
+      "name": "New Year's Day",
+      "year": "2028",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "New Year's Day",
+      "year": "2032",
+      "date": "12-31"
+    },
+    {
+      "action": "remove",
+      "name": "New Year's Day",
+      "year": "2033",
+      "date": "12-31"
+    }
   ]
 }

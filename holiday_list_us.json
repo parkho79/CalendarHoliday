@@ -11,6 +11,7 @@
       { "date": "05-25", "name": "Memorial Day" },
       { "date": "07-03", "name": "Independence Day" },
       { "date": "09-07", "name": "Labor Day" },
+      { "date": "10-12", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-26", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -22,6 +23,7 @@
       { "date": "05-30", "name": "Memorial Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-05", "name": "Labor Day" },
+      { "date": "10-10", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-24", "name": "Thanksgiving Day" },
       { "date": "12-26", "name": "Christmas Day" }
@@ -33,6 +35,7 @@
       { "date": "05-29", "name": "Memorial Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-04", "name": "Labor Day" },
+      { "date": "10-09", "name": "Columbus Day" },
       { "date": "11-10", "name": "Veterans Day" },
       { "date": "11-23", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -44,8 +47,10 @@
       { "date": "05-28", "name": "Memorial Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-03", "name": "Labor Day" },
+      { "date": "10-08", "name": "Columbus Day" },
       { "date": "11-12", "name": "Veterans Day" },
       { "date": "11-22", "name": "Thanksgiving Day" },
+      { "date": "12-24", "name": "Christmas Eve" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2019": [
@@ -55,8 +60,10 @@
       { "date": "05-27", "name": "Memorial Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-02", "name": "Labor Day" },
+      { "date": "10-14", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-28", "name": "Thanksgiving Day" },
+      { "date": "12-24", "name": "Christmas Eve" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2020": [
@@ -66,8 +73,10 @@
       { "date": "05-25", "name": "Memorial Day" },
       { "date": "07-03", "name": "Independence Day" },
       { "date": "09-07", "name": "Labor Day" },
+      { "date": "10-12", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-26", "name": "Thanksgiving Day" },
+      { "date": "12-24", "name": "Christmas Eve" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2021": [
@@ -78,18 +87,20 @@
       { "date": "06-18", "name": "Juneteenth National Independence Day" },
       { "date": "07-05", "name": "Independence Day" },
       { "date": "09-06", "name": "Labor Day" },
+      { "date": "10-11", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-25", "name": "Thanksgiving Day" },
-      { "date": "12-24", "name": "Christmas Day" }
+      { "date": "12-24", "name": "Christmas Day" },
+      { "date": "12-31", "name": "New Year's Day" }
     ],
     "2022": [
-      { "date": "12-31", "name": "New Year's Day" },
       { "date": "01-17", "name": "Martin Luther King, Jr. Day" },
       { "date": "02-21", "name": "Washington's Birthday" },
       { "date": "05-30", "name": "Memorial Day" },
       { "date": "06-20", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-05", "name": "Labor Day" },
+      { "date": "10-10", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-24", "name": "Thanksgiving Day" },
       { "date": "12-26", "name": "Christmas Day" }
@@ -102,6 +113,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-04", "name": "Labor Day" },
+      { "date": "10-09", "name": "Columbus Day" },
       { "date": "11-10", "name": "Veterans Day" },
       { "date": "11-23", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -114,21 +126,27 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-02", "name": "Labor Day" },
+      { "date": "10-14", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-28", "name": "Thanksgiving Day" },
+      { "date": "12-24", "name": "Christmas Eve" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2025": [
       { "date": "01-01", "name": "New Year's Day" },
+      { "date": "01-09", "name": "National Day of Mourning" },
       { "date": "01-20", "name": "Martin Luther King, Jr. Day" },
       { "date": "02-17", "name": "Washington's Birthday" },
       { "date": "05-26", "name": "Memorial Day" },
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-01", "name": "Labor Day" },
+      { "date": "10-13", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-27", "name": "Thanksgiving Day" },
-      { "date": "12-25", "name": "Christmas Day" }
+      { "date": "12-24", "name": "Christmas Eve" },
+      { "date": "12-25", "name": "Christmas Day" },
+      { "date": "12-26", "name": "Day After Christmas" }
     ],
     "2026": [
       { "date": "01-01", "name": "New Year's Day" },
@@ -138,6 +156,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-03", "name": "Independence Day" },
       { "date": "09-07", "name": "Labor Day" },
+      { "date": "10-12", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-26", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -150,18 +169,20 @@
       { "date": "06-18", "name": "Juneteenth National Independence Day" },
       { "date": "07-05", "name": "Independence Day" },
       { "date": "09-06", "name": "Labor Day" },
+      { "date": "10-11", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-25", "name": "Thanksgiving Day" },
-      { "date": "12-24", "name": "Christmas Day" }
+      { "date": "12-24", "name": "Christmas Day" },
+      { "date": "12-31", "name": "New Year's Day" }
     ],
     "2028": [
-      { "date": "12-31", "name": "New Year's Day" },
       { "date": "01-17", "name": "Martin Luther King, Jr. Day" },
       { "date": "02-21", "name": "Washington's Birthday" },
       { "date": "05-29", "name": "Memorial Day" },
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-04", "name": "Labor Day" },
+      { "date": "10-09", "name": "Columbus Day" },
       { "date": "11-10", "name": "Veterans Day" },
       { "date": "11-23", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -174,6 +195,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-03", "name": "Labor Day" },
+      { "date": "10-08", "name": "Columbus Day" },
       { "date": "11-12", "name": "Veterans Day" },
       { "date": "11-22", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -186,6 +208,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-02", "name": "Labor Day" },
+      { "date": "10-14", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-28", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -198,6 +221,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-01", "name": "Labor Day" },
+      { "date": "10-13", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-27", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -210,18 +234,20 @@
       { "date": "06-18", "name": "Juneteenth National Independence Day" },
       { "date": "07-05", "name": "Independence Day" },
       { "date": "09-06", "name": "Labor Day" },
+      { "date": "10-11", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-25", "name": "Thanksgiving Day" },
-      { "date": "12-24", "name": "Christmas Day" }
+      { "date": "12-24", "name": "Christmas Day" },
+      { "date": "12-31", "name": "New Year's Day" }
     ],
     "2033": [
-      { "date": "12-31", "name": "New Year's Day" },
       { "date": "01-17", "name": "Martin Luther King, Jr. Day" },
       { "date": "02-21", "name": "Washington's Birthday" },
       { "date": "05-30", "name": "Memorial Day" },
       { "date": "06-20", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-05", "name": "Labor Day" },
+      { "date": "10-10", "name": "Columbus Day" },
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-24", "name": "Thanksgiving Day" },
       { "date": "12-26", "name": "Christmas Day" }
@@ -234,6 +260,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-04", "name": "Labor Day" },
+      { "date": "10-09", "name": "Columbus Day" },
       { "date": "11-10", "name": "Veterans Day" },
       { "date": "11-23", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
@@ -246,6 +273,7 @@
       { "date": "06-19", "name": "Juneteenth National Independence Day" },
       { "date": "07-04", "name": "Independence Day" },
       { "date": "09-03", "name": "Labor Day" },
+      { "date": "10-08", "name": "Columbus Day" },
       { "date": "11-12", "name": "Veterans Day" },
       { "date": "11-22", "name": "Thanksgiving Day" },
       { "date": "12-25", "name": "Christmas Day" }
