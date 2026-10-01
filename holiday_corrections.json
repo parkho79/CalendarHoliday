@@ -3469,16 +3469,44 @@
   ],
   "us": [
     {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2015",
+      "date": "07-03"
+    },
+    {
       "action": "add",
       "name": "Independence Day",
       "year": "2015",
       "date": "07-04"
     },
     {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2016",
+      "date": "12-26"
+    },
+    {
       "action": "add",
       "name": "Christmas Day",
       "year": "2016",
       "date": "12-25"
+    },
+    {
+      "action": "modify",
+      "name": "New Year's Day",
+      "to": "New Year's Day (observed)",
+      "year": "2017",
+      "date": "01-02"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2017",
+      "date": "11-10"
     },
     {
       "action": "add",
@@ -3491,6 +3519,13 @@
       "name": "Veterans Day",
       "year": "2017",
       "date": "11-11"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2018",
+      "date": "11-12"
     },
     {
       "action": "add",
@@ -3511,6 +3546,13 @@
       "date": "12-24"
     },
     {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2020",
+      "date": "07-03"
+    },
+    {
       "action": "add",
       "name": "Christmas Eve",
       "year": "2020",
@@ -3521,6 +3563,27 @@
       "name": "Independence Day",
       "year": "2020",
       "date": "07-04"
+    },
+    {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2021",
+      "date": "12-24"
+    },
+    {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2021",
+      "date": "07-05"
+    },
+    {
+      "action": "modify",
+      "name": "Juneteenth National Independence Day",
+      "to": "Juneteenth National Independence Day (observed)",
+      "year": "2021",
+      "date": "06-18"
     },
     {
       "action": "add",
@@ -3548,7 +3611,7 @@
     },
     {
       "action": "add",
-      "name": "New Year's Day",
+      "name": "New Year's Day (observed)",
       "year": "2021",
       "date": "12-31"
     },
@@ -3557,6 +3620,20 @@
       "name": "New Year's Day",
       "year": "2022",
       "date": "12-31"
+    },
+    {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2022",
+      "date": "12-26"
+    },
+    {
+      "action": "modify",
+      "name": "Juneteenth National Independence Day",
+      "to": "Juneteenth National Independence Day (observed)",
+      "year": "2022",
+      "date": "06-20"
     },
     {
       "action": "add",
@@ -3575,6 +3652,20 @@
       "name": "New Year's Day",
       "year": "2022",
       "date": "01-01"
+    },
+    {
+      "action": "modify",
+      "name": "New Year's Day",
+      "to": "New Year's Day (observed)",
+      "year": "2023",
+      "date": "01-02"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2023",
+      "date": "11-10"
     },
     {
       "action": "add",
@@ -3613,10 +3704,38 @@
       "date": "01-09"
     },
     {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2026",
+      "date": "07-03"
+    },
+    {
       "action": "add",
       "name": "Independence Day",
       "year": "2026",
       "date": "07-04"
+    },
+    {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2027",
+      "date": "12-24"
+    },
+    {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2027",
+      "date": "07-05"
+    },
+    {
+      "action": "modify",
+      "name": "Juneteenth National Independence Day",
+      "to": "Juneteenth National Independence Day (observed)",
+      "year": "2027",
+      "date": "06-18"
     },
     {
       "action": "add",
@@ -3638,7 +3757,7 @@
     },
     {
       "action": "add",
-      "name": "New Year's Day",
+      "name": "New Year's Day (observed)",
       "year": "2027",
       "date": "12-31"
     },
@@ -3647,6 +3766,13 @@
       "name": "New Year's Day",
       "year": "2028",
       "date": "12-31"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2028",
+      "date": "11-10"
     },
     {
       "action": "add",
@@ -3659,6 +3785,13 @@
       "name": "Veterans Day",
       "year": "2028",
       "date": "11-11"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2029",
+      "date": "11-12"
     },
     {
       "action": "add",
@@ -3667,6 +3800,27 @@
       "date": "11-11"
     },
     {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2032",
+      "date": "12-24"
+    },
+    {
+      "action": "modify",
+      "name": "Independence Day",
+      "to": "Independence Day (observed)",
+      "year": "2032",
+      "date": "07-05"
+    },
+    {
+      "action": "modify",
+      "name": "Juneteenth National Independence Day",
+      "to": "Juneteenth National Independence Day (observed)",
+      "year": "2032",
+      "date": "06-18"
+    },
+    {
       "action": "add",
       "name": "Christmas Day",
       "year": "2032",
@@ -3686,7 +3840,7 @@
     },
     {
       "action": "add",
-      "name": "New Year's Day",
+      "name": "New Year's Day (observed)",
       "year": "2032",
       "date": "12-31"
     },
@@ -3695,6 +3849,20 @@
       "name": "New Year's Day",
       "year": "2033",
       "date": "12-31"
+    },
+    {
+      "action": "modify",
+      "name": "Christmas Day",
+      "to": "Christmas Day (observed)",
+      "year": "2033",
+      "date": "12-26"
+    },
+    {
+      "action": "modify",
+      "name": "Juneteenth National Independence Day",
+      "to": "Juneteenth National Independence Day (observed)",
+      "year": "2033",
+      "date": "06-20"
     },
     {
       "action": "add",
@@ -3715,6 +3883,20 @@
       "date": "01-01"
     },
     {
+      "action": "modify",
+      "name": "New Year's Day",
+      "to": "New Year's Day (observed)",
+      "year": "2034",
+      "date": "01-02"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2034",
+      "date": "11-10"
+    },
+    {
       "action": "add",
       "name": "New Year's Day",
       "year": "2034",
@@ -3725,6 +3907,13 @@
       "name": "Veterans Day",
       "year": "2034",
       "date": "11-11"
+    },
+    {
+      "action": "modify",
+      "name": "Veterans Day",
+      "to": "Veterans Day (observed)",
+      "year": "2035",
+      "date": "11-12"
     },
     {
       "action": "add",

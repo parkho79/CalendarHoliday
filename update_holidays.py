@@ -134,7 +134,12 @@ def apply_corrections(holidays_by_year, country_rules):
       경우(예: 어린이날이 주말과 겹쳐 날짜가 옮겨져도 이름은 그대로 "어린이날") remove+add
       없이 이름만 고칠 때 사용
     관련된 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉽다
-    (holiday_corrections.json 참고)."""
+    (holiday_corrections.json 참고).
+
+    주의: remove/modify는 원본 소스 데이터에만 적용되고, add는 그 다음에 실행된다. 즉 같은
+    실행에서 add로 새로 만든 항목은 그 뒤에 나오는 modify의 대상이 될 수 없다(2026-10-01
+    미국 신정 연도경계 사례에서 실제로 걸림 — 그 항목은 add할 때부터 원하는 이름으로 넣어야
+    함)."""
     if not country_rules:
         return
 
