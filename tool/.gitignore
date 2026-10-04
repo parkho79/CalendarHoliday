@@ -1,0 +1,10 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ / Android Studio
+*.iml
+.idea/
+
+# OS
+.DS_Store
