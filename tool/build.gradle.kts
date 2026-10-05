@@ -40,3 +40,4 @@ tasks.register<JavaExec>("runSelfTest") {
     mainClass.set("SelfTestKt")
     classpath = sourceSets["main"].runtimeClasspath
 }
+
