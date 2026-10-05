@@ -43,6 +43,10 @@ fun App() {
     var years by remember { mutableStateOf<List<YearGroup>>(emptyList()) }
     var appleError by remember { mutableStateOf<String?>(null) }
 
+    var newYear by remember { mutableStateOf("") }
+    var newDate by remember { mutableStateOf("") }
+    var newName by remember { mutableStateOf("") }
+
     val scope = rememberCoroutineScope()
 
     fun sourceOf(code: String) = if (countries?.nager?.contains(code) == true) "Nager" else "Google"
@@ -139,6 +143,38 @@ fun App() {
         status = "✅ 내보내기 완료: ${chooser.selectedFile.name}"
     }
 
+    fun addHoliday() {
+        val year = newYear.trim()
+        val date = newDate.trim()
+        val name = newName.trim()
+        if (year.isBlank() || date.isBlank() || name.isBlank()) {
+            status = "⚠ 연도/월-일/이름을 모두 입력하세요"
+            return
+        }
+        if (!year.matches(Regex("""\d{4}"""))) {
+            status = "⚠ 연도는 4자리 숫자로 입력하세요 (예: 2026)"
+            return
+        }
+        if (!date.matches(Regex("""\d{2}-\d{2}"""))) {
+            status = "⚠ 월-일은 MM-DD 형식으로 입력하세요 (예: 05-05)"
+            return
+        }
+        var group = years.find { it.year == year }
+        if (group == null) {
+            group = YearGroup(year, emptyList())
+            years = (years + group).sortedBy { it.year }
+        }
+        val entry = EditableHoliday(date, name)
+        entry.edited = true
+        group.holidays.add(entry)
+        group.holidays.sortBy { it.date }
+        group.expanded = true
+        status = "✅ 추가됨: $year-$date $name"
+        newYear = ""
+        newDate = ""
+        newName = ""
+    }
+
     Column(Modifier.fillMaxSize().padding(16.dp)) {
         Text("공휴일 데이터 검수 도구", style = MaterialTheme.typography.headlineSmall)
         Spacer(Modifier.height(4.dp))
@@ -205,6 +241,39 @@ fun App() {
                 modifier = Modifier.background(Color(0xFFFFF3CD)).padding(8.dp),
             )
         }
+        if (generated) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                OutlinedTextField(
+                    value = newYear,
+                    onValueChange = { newYear = it },
+                    label = { Text("연도") },
+                    placeholder = { Text("2026") },
+                    singleLine = true,
+                    modifier = Modifier.width(110.dp),
+                )
+                Spacer(Modifier.width(8.dp))
+                OutlinedTextField(
+                    value = newDate,
+                    onValueChange = { newDate = it },
+                    label = { Text("월-일") },
+                    placeholder = { Text("05-05") },
+                    singleLine = true,
+                    modifier = Modifier.width(110.dp),
+                )
+                Spacer(Modifier.width(8.dp))
+                OutlinedTextField(
+                    value = newName,
+                    onValueChange = { newName = it },
+                    label = { Text("이름") },
+                    singleLine = true,
+                    modifier = Modifier.weight(1f),
+                )
+                Spacer(Modifier.width(8.dp))
+                Button(onClick = { addHoliday() }) { Text("삽입") }
+            }
+            Spacer(Modifier.height(8.dp))
+        }
+
         Spacer(Modifier.height(12.dp))
 
         if (years.isNotEmpty()) {
