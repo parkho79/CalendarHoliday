@@ -192,6 +192,21 @@ def apply_corrections(holidays_by_year, country_rules):
         existing.sort(key=lambda h: h['date'])
 
 
+def merge_same_date(holidays_by_year):
+    """같은 날짜에 공휴일이 여러 건 겹치면 이름을 "·"로 이어붙여 한 줄로 합친다(예: 2025-05-05
+    KR 어린이날 + 부처님 오신 날 — 2026-10-05 검토 중 발견. 음력 기준인 부처님오신날이 어느
+    해든 양력 5월 5일과 겹칠 수 있어 국가·연도를 가리지 않는 일반 규칙으로 둠). 입력은
+    apply_corrections() 이후라 각 연도가 이미 날짜순으로 정렬돼 있다고 가정."""
+    for year, entries in holidays_by_year.items():
+        merged = {}
+        for h in entries:
+            if h['date'] in merged:
+                merged[h['date']] += '·' + h['name']
+            else:
+                merged[h['date']] = h['name']
+        holidays_by_year[year] = [{'date': date, 'name': name} for date, name in merged.items()]
+
+
 def load_committed_holidays(country_code):
     """이전에 커밋된 결과물을 읽어온다(없으면 빈 dict) — 이번 조회가 빈 응답으로 와서
     덮어쓰기 전에 비교할 기준."""
@@ -394,6 +409,7 @@ def main():
             holidays_by_year = build_nager_holidays(nager_code, country_start_year)
             restore_empty_years(code, holidays_by_year)
             apply_corrections(holidays_by_year, corrections.get(code, []))
+            merge_same_date(holidays_by_year)
             path = write_json(code, holidays_by_year)
             ok_countries.append(code)
             print(f'  ✅ 저장: {path}')
@@ -418,6 +434,7 @@ def main():
                     continue
                 restore_empty_years(code, holidays_by_year)
                 apply_corrections(holidays_by_year, corrections.get(code, []))
+                merge_same_date(holidays_by_year)
                 path = write_json(code, holidays_by_year)
                 ok_countries.append(code)
                 print(f'  ✅ 저장: {path}')
