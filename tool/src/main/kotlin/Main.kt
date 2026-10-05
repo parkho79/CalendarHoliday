@@ -336,14 +336,21 @@ fun YearGroupView(group: YearGroup) {
         }
         if (group.expanded) {
             group.holidays.forEach { holiday ->
-                HolidayRowView(holiday, group)
+                HolidayRowView(
+                    holiday = holiday,
+                    group = group,
+                    onDelete = {
+                        group.holidays.remove(holiday)
+                        group.anyDeletion = true
+                    },
+                )
             }
         }
     }
 }
 
 @Composable
-fun HolidayRowView(holiday: EditableHoliday, group: YearGroup) {
+fun HolidayRowView(holiday: EditableHoliday, group: YearGroup, onDelete: () -> Unit) {
     val appleNamesForDate = group.appleDiffs[holiday.date]
     Row(
         Modifier
@@ -374,6 +381,9 @@ fun HolidayRowView(holiday: EditableHoliday, group: YearGroup) {
                     color = MaterialTheme.colorScheme.error,
                 )
             }
+        }
+        TextButton(onClick = onDelete) {
+            Text("삭제", color = MaterialTheme.colorScheme.error, style = MaterialTheme.typography.labelSmall)
         }
     }
 }

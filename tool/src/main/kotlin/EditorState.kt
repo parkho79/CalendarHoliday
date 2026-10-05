@@ -24,6 +24,10 @@ class YearGroup(val year: String, entries: List<HolidayEntry>) {
     /** 애플과 다른 날짜만 담는다(날짜 -> 애플 쪽 이름들) — 요청: "애플과 다른 항목만 알려줘". */
     var appleDiffs by mutableStateOf<Map<String, Set<String>>>(emptyMap())
 
+    /** 항목을 삭제하면 그 항목 자체는 목록에서 사라지므로 holidays의 edited 플래그로는
+     * "이 연도가 수정됐다"를 더 이상 판단할 수 없다 — 따로 추적. */
+    var anyDeletion by mutableStateOf(false)
+
     val isEdited: Boolean
-        get() = holidays.any { it.edited }
+        get() = anyDeletion || holidays.any { it.edited }
 }
