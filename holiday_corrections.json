@@ -1068,6 +1068,42 @@
     },
     {
       "action": "add",
+      "name": "劳动节",
+      "year": "2015",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2015",
+      "date": "05-03"
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2015",
+      "date": "06-21"
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2015",
+      "date": "06-22"
+    },
+    {
+      "action": "add",
+      "name": "抗战胜利70周年纪念日",
+      "year": "2015",
+      "date": "09-05"
+    },
+    {
+      "action": "add",
+      "name": "中秋节",
+      "year": "2015",
+      "date": "09-26"
+    },
+    {
+      "action": "add",
       "name": "中秋节",
       "year": "2016",
       "date": "09-15"
@@ -1392,6 +1428,18 @@
     },
     {
       "action": "add",
+      "name": "劳动节",
+      "year": "2017",
+      "date": "04-29"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2017",
+      "date": "04-30"
+    },
+    {
+      "action": "add",
       "name": "中秋节",
       "year": "2018",
       "date": "09-22"
@@ -1641,6 +1689,18 @@
       "name": "春节",
       "year": "2019",
       "date": "02-10"
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2019",
+      "date": "06-08"
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2019",
+      "date": "06-09"
     },
     {
       "action": "remove",
