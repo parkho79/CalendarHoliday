@@ -1715,6 +1715,30 @@
       "date": "06-09"
     },
     {
+      "action": "add",
+      "name": "清明节",
+      "year": "2019",
+      "date": "04-05"
+    },
+    {
+      "action": "add",
+      "name": "清明节",
+      "year": "2019",
+      "date": "04-06"
+    },
+    {
+      "action": "add",
+      "name": "清明节",
+      "year": "2019",
+      "date": "04-07"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2019",
+      "date": "05-04"
+    },
+    {
       "action": "remove",
       "name": "端午节",
       "year": "2020",
