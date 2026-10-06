@@ -1596,6 +1596,18 @@
     },
     {
       "action": "add",
+      "name": "元旦",
+      "year": "2018",
+      "date": "12-30"
+    },
+    {
+      "action": "add",
+      "name": "元旦",
+      "year": "2018",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
       "name": "中秋节",
       "year": "2019",
       "date": "09-14"
