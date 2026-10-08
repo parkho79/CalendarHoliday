@@ -4041,5 +4041,396 @@
       "year": "2035",
       "date": "11-11"
     }
+  ],
+  "tw": [
+    {
+      "action": "modify",
+      "name": "農曆春節 厂礼拜",
+      "to": "農曆春節假日",
+      "year": "2027",
+      "date": "02-09"
+    },
+    {
+      "action": "modify",
+      "name": "農曆春節假日 厂礼拜",
+      "to": "農曆春節假日",
+      "year": "2027",
+      "date": "02-10"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2027",
+      "date": "02-27"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2027",
+      "date": "04-03"
+    },
+    {
+      "action": "modify",
+      "name": "兒童節 厂礼拜",
+      "to": "兒童節 補假",
+      "year": "2027",
+      "date": "04-06"
+    },
+    {
+      "action": "add",
+      "name": "勞動節",
+      "year": "2027",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2027",
+      "date": "10-09"
+    },
+    {
+      "action": "add",
+      "name": "台灣光復節",
+      "year": "2027",
+      "date": "10-23"
+    },
+    {
+      "action": "add",
+      "name": "台灣光復節",
+      "year": "2027",
+      "date": "10-24"
+    },
+    {
+      "action": "modify",
+      "name": "行憲紀念日 厂礼拜",
+      "to": "行憲紀念日 補假",
+      "year": "2027",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "行憲紀念日",
+      "year": "2027",
+      "date": "12-26"
+    },
+    {
+      "action": "modify",
+      "name": "中華民國開國紀念日/元旦 厂礼拜",
+      "to": "中華民國開國紀念日/元旦 補假",
+      "year": "2027",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦",
+      "year": "2021",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦",
+      "year": "2021",
+      "date": "01-03"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2021",
+      "date": "02-27"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2021",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2021",
+      "date": "06-12"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2021",
+      "date": "06-13"
+    },
+    {
+      "action": "add",
+      "name": "中秋節",
+      "year": "2021",
+      "date": "09-18"
+    },
+    {
+      "action": "add",
+      "name": "中秋節",
+      "year": "2021",
+      "date": "09-19"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2021",
+      "date": "10-09"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦 補假",
+      "year": "2021",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦",
+      "year": "2022",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "農曆春節假日",
+      "year": "2022",
+      "date": "01-29"
+    },
+    {
+      "action": "add",
+      "name": "農曆春節假日",
+      "year": "2022",
+      "date": "01-30"
+    },
+    {
+      "action": "add",
+      "name": "農曆春節假日",
+      "year": "2022",
+      "date": "02-06"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2022",
+      "date": "02-26"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2022",
+      "date": "02-27"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2022",
+      "date": "04-02"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2022",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2022",
+      "date": "06-04"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2022",
+      "date": "06-05"
+    },
+    {
+      "action": "add",
+      "name": "中秋節",
+      "year": "2022",
+      "date": "09-11"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2022",
+      "date": "10-08"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2022",
+      "date": "10-09"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦",
+      "year": "2023",
+      "date": "12-30"
+    },
+    {
+      "action": "add",
+      "name": "中華民國開國紀念日/元旦",
+      "year": "2023",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2024",
+      "date": "06-08"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2024",
+      "date": "06-09"
+    },
+    {
+      "action": "add",
+      "name": "農曆春節假日",
+      "year": "2025",
+      "date": "01-25"
+    },
+    {
+      "action": "add",
+      "name": "農曆春節假日",
+      "year": "2025",
+      "date": "01-26"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2025",
+      "date": "03-01"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2025",
+      "date": "03-02"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2025",
+      "date": "04-05"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2025",
+      "date": "04-06"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2025",
+      "date": "06-01"
+    },
+    {
+      "action": "add",
+      "name": "中秋節",
+      "year": "2025",
+      "date": "10-04"
+    },
+    {
+      "action": "add",
+      "name": "中秋節",
+      "year": "2025",
+      "date": "10-05"
+    },
+    {
+      "action": "add",
+      "name": "教師節",
+      "year": "2025",
+      "date": "09-28"
+    },
+    {
+      "action": "add",
+      "name": "台灣光復節",
+      "year": "2025",
+      "date": "10-25"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2025",
+      "date": "10-11"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2025",
+      "date": "10-12"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2026",
+      "date": "09-26"
+    },
+    {
+      "action": "add",
+      "name": "國定假日",
+      "year": "2026",
+      "date": "09-27"
+    },
+    {
+      "action": "add",
+      "name": "和平紀念日",
+      "year": "2026",
+      "date": "03-01"
+    },
+    {
+      "action": "add",
+      "name": "勞動節",
+      "year": "2026",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "勞動節",
+      "year": "2026",
+      "date": "05-03"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2026",
+      "date": "06-20"
+    },
+    {
+      "action": "add",
+      "name": "端午節",
+      "year": "2026",
+      "date": "06-21"
+    },
+    {
+      "action": "add",
+      "name": "中華民國國慶日",
+      "year": "2026",
+      "date": "10-11"
+    },
+    {
+      "action": "add",
+      "name": "台灣光復節",
+      "year": "2026",
+      "date": "10-24"
+    },
+    {
+      "action": "add",
+      "name": "台灣光復節",
+      "year": "2026",
+      "date": "10-25"
+    },
+    {
+      "action": "add",
+      "name": "行憲紀念日",
+      "year": "2026",
+      "date": "12-26"
+    },
+    {
+      "action": "add",
+      "name": "行憲紀念日",
+      "year": "2026",
+      "date": "12-27"
+    }
   ]
 }
