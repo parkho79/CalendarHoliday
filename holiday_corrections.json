@@ -3624,6 +3624,14 @@
       "from_year": 1980
     }
   ],
+  "es": [
+    {
+      "action": "add",
+      "name": "Navidad",
+      "year": "2022",
+      "date": "12-25"
+    }
+  ],
   "pe": [
     {
       "action": "remove",

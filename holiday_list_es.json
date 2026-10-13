@@ -97,7 +97,8 @@
       { "date": "10-12", "name": "Fiesta Nacional de España" },
       { "date": "11-01", "name": "Día de todos los Santos" },
       { "date": "12-06", "name": "Día de la Constitución" },
-      { "date": "12-08", "name": "Inmaculada Concepción" }
+      { "date": "12-08", "name": "Inmaculada Concepción" },
+      { "date": "12-25", "name": "Navidad" }
     ],
     "2023": [
       { "date": "01-01", "name": "Año Nuevo" },
