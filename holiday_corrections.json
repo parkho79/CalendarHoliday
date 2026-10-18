@@ -1,5 +1,5 @@
 {
-  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가.",
+  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), in 2027 DoPT 목록, th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음).",
   "vn": [
     {
       "action": "remove",
@@ -6761,6 +6761,1723 @@
       "name": "行憲紀念日",
       "year": "2026",
       "date": "12-27"
+    }
+  ],
+  "mx": [
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2017",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2017",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2023",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2023",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2034",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2034",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2022",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2022",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2028",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2028",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Año Nuevo",
+      "year": "2033",
+      "date": "12-31"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2033",
+      "date": "01-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2016",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2016",
+      "date": "05-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2021",
+      "date": "04-30"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2021",
+      "date": "05-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2022",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2022",
+      "date": "05-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2027",
+      "date": "04-30"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2027",
+      "date": "05-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2032",
+      "date": "04-30"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2032",
+      "date": "05-01"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Trabajo",
+      "year": "2033",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "Día del Trabajo",
+      "year": "2033",
+      "date": "05-01"
+    }
+  ],
+  "id": [
+    {
+      "action": "remove",
+      "name": "Paskah",
+      "from_year": 2024
+    },
+    {
+      "action": "remove",
+      "name": "Hari Lahir Pancasila",
+      "from_year": 2017
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pilkada Serentak",
+      "year": "2015",
+      "date": "12-09"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2015",
+      "date": "09-24"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2015",
+      "date": "07-17"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2015",
+      "date": "07-18"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2015",
+      "date": "06-02"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2015",
+      "date": "03-21"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2015",
+      "date": "05-16"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2015",
+      "date": "01-03"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2015",
+      "date": "12-24"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2015",
+      "date": "02-19"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2015",
+      "date": "10-14"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2016",
+      "date": "09-12"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2016",
+      "date": "07-06"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2016",
+      "date": "07-07"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2016",
+      "date": "05-22"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2016",
+      "date": "03-09"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2016",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2016",
+      "date": "12-12"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2016",
+      "date": "02-08"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2016",
+      "date": "10-02"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pilkada Serentak",
+      "year": "2017",
+      "date": "02-15"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2017",
+      "date": "09-01"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2017",
+      "date": "06-25"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2017",
+      "date": "06-26"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2017",
+      "date": "05-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2017",
+      "date": "03-28"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2017",
+      "date": "04-24"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2017",
+      "date": "12-01"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2017",
+      "date": "01-28"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2017",
+      "date": "09-21"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pilkada Serentak",
+      "year": "2018",
+      "date": "06-27"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2018",
+      "date": "08-22"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2018",
+      "date": "06-15"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2018",
+      "date": "06-16"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2018",
+      "date": "05-29"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2018",
+      "date": "03-17"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2018",
+      "date": "04-14"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2018",
+      "date": "11-20"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2018",
+      "date": "02-16"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2018",
+      "date": "09-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pemilihan Umum",
+      "year": "2019",
+      "date": "04-17"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2019",
+      "date": "08-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2019",
+      "date": "06-05"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2019",
+      "date": "06-06"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2019",
+      "date": "05-19"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2019",
+      "date": "03-07"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2019",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2019",
+      "date": "11-09"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2019",
+      "date": "02-05"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2019",
+      "date": "09-01"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pilkada Serentak",
+      "year": "2020",
+      "date": "12-09"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2020",
+      "date": "07-31"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2020",
+      "date": "05-24"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2020",
+      "date": "05-25"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2020",
+      "date": "05-07"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2020",
+      "date": "03-25"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2020",
+      "date": "03-22"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2020",
+      "date": "10-29"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2020",
+      "date": "01-25"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2020",
+      "date": "08-20"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2021",
+      "date": "07-20"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2021",
+      "date": "05-13"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2021",
+      "date": "05-14"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2021",
+      "date": "05-26"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2021",
+      "date": "03-14"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2021",
+      "date": "03-11"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2021",
+      "date": "10-20"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2021",
+      "date": "02-12"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2021",
+      "date": "08-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2022",
+      "date": "07-10"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2022",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2022",
+      "date": "05-03"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2022",
+      "date": "05-16"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2022",
+      "date": "03-03"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2022",
+      "date": "02-28"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2022",
+      "date": "10-08"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2022",
+      "date": "02-01"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2022",
+      "date": "07-30"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2023",
+      "date": "06-29"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2023",
+      "date": "04-22"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2023",
+      "date": "04-23"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2023",
+      "date": "06-04"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2023",
+      "date": "03-22"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2023",
+      "date": "02-18"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2023",
+      "date": "09-28"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2023",
+      "date": "01-22"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2023",
+      "date": "07-19"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pemilihan Umum",
+      "year": "2024",
+      "date": "02-14"
+    },
+    {
+      "action": "add",
+      "name": "Hari Pemungutan Suara Pilkada Serentak",
+      "year": "2024",
+      "date": "11-27"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2024",
+      "date": "06-17"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2024",
+      "date": "04-10"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2024",
+      "date": "04-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2024",
+      "date": "05-23"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2024",
+      "date": "03-11"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2024",
+      "date": "02-08"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2024",
+      "date": "09-16"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2024",
+      "date": "02-10"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2024",
+      "date": "07-07"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2025",
+      "date": "06-06"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2025",
+      "date": "03-31"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2025",
+      "date": "04-01"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2025",
+      "date": "05-12"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2025",
+      "date": "03-29"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2025",
+      "date": "01-27"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2025",
+      "date": "09-05"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2025",
+      "date": "01-29"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2025",
+      "date": "06-27"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2026",
+      "date": "05-27"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2026",
+      "date": "03-21"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2026",
+      "date": "03-22"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2026",
+      "date": "05-31"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2026",
+      "date": "03-19"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2026",
+      "date": "01-16"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2026",
+      "date": "08-25"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2026",
+      "date": "02-17"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2026",
+      "date": "06-16"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2027",
+      "date": "05-17"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2027",
+      "date": "03-10"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2027",
+      "date": "03-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2027",
+      "date": "05-20"
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2027",
+      "date": "03-08"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2027",
+      "date": "01-05"
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2027",
+      "date": "12-26"
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2027",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2027",
+      "date": "02-06"
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2027",
+      "date": "06-06"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2028",
+      "date": "02-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2028",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2028",
+      "date": "05-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2028",
+      "date": "03-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2028",
+      "date": "12-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2028",
+      "date": "08-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2028",
+      "date": "01-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2028",
+      "date": "05-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2029",
+      "date": "04-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2029",
+      "date": "02-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2029",
+      "date": "05-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2029",
+      "date": "03-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2029",
+      "date": "12-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2029",
+      "date": "07-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2029",
+      "date": "02-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2029",
+      "date": "05-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2030",
+      "date": "04-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2030",
+      "date": "05-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2030",
+      "date": "03-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2030",
+      "date": "11-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2030",
+      "date": "07-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2030",
+      "date": "02-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2030",
+      "date": "05-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2031",
+      "date": "04-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2031",
+      "date": "01-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2031",
+      "date": "01-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2031",
+      "date": "06-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2031",
+      "date": "03-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2031",
+      "date": "11-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2031",
+      "date": "07-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2031",
+      "date": "01-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2031",
+      "date": "04-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2032",
+      "date": "03-22",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2032",
+      "date": "01-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2032",
+      "date": "01-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2032",
+      "date": "05-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2032",
+      "date": "03-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2032",
+      "date": "11-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2032",
+      "date": "06-20",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2032",
+      "date": "02-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2032",
+      "date": "04-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2033",
+      "date": "03-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2033",
+      "date": "01-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2033",
+      "date": "01-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2033",
+      "date": "12-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2033",
+      "date": "12-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2033",
+      "date": "05-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2033",
+      "date": "03-31",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2033",
+      "date": "10-21",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2033",
+      "date": "06-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2033",
+      "date": "01-31",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2033",
+      "date": "04-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2034",
+      "date": "03-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2034",
+      "date": "12-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2034",
+      "date": "12-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2034",
+      "date": "06-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2034",
+      "date": "03-20",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2034",
+      "date": "10-10",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2034",
+      "date": "05-30",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2034",
+      "date": "02-19",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2034",
+      "date": "03-21",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Adha",
+      "year": "2035",
+      "date": "02-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2035",
+      "date": "12-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Idul Fitri",
+      "year": "2035",
+      "date": "12-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Waisak",
+      "year": "2035",
+      "date": "05-22",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Suci Nyepi",
+      "year": "2035",
+      "date": "03-10",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Isra Mikraj Nabi Muhammad",
+      "year": "2035",
+      "date": "09-29",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Maulid Nabi Muhammad",
+      "year": "2035",
+      "date": "05-20",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Imlek",
+      "year": "2035",
+      "date": "02-08",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Tahun Baru Islam",
+      "year": "2035",
+      "date": "03-11",
+      "estimated": true
+    }
+  ],
+  "in": [
+    {
+      "action": "remove",
+      "name": "Holi",
+      "year": "2027",
+      "date": "03-22"
+    },
+    {
+      "action": "add",
+      "name": "Holi",
+      "year": "2027",
+      "date": "03-23"
+    },
+    {
+      "action": "add",
+      "name": "Ramzan Id",
+      "year": "2027",
+      "date": "03-10"
+    },
+    {
+      "action": "add",
+      "name": "Bakrid",
+      "year": "2027",
+      "date": "05-17"
+    },
+    {
+      "action": "add",
+      "name": "Muharram/Ashura",
+      "year": "2027",
+      "date": "06-16"
+    },
+    {
+      "action": "add",
+      "name": "Milad un-Nabi",
+      "year": "2027",
+      "date": "08-15"
+    }
+  ],
+  "th": [
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันสิ้นปี",
+      "year": "2023",
+      "date": "01-03"
+    },
+    {
+      "action": "add",
+      "name": "วันสงกรานต์",
+      "year": "2023",
+      "date": "04-15"
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันสงกรานต์",
+      "year": "2023",
+      "date": "04-17"
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2023",
+      "date": "08-02"
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2024",
+      "date": "07-21"
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2025",
+      "date": "07-11"
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2026",
+      "date": "07-30"
+    },
+    {
+      "action": "add",
+      "name": "วันมาฆบูชา",
+      "year": "2027",
+      "date": "02-21"
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันมาฆบูชา",
+      "year": "2027",
+      "date": "02-22"
+    },
+    {
+      "action": "add",
+      "name": "วันวิสาขบูชา",
+      "year": "2027",
+      "date": "05-20"
+    },
+    {
+      "action": "add",
+      "name": "วันอาสาฬหบูชา",
+      "year": "2027",
+      "date": "07-18"
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2027",
+      "date": "07-19"
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันอาสาฬหบูชา",
+      "year": "2027",
+      "date": "07-20"
+    },
+    {
+      "action": "add",
+      "name": "วันมาฆบูชา",
+      "year": "2028",
+      "date": "02-10",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันสงกรานต์",
+      "year": "2028",
+      "date": "04-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันวิสาขบูชา",
+      "year": "2028",
+      "date": "05-08",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันอาสาฬหบูชา",
+      "year": "2028",
+      "date": "07-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2028",
+      "date": "07-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันเฉลิมพระชนมพรรษาสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง และวันแม่แห่งชาติ",
+      "year": "2028",
+      "date": "08-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันสิ้นปี",
+      "year": "2029",
+      "date": "01-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันมาฆบูชา",
+      "year": "2029",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันวิสาขบูชา",
+      "year": "2029",
+      "date": "05-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันวิสาขบูชา",
+      "year": "2029",
+      "date": "05-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันอาสาฬหบูชา",
+      "year": "2029",
+      "date": "07-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2029",
+      "date": "07-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันมาฆบูชา",
+      "year": "2030",
+      "date": "02-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันมาฆบูชา",
+      "year": "2030",
+      "date": "02-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันวิสาขบูชา",
+      "year": "2030",
+      "date": "05-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันอาสาฬหบูชา",
+      "year": "2030",
+      "date": "07-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2030",
+      "date": "07-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันอาสาฬหบูชา",
+      "year": "2030",
+      "date": "07-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันมาฆบูชา",
+      "year": "2031",
+      "date": "03-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันวิสาขบูชา",
+      "year": "2031",
+      "date": "06-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันอาสาฬหบูชา",
+      "year": "2031",
+      "date": "08-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันเข้าพรรษา",
+      "year": "2031",
+      "date": "08-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "วันหยุดชดเชยวันอาสาฬหบูชา",
+      "year": "2031",
+      "date": "08-04",
+      "estimated": true
+    },
+    {
+      "action": "remove",
+      "name": "วันหยุดชดเชยวันเฉลิมพระชนมพรรษาสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง และวันแม่แห่งชาติ",
+      "year": "2028",
+      "date": "08-11"
     }
   ]
 }
