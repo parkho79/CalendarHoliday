@@ -1,5 +1,5 @@
 {
-  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), in 2027 DoPT 목록, th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음).",
+  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), in 2027 DoPT 목록, th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음). 2026-10-31: pt 2015 정지 공휴일 4일 제거(2013~2015 정지, Lei 8/2016로 2016 복원), nl 성금요일·해방기념일(5/5) 매년(rijksoverheid 공식 목록), pe 6월 7일(Ley 31788, 2024~), cl 이동 공휴일(Ley 19.668)·9/17·9/20(Ley 20.215·20.983)·1월 2일 이름·원주민의 날 2031~2035·2017 인구조사·2022-09-16, tr 2027~2035 라마단·쿠르반 바이람(움 알쿠라 = 디야넷 2027 발표, 2028~ 추정).",
   "vn": [
     {
       "action": "remove",
@@ -4261,6 +4261,78 @@
       "action": "remove",
       "name": "Día de la Fuerza Aérea",
       "from_year": 2023
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2024",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2025",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2026",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2027",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2028",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2029",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2030",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2031",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2032",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2033",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2034",
+      "date": "06-07"
+    },
+    {
+      "action": "add",
+      "name": "Batalla de Arica y Día de la Bandera",
+      "year": "2035",
+      "date": "06-07"
     }
   ],
   "au": [
@@ -8478,6 +8550,1120 @@
       "name": "วันหยุดชดเชยวันเฉลิมพระชนมพรรษาสมเด็จพระนางเจ้าสิริกิติ์ พระบรมราชินีนาถ พระบรมราชชนนีพันปีหลวง และวันแม่แห่งชาติ",
       "year": "2028",
       "date": "08-11"
+    }
+  ],
+  "pt": [
+    {
+      "action": "remove",
+      "name": "Corpo de Deus",
+      "year": "2015",
+      "date": "06-04"
+    },
+    {
+      "action": "remove",
+      "name": "Implantação da República",
+      "year": "2015",
+      "date": "10-05"
+    },
+    {
+      "action": "remove",
+      "name": "Dia de Todos-os-Santos",
+      "year": "2015",
+      "date": "11-01"
+    },
+    {
+      "action": "remove",
+      "name": "Restauração da Independência",
+      "year": "2015",
+      "date": "12-01"
+    }
+  ],
+  "nl": [
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2015",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2015",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2016",
+      "date": "03-25"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2016",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2017",
+      "date": "04-14"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2017",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2018",
+      "date": "03-30"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2018",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2019",
+      "date": "04-19"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2019",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2020",
+      "date": "04-10"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2020",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2021",
+      "date": "04-02"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2021",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2022",
+      "date": "04-15"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2022",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2023",
+      "date": "04-07"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2023",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2024",
+      "date": "03-29"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2024",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2025",
+      "date": "04-18"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2025",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2026",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2026",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2027",
+      "date": "03-26"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2027",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2028",
+      "date": "04-14"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2028",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2029",
+      "date": "03-30"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2029",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2030",
+      "date": "04-19"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2030",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2031",
+      "date": "04-11"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2031",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2032",
+      "date": "03-26"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2032",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2033",
+      "date": "04-15"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2033",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2034",
+      "date": "04-07"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2034",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "Goede Vrijdag",
+      "year": "2035",
+      "date": "03-23"
+    },
+    {
+      "action": "add",
+      "name": "Bevrijdingsdag",
+      "year": "2035",
+      "date": "05-05"
+    }
+  ],
+  "cl": [
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2017",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Censo Nacional de Población y Vivienda",
+      "year": "2017",
+      "date": "04-19"
+    },
+    {
+      "action": "remove",
+      "name": "San Pedro y San Pablo",
+      "year": "2018",
+      "date": "06-30"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2018",
+      "date": "10-13"
+    },
+    {
+      "action": "add",
+      "name": "San Pedro y San Pablo",
+      "year": "2018",
+      "date": "07-02"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2018",
+      "date": "09-17"
+    },
+    {
+      "action": "add",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2018",
+      "date": "10-15"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2019",
+      "date": "09-20"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2021",
+      "date": "09-17"
+    },
+    {
+      "action": "add",
+      "name": "Feriado nacional",
+      "year": "2022",
+      "date": "09-16"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2023",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2024",
+      "date": "09-20"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2027",
+      "date": "09-17"
+    },
+    {
+      "action": "remove",
+      "name": "San Pedro y San Pablo",
+      "year": "2029",
+      "date": "06-30"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2029",
+      "date": "10-13"
+    },
+    {
+      "action": "add",
+      "name": "San Pedro y San Pablo",
+      "year": "2029",
+      "date": "07-02"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2029",
+      "date": "09-17"
+    },
+    {
+      "action": "add",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2029",
+      "date": "10-15"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2030",
+      "date": "09-20"
+    },
+    {
+      "action": "add",
+      "name": "Día Nacional de los Pueblos Indígenas",
+      "year": "2031",
+      "date": "06-21"
+    },
+    {
+      "action": "add",
+      "name": "Día Nacional de los Pueblos Indígenas",
+      "year": "2032",
+      "date": "06-20"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2032",
+      "date": "09-17"
+    },
+    {
+      "action": "add",
+      "name": "Día Nacional de los Pueblos Indígenas",
+      "year": "2033",
+      "date": "06-20"
+    },
+    {
+      "action": "add",
+      "name": "Año Nuevo",
+      "year": "2034",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "Día Nacional de los Pueblos Indígenas",
+      "year": "2034",
+      "date": "06-21"
+    },
+    {
+      "action": "remove",
+      "name": "San Pedro y San Pablo",
+      "year": "2035",
+      "date": "06-30"
+    },
+    {
+      "action": "remove",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2035",
+      "date": "10-13"
+    },
+    {
+      "action": "add",
+      "name": "Día Nacional de los Pueblos Indígenas",
+      "year": "2035",
+      "date": "06-21"
+    },
+    {
+      "action": "add",
+      "name": "San Pedro y San Pablo",
+      "year": "2035",
+      "date": "07-02"
+    },
+    {
+      "action": "add",
+      "name": "Fiestas Patrias",
+      "year": "2035",
+      "date": "09-17"
+    },
+    {
+      "action": "add",
+      "name": "Día del Descubrimiento de Dos Mundos",
+      "year": "2035",
+      "date": "10-15"
+    },
+    {
+      "action": "modify",
+      "name": "Año Nuevo",
+      "to": "Feriado nacional",
+      "year": "2017",
+      "date": "01-02"
+    },
+    {
+      "action": "modify",
+      "name": "Año Nuevo",
+      "to": "Feriado nacional",
+      "year": "2023",
+      "date": "01-02"
+    },
+    {
+      "action": "modify",
+      "name": "Año Nuevo",
+      "to": "Feriado nacional",
+      "year": "2034",
+      "date": "01-02"
+    }
+  ],
+  "tr": [
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 1. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "03-10"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 2. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "03-11"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 3. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "03-12"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 1. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "05-16"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 2. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "05-17"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 3. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "05-18"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 4. Gün (Tentative Date)",
+      "year": "2027",
+      "date": "05-19"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 1. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "02-27"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 2. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "02-28"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 3. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "02-29"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 1. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "05-05"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 2. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "05-06"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 3. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "05-07"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 4. Gün (Tentative Date)",
+      "year": "2028",
+      "date": "05-08"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 1. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "02-15"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 2. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "02-16"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 3. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "02-17"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 1. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "04-24"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 2. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "04-25"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 3. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "04-26"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 4. Gün (Tentative Date)",
+      "year": "2029",
+      "date": "04-27"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 1. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "02-05"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 2. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "02-06"
+    },
+    {
+      "action": "remove",
+      "name": "Ramazan Bayramı 3. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "02-07"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 1. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "04-14"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 2. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "04-15"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 3. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "04-16"
+    },
+    {
+      "action": "remove",
+      "name": "Kurban Bayramı 4. Gün (Tentative Date)",
+      "year": "2030",
+      "date": "04-17"
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2027",
+      "date": "03-09"
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2027",
+      "date": "03-10"
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2027",
+      "date": "03-11"
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2027",
+      "date": "05-16"
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2027",
+      "date": "05-17"
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2027",
+      "date": "05-18"
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2027",
+      "date": "05-19"
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2028",
+      "date": "02-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2028",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2028",
+      "date": "02-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2028",
+      "date": "05-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2028",
+      "date": "05-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2028",
+      "date": "05-08",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2029",
+      "date": "02-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2029",
+      "date": "02-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2029",
+      "date": "04-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2029",
+      "date": "04-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2029",
+      "date": "04-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2029",
+      "date": "04-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2030",
+      "date": "02-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2030",
+      "date": "04-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2030",
+      "date": "04-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2030",
+      "date": "04-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2030",
+      "date": "04-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2031",
+      "date": "01-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2031",
+      "date": "01-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2031",
+      "date": "01-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2031",
+      "date": "04-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2031",
+      "date": "04-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2031",
+      "date": "04-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2031",
+      "date": "04-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2032",
+      "date": "01-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2032",
+      "date": "01-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2032",
+      "date": "01-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2032",
+      "date": "03-22",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2032",
+      "date": "03-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2032",
+      "date": "03-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2032",
+      "date": "03-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2033",
+      "date": "01-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2033",
+      "date": "01-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2033",
+      "date": "01-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2033",
+      "date": "03-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2033",
+      "date": "03-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2033",
+      "date": "03-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2033",
+      "date": "03-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2033",
+      "date": "12-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2033",
+      "date": "12-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2033",
+      "date": "12-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2034",
+      "date": "03-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2034",
+      "date": "03-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2034",
+      "date": "03-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2034",
+      "date": "03-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2034",
+      "date": "12-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2034",
+      "date": "12-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2034",
+      "date": "12-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 1. Gün",
+      "year": "2035",
+      "date": "02-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 2. Gün",
+      "year": "2035",
+      "date": "02-19",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 3. Gün",
+      "year": "2035",
+      "date": "02-20",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Kurban Bayramı 4. Gün",
+      "year": "2035",
+      "date": "02-21",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 1. Gün",
+      "year": "2035",
+      "date": "12-01",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 2. Gün",
+      "year": "2035",
+      "date": "12-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Ramazan Bayramı 3. Gün",
+      "year": "2035",
+      "date": "12-03",
+      "estimated": true
     }
   ]
 }

@@ -10,12 +10,8 @@
       { "date": "04-05", "name": "Domingo de Páscoa" },
       { "date": "04-25", "name": "Dia da Liberdade" },
       { "date": "05-01", "name": "Dia do Trabalhador" },
-      { "date": "06-04", "name": "Corpo de Deus" },
       { "date": "06-10", "name": "Dia de Portugal, de Camões e das Comunidades Portuguesas" },
       { "date": "08-15", "name": "Assunção de Nossa Senhora" },
-      { "date": "10-05", "name": "Implantação da República" },
-      { "date": "11-01", "name": "Dia de Todos-os-Santos" },
-      { "date": "12-01", "name": "Restauração da Independência" },
       { "date": "12-08", "name": "Imaculada Conceição" },
       { "date": "12-25", "name": "Natal" }
     ],
