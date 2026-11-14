@@ -6,9 +6,11 @@
 저장소에는 더 이상 생성 로직이 없고, 앱에 내장할 스냅샷이 필요할 때
 `sync_holidays_from_calendarholiday.py`(MyCalendar 저장소)로 이 저장소의 결과물을 복사해간다.
 
-- Nager.Date(date.nager.at)가 지원하는 국가 중 38개국은 Nager를 우선 사용 (global=true &
+- Nager.Date(date.nager.at)가 지원하는 국가 중 36개국은 Nager를 우선 사용 (global=true &
   Public 타입만 채택 — 문화적 기념일이 섞이지 않은 정제된 데이터).
-- Nager 미지원 또는 데이터 결측 8개국(tw, th, my, in, il, sa, ae, vn)은 Google Calendar
+- 정부 공식 목록과 두 소스가 크게 어긋나는 4개국(in, eg, ph, uy)은 manual/{code}.json(사람이 옮겨 적은
+  원본)을 소스로 쓴다.
+- Nager 미지원 또는 데이터 결측 7개국(tw, th, my, il, sa, ae, vn)은 Google Calendar
   공휴일 캘린더에서 생성. vn은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이
   통째로 빠져있어 여기로 옮김.
 - holiday_corrections.json에 등록된 국가별 add/remove 규칙을 마지막에 적용한다. 원본이 실제로는
@@ -19,9 +21,9 @@
 API 키는 코드에 넣지 않고 GOOGLE_API_KEY 환경변수 또는 .google_api_key 파일(git 추적 제외)에서
 읽는다.
 
-사용법: `python3 update_holidays.py` (인자 없음, 46개국 전체 — 더블클릭 런처도 이 방식)
+사용법: `python3 update_holidays.py` (인자 없음, 47개국 전체 — 더블클릭 런처도 이 방식)
         `python3 update_holidays.py kr pe` (국가 코드를 인자로 주면 그 나라들만 처리 — 정정
-        하나 검증하려고 매번 46개국을 다 돌릴 필요 없게)
+        하나 검증하려고 매번 47개국을 다 돌릴 필요 없게)
 """
 import json
 import os
@@ -49,20 +51,20 @@ COUNTRY_START_YEAR_OVERRIDES = {
     'ua': 1991,  # 소련에서 독립(1991.8)
 }
 
-# Nager.Date 지원국 중 실제 채택 38개국: 우리 국가코드 -> Nager countryCode
+# Nager.Date 지원국 중 실제 채택 36개국(eg·ph는 manual로 옮김): 우리 국가코드 -> Nager countryCode
 # (vn 제외: Nager에 베트남 음력 공휴일(뗏 연휴, 훙브엉기념일)이 전혀 없어서 Google Calendar로
 #  되돌림. 2026-09-11 확인: CN/HK 등 다른 음력 국가는 Nager에도 정상 반영되어 있어 VN만의
 #  결측으로 보임.)
 NAGER_COUNTRIES = {
     'kr': 'KR', 'jp': 'JP', 'cn': 'CN', 'hk': 'HK', 'id': 'ID',
-    'sg': 'SG', 'ph': 'PH', 'au': 'AU', 'nz': 'NZ',
+    'sg': 'SG', 'au': 'AU', 'nz': 'NZ',
     'us': 'US', 'ca': 'CA', 'mx': 'MX', 'br': 'BR', 'ar': 'AR', 'cl': 'CL',
     'co': 'CO', 'pe': 'PE',
     'gb': 'GB', 'ie': 'IE', 'fr': 'FR', 'de': 'DE', 'at': 'AT', 'ch': 'CH',
     'it': 'IT', 'es': 'ES', 'pt': 'PT', 'nl': 'NL', 'be': 'BE', 'se': 'SE',
     'no': 'NO', 'dk': 'DK', 'fi': 'FI', 'ru': 'RU', 'ua': 'UA', 'pl': 'PL',
     'tr': 'TR',
-    'eg': 'EG', 'za': 'ZA',
+    'za': 'ZA',
 }
 
 # Nager는 영국처럼 지역별로 다른 공휴일이 있는 나라를 global=false + counties=[...]로 태깅한다
@@ -84,17 +86,34 @@ NAGER_INCLUDE_TYPE = {
     'US': 'Bank',  # Columbus Day — 연방/은행 공휴일이지만 Nager가 Public으로 안 태깅함
 }
 
-# Nager 미지원(또는 데이터 결측으로 제외) 8개국: Google Calendar 방식
+# Nager 미지원(또는 데이터 결측으로 제외) 7개국(in은 manual로 옮김): Google Calendar 방식
 GOOGLE_ONLY_CALENDARS = {
     'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
     'th': {'id': 'th.th#holiday@group.v.calendar.google.com'},
     'my': {'id': 'en.malaysia#holiday@group.v.calendar.google.com'},
-    'in': {'id': 'en.indian#holiday@group.v.calendar.google.com'},
     'il': {'id': 'iw.jewish#holiday@group.v.calendar.google.com'},
     'vn': {'id': 'vi.vietnamese#holiday@group.v.calendar.google.com'},
     'sa': {'id': 'ar.saudiarabian#holiday@group.v.calendar.google.com'},
     'ae': {'id': 'ar.ae#holiday@group.v.calendar.google.com'},
 }
+
+
+# 정부 공식 목록을 사람이 옮겨 적은 원본(manual/{code}.json)을 소스로 쓰는 나라. 두 소스 모두
+# 그 나라가 실제로 쉬는 날과 맞지 않아 정정 규칙이 원본보다 많아질 때 쓴다 — 인도는 중앙정부
+# 공휴일을 매년 DoPT가 고시(델리 선택 공휴일 3개 포함)하는데 Google은 2021~2031만, 날짜·항목도
+# 고시와 달랐다(2026-11-14). 파일 형식: {"_source": 근거, "YYYY": [{"date","name","estimated"?}]}.
+MANUAL_COUNTRIES = {'in', 'eg', 'ph', 'uy'}
+MANUAL_DIR = SCRIPT_DIR / 'manual'
+
+
+def build_manual_holidays(country_code):
+    with open(MANUAL_DIR / f'{country_code}.json', encoding='utf-8') as f:
+        data = json.load(f)
+    data.pop('_source', None)
+    return {
+        year: [{'date': h['date'], 'name': h['name']} for h in entries]
+        for year, entries in data.items()
+    }
 
 
 def load_google_api_key():
@@ -375,12 +394,12 @@ def build_google_holidays(calendar_id, api_key):
 
 
 def main():
-    # 인자 없이 실행(더블클릭 런처 포함)하면 기존대로 46개국 전체. 국가 코드를 인자로 주면
-    # 그 나라들만 처리 — 수정 하나 검증하려고 46개국 API를 매번 전부 호출할 필요 없게.
+    # 인자 없이 실행(더블클릭 런처 포함)하면 기존대로 47개국 전체. 국가 코드를 인자로 주면
+    # 그 나라들만 처리 — 수정 하나 검증하려고 47개국 API를 매번 전부 호출할 필요 없게.
     # 예: python3 update_holidays.py kr pe
     requested = {code.lower() for code in sys.argv[1:]}
     if requested:
-        unknown = requested - set(NAGER_COUNTRIES) - set(GOOGLE_ONLY_CALENDARS)
+        unknown = requested - set(NAGER_COUNTRIES) - set(GOOGLE_ONLY_CALENDARS) - MANUAL_COUNTRIES
         if unknown:
             print(f'❌ 모르는 국가 코드: {", ".join(sorted(unknown))}')
             return 1
@@ -408,6 +427,22 @@ def main():
             country_start_year = max(START_YEAR, COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR))
             holidays_by_year = build_nager_holidays(nager_code, country_start_year)
             restore_empty_years(code, holidays_by_year)
+            apply_corrections(holidays_by_year, corrections.get(code, []))
+            merge_same_date(holidays_by_year)
+            path = write_json(code, holidays_by_year)
+            ok_countries.append(code)
+            print(f'  ✅ 저장: {path}')
+        except Exception as e:
+            failed_countries.append(code)
+            print(f'  ❌ 실패: {e}')
+
+    for code in sorted(MANUAL_COUNTRIES):
+        if requested and code not in requested:
+            continue
+        print(f'[Manual] {code.upper()} 읽는 중...')
+        try:
+            # restore_empty_years는 쓰지 않는다 — 원본 파일이 곧 정답이라 "조회 실패"가 없다.
+            holidays_by_year = build_manual_holidays(code)
             apply_corrections(holidays_by_year, corrections.get(code, []))
             merge_same_date(holidays_by_year)
             path = write_json(code, holidays_by_year)

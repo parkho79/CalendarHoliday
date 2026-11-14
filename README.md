@@ -11,7 +11,7 @@ MyCalendar 앱(안드로이드 캘린더 앱)이 표시하는 공휴일 데이�
   두 경로로 받습니다.
   1. **빌드 시점 번들**: MyCalendar 저장소의 `sync_holidays_from_calendarholiday.py`가 여기
      결과물을 복사해서 `app/src/main/assets/holidays/`에 커밋 — APK에 포함되어 오프라인
-     최초 실행에도 즉시 표시됨(46개국 합쳐도 gzip 기준 약 24KB).
+     최초 실행에도 즉시 표시됨(47개국 합쳐도 gzip 기준 약 24KB).
   2. **런타임 갱신**: 앱의 `HolidayListInstaller`가 `raw.githubusercontent.com/parkho79/
      CalendarHoliday/main/holiday_list_{code}.json`을 ETag 조건부 GET으로 주기적으로 확인해서,
      앱 업데이트 없이도 이미 설치된 사용자에게 최신 데이터를 반영합니다.
@@ -24,23 +24,28 @@ MyCalendar 앱(안드로이드 캘린더 앱)이 표시하는 공휴일 데이�
 
 `generate_holidays.command`(Mac) 또는 `generate_holidays.bat`(Windows)를 더블클릭하면
 python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고, 끝나면 **OK/NOK**를
-표시하고 아무 키나 누르면 창이 닫힙니다(46개국 전체).
+표시하고 아무 키나 누르면 창이 닫힙니다(47개국 전체).
 
 터미널에서 직접 `python3 update_holidays.py`를 실행할 때는 국가 코드를 인자로 줘서 그
 나라들만 처리할 수 있습니다(예: `python3 update_holidays.py kr pe`) — 정정 하나 검증하려고
-매번 46개국 API를 전부 호출할 필요 없게. 인자 없이 실행하면 기존대로 전체를 처리합니다.
+매번 47개국 API를 전부 호출할 필요 없게. 인자 없이 실행하면 기존대로 전체를 처리합니다.
 
 내부적으로:
 
-- **Nager.Date**(date.nager.at, 무료·키 불필요) 지원국 중 38개국은 이걸 우선 사용합니다.
+- **Nager.Date**(date.nager.at, 무료·키 불필요) 지원국 중 36개국은 이걸 우선 사용합니다.
   `global == true && "Public" in types`만 채택해서, 문화적 기념일(밸런타인데이, 부활절 등)이
   섞여 들어오는 걸 막습니다. 단, Nager가 실제로는 전국 공휴일인데 `global: false`로 잘못
   분류해둔 경우가 있음을 2026-09-12에 38개국 전수 확인으로 발견함(영국 New Year's Day, 호주
   Anzac Day) — 이런 것과 Nager 원본에 아예 없는 항목(중국 청명절)은 `holiday_corrections.json`
   으로 보정한다.
-- Nager 미지원 또는 데이터 결측 8개국(`tw`, `th`, `my`, `in`, `il`, `sa`, `ae`, `vn`)은
+- **수기 원본(`manual/{code}.json`)** 4개국(`in`, `eg`, `ph`, `uy`): 정부 공식 목록을 사람이 옮겨 적은
+  파일이 소스입니다. 두 소스가 실제 쉬는 날과 크게 어긋나 정정 규칙이 원본보다 많아질 나라에 씁니다
+  (인도: 매년 DoPT 고시, 이집트: 총리령 이동·이드 연장, 필리핀: 매년 대통령 포고, 우루과이: 월요일 이동 법).
+  각 파일 `_source`에 근거가 있고, `"estimated": true`는 정부 발표 전 값입니다(생성 결과에는 안 들어감).
+  매년 새 고시가 나오면 이 파일을 고칩니다.
+- Nager 미지원 또는 데이터 결측 7개국(`tw`, `th`, `my`, `il`, `sa`, `ae`, `vn`)은
   Google Calendar 공휴일 캘린더 API로 생성합니다. `.google_api_key` 파일(이 저장소 루트,
-  git 추적 제외)이나 `GOOGLE_API_KEY` 환경변수에 키가 있어야 합니다. 키가 없으면 이 8개국만
+  git 추적 제외)이나 `GOOGLE_API_KEY` 환경변수에 키가 있어야 합니다. 키가 없으면 이 7개국만
   건너뜁니다. (`vn`은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이 통째로 빠져
   있어 2026-09-11에 여기로 옮김 — 다른 음력 국가(중국/홍콩)는 Nager에 정상 반영되어 있어
   베트남만의 결측으로 확인됨.)
