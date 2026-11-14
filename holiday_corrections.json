@@ -3941,6 +3941,138 @@
       "name": "清明节",
       "year": "2035",
       "date": "04-05"
+    },
+    {
+      "action": "add",
+      "name": "元旦",
+      "year": "2027",
+      "date": "01-02"
+    },
+    {
+      "action": "add",
+      "name": "元旦",
+      "year": "2027",
+      "date": "01-03"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-05"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-07"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-08"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-09"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-10"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-11"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-12"
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2027",
+      "date": "02-13"
+    },
+    {
+      "action": "add",
+      "name": "清明节",
+      "year": "2027",
+      "date": "04-03"
+    },
+    {
+      "action": "add",
+      "name": "清明节",
+      "year": "2027",
+      "date": "04-04"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2027",
+      "date": "05-02"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2027",
+      "date": "05-03"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2027",
+      "date": "05-04"
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2027",
+      "date": "05-05"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-02"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-03"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-04"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-05"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-06"
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2027",
+      "date": "10-07"
     }
   ],
   "pl": [
@@ -6826,6 +6958,12 @@
       "name": "行憲紀念日",
       "year": "2026",
       "date": "12-27"
+    },
+    {
+      "action": "add",
+      "name": "教師節",
+      "year": "2027",
+      "date": "09-28"
     }
   ],
   "mx": [
