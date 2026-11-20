@@ -59,8 +59,7 @@
     "2019": [
       { "date": "01-01", "name": "Confraternização Universal" },
       { "date": "04-19", "name": "Sexta-feira Santa" },
-      { "date": "04-21", "name": "Dia de Tiradentes" },
-      { "date": "04-21", "name": "Domingo de Páscoa" },
+      { "date": "04-21", "name": "Dia de Tiradentes·Domingo de Páscoa" },
       { "date": "05-01", "name": "Dia do Trabalhador" },
       { "date": "06-20", "name": "Corpus Christi" },
       { "date": "09-07", "name": "Dia da Independência" },
@@ -208,8 +207,7 @@
     "2030": [
       { "date": "01-01", "name": "Confraternização Universal" },
       { "date": "04-19", "name": "Sexta-feira Santa" },
-      { "date": "04-21", "name": "Dia de Tiradentes" },
-      { "date": "04-21", "name": "Domingo de Páscoa" },
+      { "date": "04-21", "name": "Dia de Tiradentes·Domingo de Páscoa" },
       { "date": "05-01", "name": "Dia do Trabalhador" },
       { "date": "06-20", "name": "Corpus Christi" },
       { "date": "09-07", "name": "Dia da Independência" },

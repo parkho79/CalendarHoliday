@@ -219,11 +219,14 @@ def merge_same_date(holidays_by_year):
     for year, entries in holidays_by_year.items():
         merged = {}
         for h in entries:
-            if h['date'] in merged:
-                merged[h['date']] += '·' + h['name']
-            else:
-                merged[h['date']] = h['name']
-        holidays_by_year[year] = [{'date': date, 'name': name} for date, name in merged.items()]
+            parts = merged.setdefault(h['date'], [])
+            # 같은 이름이 소스에 여러 번 오거나 공백만 다른 경우(SG "Chinese New Year" 2건, TW "元旦 補假"/"元旦補假")
+            # "A·A"처럼 반복되지 않도록 공백을 무시하고 이미 있는 이름은 건너뜀 — 2026-11-20 발견.
+            for part in h['name'].split('·'):
+                key = ''.join(part.split())
+                if key not in {''.join(p.split()) for p in parts}:
+                    parts.append(part)
+        holidays_by_year[year] = [{'date': date, 'name': '·'.join(parts)} for date, parts in merged.items()]
 
 
 def load_committed_holidays(country_code):

@@ -181,8 +181,7 @@
       { "date": "05-01", "name": "Første mai" },
       { "date": "05-06", "name": "Kristi himmelfartsdag" },
       { "date": "05-16", "name": "Første pinsedag" },
-      { "date": "05-17", "name": "Syttende mai" },
-      { "date": "05-17", "name": "Andre pinsedag" },
+      { "date": "05-17", "name": "Syttende mai·Andre pinsedag" },
       { "date": "12-25", "name": "Første juledag" },
       { "date": "12-26", "name": "Andre juledag" }
     ],
@@ -251,8 +250,7 @@
       { "date": "05-01", "name": "Første mai" },
       { "date": "05-06", "name": "Kristi himmelfartsdag" },
       { "date": "05-16", "name": "Første pinsedag" },
-      { "date": "05-17", "name": "Syttende mai" },
-      { "date": "05-17", "name": "Andre pinsedag" },
+      { "date": "05-17", "name": "Syttende mai·Andre pinsedag" },
       { "date": "12-25", "name": "Første juledag" },
       { "date": "12-26", "name": "Andre juledag" }
     ],
