@@ -1,5 +1,5 @@
 {
-  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음). 2026-11-14: in·eg 정정 삭제 — in·eg·ph·uy는 manual/{code}.json이 소스. 2026-10-31: pt 2015 정지 공휴일 4일 제거(2013~2015 정지, Lei 8/2016로 2016 복원), nl 성금요일·해방기념일(5/5) 매년(rijksoverheid 공식 목록), pe 6월 7일(Ley 31788, 2024~), cl 이동 공휴일(Ley 19.668)·9/17·9/20(Ley 20.215·20.983)·1월 2일 이름·원주민의 날 2031~2035·2017 인구조사·2022-09-16, tr 2027~2035 라마단·쿠르반 바이람(움 알쿠라 = 디야넷 2027 발표, 2028~ 추정). 2026-11-22: tw 2028~2035 紀念日及節日實施條例(2025-05-28) 규칙으로 계산(小年夜·教師節·光復節·行憲紀念日, 토→앞 근무일·일→다음 근무일 補假, 설 補假는 연휴 뒤, 兒童節·清明 같은 날은 전날(목요일이면 다음 날), 3일 이상 연휴의 주말 포함) — 2026·2027 정부 발표 날짜를 그대로 재현함을 확인, 청명은 천문 계산(Google 2029-04-05는 틀림), 調整放假(보충 출근일)는 매년 발표라 넣지 않음, 전부 estimated.",
+  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음). 2026-11-14: in·eg 정정 삭제 — in·eg·ph·uy는 manual/{code}.json이 소스. 2026-10-31: pt 2015 정지 공휴일 4일 제거(2013~2015 정지, Lei 8/2016로 2016 복원), nl 성금요일·해방기념일(5/5) 매년(rijksoverheid 공식 목록), pe 6월 7일(Ley 31788, 2024~), cl 이동 공휴일(Ley 19.668)·9/17·9/20(Ley 20.215·20.983)·1월 2일 이름·원주민의 날 2031~2035·2017 인구조사·2022-09-16, tr 2027~2035 라마단·쿠르반 바이람(움 알쿠라 = 디야넷 2027 발표, 2028~ 추정). 2026-11-22: tw 2028~2035 紀念日及節日實施條例(2025-05-28) 규칙으로 계산(小年夜·教師節·光復節·行憲紀念日, 토→앞 근무일·일→다음 근무일 補假, 설 補假는 연휴 뒤, 兒童節·清明 같은 날은 전날(목요일이면 다음 날), 3일 이상 연휴의 주말 포함) — 2026·2027 정부 발표 날짜를 그대로 재현함을 확인, 청명은 천문 계산(Google 2029-04-05는 틀림), 調整放假(보충 출근일)는 매년 발표라 넣지 않음, 전부 estimated. 2026-11-22: 주 파일 정정 키는 \"{국가}-{주}\"(예: de-by). de-by 성모승천일(8/15)은 바이에른 가톨릭 다수 자치단체(뮌헨 포함)가 쉬는 날이라 전 연도 추가(Nager는 SL만).",
   "vn": [
     {
       "action": "remove",
@@ -11012,6 +11012,134 @@
       "year": "2035",
       "date": "12-03",
       "estimated": true
+    }
+  ],
+  "de-by": [
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2015",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2016",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2017",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2018",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2019",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2020",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2021",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2022",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2023",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2024",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2025",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2026",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2027",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2028",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2029",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2030",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2031",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2032",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2033",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2034",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Mariä Himmelfahrt",
+      "year": "2035",
+      "date": "08-15"
     }
   ]
 }

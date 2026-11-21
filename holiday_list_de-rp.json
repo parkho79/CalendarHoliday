@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "country": "DE-RP",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+      { "date": "06-04", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2016": [
+      { "date": "05-26", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2017": [
+      { "date": "06-15", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2018": [
+      { "date": "05-31", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2019": [
+      { "date": "06-20", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2020": [
+      { "date": "06-11", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2021": [
+      { "date": "06-03", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2022": [
+      { "date": "06-16", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2023": [
+      { "date": "06-08", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2024": [
+      { "date": "05-30", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2025": [
+      { "date": "06-19", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2026": [
+      { "date": "06-04", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2027": [
+      { "date": "05-27", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2028": [
+      { "date": "06-15", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2029": [
+      { "date": "05-31", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2030": [
+      { "date": "06-20", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2031": [
+      { "date": "06-12", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2032": [
+      { "date": "05-27", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2033": [
+      { "date": "06-16", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2034": [
+      { "date": "06-08", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ],
+    "2035": [
+      { "date": "05-24", "name": "Fronleichnam" },
+      { "date": "11-01", "name": "Allerheiligen" }
+    ]
+  }
+}

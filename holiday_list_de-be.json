@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "country": "DE-BE",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+    ],
+    "2016": [
+    ],
+    "2017": [
+    ],
+    "2018": [
+    ],
+    "2019": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2020": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "05-08", "name": "Tag der Befreiung" }
+    ],
+    "2021": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2022": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2023": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2024": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2025": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "05-08", "name": "Tag der Befreiung" }
+    ],
+    "2026": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2027": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2028": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "06-17", "name": "75. Jahrestag des Aufstandes vom 17. Juni 1953" }
+    ],
+    "2029": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2030": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2031": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2032": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2033": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2034": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ],
+    "2035": [
+      { "date": "03-08", "name": "Internationaler Frauentag" }
+    ]
+  }
+}

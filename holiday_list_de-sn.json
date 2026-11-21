@@ -1,0 +1,91 @@
+{
+  "meta": {
+    "country": "DE-SN",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-18", "name": "Buß- und Bettag" }
+    ],
+    "2016": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-16", "name": "Buß- und Bettag" }
+    ],
+    "2017": [
+      { "date": "11-22", "name": "Buß- und Bettag" }
+    ],
+    "2018": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-21", "name": "Buß- und Bettag" }
+    ],
+    "2019": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-20", "name": "Buß- und Bettag" }
+    ],
+    "2020": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-18", "name": "Buß- und Bettag" }
+    ],
+    "2021": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-17", "name": "Buß- und Bettag" }
+    ],
+    "2022": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-16", "name": "Buß- und Bettag" }
+    ],
+    "2023": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-22", "name": "Buß- und Bettag" }
+    ],
+    "2024": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-20", "name": "Buß- und Bettag" }
+    ],
+    "2025": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-19", "name": "Buß- und Bettag" }
+    ],
+    "2026": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-18", "name": "Buß- und Bettag" }
+    ],
+    "2027": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-17", "name": "Buß- und Bettag" }
+    ],
+    "2028": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-22", "name": "Buß- und Bettag" }
+    ],
+    "2029": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-21", "name": "Buß- und Bettag" }
+    ],
+    "2030": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-20", "name": "Buß- und Bettag" }
+    ],
+    "2031": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-19", "name": "Buß- und Bettag" }
+    ],
+    "2032": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-17", "name": "Buß- und Bettag" }
+    ],
+    "2033": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-16", "name": "Buß- und Bettag" }
+    ],
+    "2034": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-22", "name": "Buß- und Bettag" }
+    ],
+    "2035": [
+      { "date": "10-31", "name": "Reformationstag" },
+      { "date": "11-21", "name": "Buß- und Bettag" }
+    ]
+  }
+}

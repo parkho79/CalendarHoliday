@@ -56,6 +56,9 @@ python3/`requests` 설치를 확인한 뒤 `update_holidays.py`를 실행하고,
   add/remove 규칙으로 등록하면 생성 결과에 자동 반영됩니다(스키마는 파일 안 `_readme` 참고).
   관련된 정정(예: 틀린 날짜 제거 + 올바른 날짜 추가)은 같은 나라 목록에 나란히 등록해서
   하나의 수정으로 같이 관리합니다.
+- **독일 주별 파일**: 독일은 전국 파일(`holiday_list_de.json`) 말고 주마다 그 주에만 있는 공휴일을
+  `holiday_list_de-{주}.json`(16개, `meta.country`는 `DE-BY` 식)으로 함께 만든다(`REGION_COUNTRIES`). 배포된
+  옛 앱은 주 파일을 요청하지 않는다. 정정 키는 `de-by`처럼 쓴다(바이에른 성모승천일은 Nager에 없어 정정으로 넣음).
 - 특정 주(州)/지역에만 적용되는 공휴일(구글이 이름에 `"(regional holiday)"`라고 표시)은
   `is_public_holiday()`가 자동으로 제외합니다.
 

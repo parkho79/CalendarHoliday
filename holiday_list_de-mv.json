@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "country": "DE-MV",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2016": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2017": [
+    ],
+    "2018": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2019": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2020": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2021": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2022": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2023": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2024": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2025": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2026": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2027": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2028": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2029": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2030": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2031": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2032": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2033": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2034": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2035": [
+      { "date": "03-08", "name": "Internationaler Frauentag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ]
+  }
+}

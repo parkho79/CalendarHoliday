@@ -10,6 +10,7 @@
   Public 타입만 채택 — 문화적 기념일이 섞이지 않은 정제된 데이터).
 - 정부 공식 목록과 두 소스가 크게 어긋나는 4개국(in, eg, ph, uy)은 manual/{code}.json(사람이 옮겨 적은
   원본)을 소스로 쓴다.
+- 독일은 주(州)마다 그 주에만 있는 공휴일을 holiday_list_de-{주}.json으로 따로 만든다(REGION_COUNTRIES).
 - Nager 미지원 또는 데이터 결측 7개국(tw, th, my, il, sa, ae, vn)은 Google Calendar
   공휴일 캘린더에서 생성. vn은 Nager 자체 지원국이지만 음력 공휴일(뗏, 훙브엉기념일)이
   통째로 빠져있어 여기로 옮김.
@@ -84,6 +85,15 @@ NAGER_INCLUDE_COUNTY = {
 # "Bank" 단독) 전부 누락된 걸 발견. 국가별로 "이 타입도 Public과 동급으로 채택" 예외를 둔다.
 NAGER_INCLUDE_TYPE = {
     'US': 'Bank',  # Columbus Day — 연방/은행 공휴일이지만 Nager가 Public으로 안 태깅함
+}
+
+# 주(州)별 공휴일 파일을 따로 만드는 나라: 우리 국가코드 -> 주 코드 목록(Nager counties의 "DE-" 뒤).
+# 전국 파일(holiday_list_de.json)은 그대로 두고 주마다 그 주에만 있는 공휴일을 holiday_list_de-{주}.json으로
+# 만든다 — 배포된 옛 앱은 주 파일을 요청하지 않으므로 지역 공휴일이 전국 공휴일처럼 보이지 않는다(2026-11-22).
+# 일부 자치단체만 쉬는 날(작센·튀링겐 성체축일, 아우크스부르크 평화축제)은 Nager에도 없고 넣지 않는다.
+# 바이에른 성모승천일(가톨릭 다수 자치단체, 뮌헨 포함)은 Nager에 없어 holiday_corrections.json으로 넣는다.
+REGION_COUNTRIES = {
+    'de': ['BW', 'BY', 'BE', 'BB', 'HB', 'HH', 'HE', 'MV', 'NI', 'NW', 'RP', 'SL', 'SN', 'ST', 'SH', 'TH'],
 }
 
 # Nager 미지원(또는 데이터 결측으로 제외) 7개국(in은 manual로 옮김): Google Calendar 방식
@@ -294,7 +304,9 @@ def write_json(country_code, holidays_by_year):
 
 # --- Nager.Date 소스 ---
 
-def fetch_nager_year(nager_code, year):
+def fetch_nager_year(nager_code, year, regional_out=None):
+    """그해 전국 공휴일 목록. regional_out(dict)을 주면 global=false 공휴일을 주 코드별로 거기에 모은다
+    ({"BY": [{"date","name"}]}) — 주 파일용, API를 한 번 더 부르지 않으려고."""
     include_county = NAGER_INCLUDE_COUNTY.get(nager_code)
     include_type = NAGER_INCLUDE_TYPE.get(nager_code)
     url = f'https://date.nager.at/api/v3/PublicHolidays/{year}/{nager_code}'
@@ -305,29 +317,40 @@ def fetch_nager_year(nager_code, year):
     result = []
     for item in response.json():
         is_global = item.get('global', False)
-        matches_county = include_county and include_county in (item.get('counties') or [])
-        if not is_global and not matches_county:
-            continue
         types = item.get('types', [])
         if 'Public' not in types and not (include_type and include_type in types):
             continue
         date = item.get('date', '')  # "YYYY-MM-DD"
         name = item.get('localName') or item.get('name', '')
-        if len(date) == 10:
+        if len(date) != 10:
+            continue
+        counties = item.get('counties') or []
+        if regional_out is not None and not is_global:
+            for county in counties:
+                regional_out.setdefault(county.split('-', 1)[-1], []).append({'date': date[5:], 'name': name})
+        matches_county = include_county and include_county in counties
+        if is_global or matches_county:
             result.append({'date': date[5:], 'name': name})
     return result
 
 
-def build_nager_holidays(nager_code, start_year=START_YEAR):
+def build_nager_holidays(nager_code, start_year=START_YEAR, regions=None):
+    """연도별 전국 공휴일. regions(주 코드 목록)를 주면 (전국, {주: 연도별 주 공휴일})을 돌려준다."""
     holidays_by_year = {}
+    regional_by_year = {region: {} for region in regions or []}
     for year in range(start_year, END_YEAR + 1):
+        regional = {}
         try:
-            holidays_by_year[str(year)] = fetch_nager_year(nager_code, year)
+            holidays_by_year[str(year)] = fetch_nager_year(nager_code, year, regional if regions else None)
         except requests.exceptions.RequestException as e:
             print(f'  ⚠️ {year}년 조회 실패, 빈 목록으로 처리: {e}')
             holidays_by_year[str(year)] = []
+        for region in regional_by_year:
+            regional_by_year[region][str(year)] = regional.get(region, [])
         time.sleep(0.15)
-    return holidays_by_year
+    if regions is None:
+        return holidays_by_year
+    return holidays_by_year, regional_by_year
 
 
 # --- Google Calendar 소스 (Nager 미지원 국가 전용) ---
@@ -428,11 +451,24 @@ def main():
             # 따라야 한다. 그냥 override 우선이면 전역 START_YEAR를 낮췄을 때 이 나라만
             # 도로 옛날로 튀는 버그가 생김.
             country_start_year = max(START_YEAR, COUNTRY_START_YEAR_OVERRIDES.get(code, START_YEAR))
-            holidays_by_year = build_nager_holidays(nager_code, country_start_year)
+            regions = REGION_COUNTRIES.get(code)
+            if regions:
+                holidays_by_year, regional_by_year = build_nager_holidays(nager_code, country_start_year, regions)
+            else:
+                holidays_by_year, regional_by_year = build_nager_holidays(nager_code, country_start_year), {}
             restore_empty_years(code, holidays_by_year)
             apply_corrections(holidays_by_year, corrections.get(code, []))
             merge_same_date(holidays_by_year)
             path = write_json(code, holidays_by_year)
+            # 주 파일: holiday_list_{국가}-{주}.json, 정정 키도 "{국가}-{주}"
+            for region, region_holidays in regional_by_year.items():
+                region_code = f'{code}-{region.lower()}'
+                restore_empty_years(region_code, region_holidays)
+                apply_corrections(region_holidays, corrections.get(region_code, []))
+                merge_same_date(region_holidays)
+                write_json(region_code, region_holidays)
+            if regional_by_year:
+                print(f'  ✅ 주 파일 {len(regional_by_year)}개')
             ok_countries.append(code)
             print(f'  ✅ 저장: {path}')
         except Exception as e:

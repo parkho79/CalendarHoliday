@@ -1,0 +1,71 @@
+{
+  "meta": {
+    "country": "DE-HE",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+      { "date": "06-04", "name": "Fronleichnam" }
+    ],
+    "2016": [
+      { "date": "05-26", "name": "Fronleichnam" }
+    ],
+    "2017": [
+      { "date": "06-15", "name": "Fronleichnam" }
+    ],
+    "2018": [
+      { "date": "05-31", "name": "Fronleichnam" }
+    ],
+    "2019": [
+      { "date": "06-20", "name": "Fronleichnam" }
+    ],
+    "2020": [
+      { "date": "06-11", "name": "Fronleichnam" }
+    ],
+    "2021": [
+      { "date": "06-03", "name": "Fronleichnam" }
+    ],
+    "2022": [
+      { "date": "06-16", "name": "Fronleichnam" }
+    ],
+    "2023": [
+      { "date": "06-08", "name": "Fronleichnam" }
+    ],
+    "2024": [
+      { "date": "05-30", "name": "Fronleichnam" }
+    ],
+    "2025": [
+      { "date": "06-19", "name": "Fronleichnam" }
+    ],
+    "2026": [
+      { "date": "06-04", "name": "Fronleichnam" }
+    ],
+    "2027": [
+      { "date": "05-27", "name": "Fronleichnam" }
+    ],
+    "2028": [
+      { "date": "06-15", "name": "Fronleichnam" }
+    ],
+    "2029": [
+      { "date": "05-31", "name": "Fronleichnam" }
+    ],
+    "2030": [
+      { "date": "06-20", "name": "Fronleichnam" }
+    ],
+    "2031": [
+      { "date": "06-12", "name": "Fronleichnam" }
+    ],
+    "2032": [
+      { "date": "05-27", "name": "Fronleichnam" }
+    ],
+    "2033": [
+      { "date": "06-16", "name": "Fronleichnam" }
+    ],
+    "2034": [
+      { "date": "06-08", "name": "Fronleichnam" }
+    ],
+    "2035": [
+      { "date": "05-24", "name": "Fronleichnam" }
+    ]
+  }
+}

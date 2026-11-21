@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "country": "DE-TH",
+    "version": 1
+  },
+  "holidays": {
+    "2015": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2016": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2017": [
+    ],
+    "2018": [
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2019": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2020": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2021": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2022": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2023": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2024": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2025": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2026": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2027": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2028": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2029": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2030": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2031": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2032": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2033": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2034": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ],
+    "2035": [
+      { "date": "09-20", "name": "Weltkindertag" },
+      { "date": "10-31", "name": "Reformationstag" }
+    ]
+  }
+}
