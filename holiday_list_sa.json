@@ -109,19 +109,52 @@
     ],
     "2027": [
       { "date": "02-22", "name": "Founding Day" },
+      { "date": "03-09", "name": "Eid al-Fitr" },
+      { "date": "03-10", "name": "Eid al-Fitr Holiday" },
+      { "date": "03-11", "name": "Eid al-Fitr Holiday" },
+      { "date": "03-12", "name": "Eid al-Fitr Holiday" },
+      { "date": "05-15", "name": "Arafat Day" },
+      { "date": "05-16", "name": "Eid al-Adha" },
+      { "date": "05-17", "name": "Eid al-Adha Holiday" },
+      { "date": "05-18", "name": "Eid al-Adha Holiday" },
       { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2028": [
       { "date": "02-22", "name": "Founding Day" },
+      { "date": "02-26", "name": "Eid al-Fitr" },
+      { "date": "02-27", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-28", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-29", "name": "Eid al-Fitr Holiday" },
+      { "date": "05-04", "name": "Arafat Day" },
+      { "date": "05-05", "name": "Eid al-Adha" },
+      { "date": "05-06", "name": "Eid al-Adha Holiday" },
+      { "date": "05-07", "name": "Eid al-Adha Holiday" },
       { "date": "09-23", "name": "Saudi National Day" },
       { "date": "09-24", "name": "Day off for Saudi National Day" }
     ],
     "2029": [
+      { "date": "02-14", "name": "Eid al-Fitr" },
+      { "date": "02-15", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-16", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-17", "name": "Eid al-Fitr Holiday" },
       { "date": "02-22", "name": "Founding Day" },
+      { "date": "04-23", "name": "Arafat Day" },
+      { "date": "04-24", "name": "Eid al-Adha" },
+      { "date": "04-25", "name": "Eid al-Adha Holiday" },
+      { "date": "04-26", "name": "Eid al-Adha Holiday" },
       { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2030": [
+      { "date": "02-03", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-04", "name": "Eid al-Fitr" },
+      { "date": "02-05", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-06", "name": "Eid al-Fitr Holiday" },
+      { "date": "02-21", "name": "Day off for Founding Day" },
       { "date": "02-22", "name": "Founding Day" },
+      { "date": "04-12", "name": "Arafat Day" },
+      { "date": "04-13", "name": "Eid al-Adha" },
+      { "date": "04-14", "name": "Eid al-Adha Holiday" },
+      { "date": "04-15", "name": "Eid al-Adha Holiday" },
       { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2031": [

@@ -1,5 +1,5 @@
 {
-  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음). 2026-11-14: in·eg 정정 삭제 — in·eg·ph·uy는 manual/{code}.json이 소스. 2026-10-31: pt 2015 정지 공휴일 4일 제거(2013~2015 정지, Lei 8/2016로 2016 복원), nl 성금요일·해방기념일(5/5) 매년(rijksoverheid 공식 목록), pe 6월 7일(Ley 31788, 2024~), cl 이동 공휴일(Ley 19.668)·9/17·9/20(Ley 20.215·20.983)·1월 2일 이름·원주민의 날 2031~2035·2017 인구조사·2022-09-16, tr 2027~2035 라마단·쿠르반 바이람(움 알쿠라 = 디야넷 2027 발표, 2028~ 추정). 2026-11-22: tw 2028~2035 紀念日及節日實施條例(2025-05-28) 규칙으로 계산(小年夜·教師節·光復節·行憲紀念日, 토→앞 근무일·일→다음 근무일 補假, 설 補假는 연휴 뒤, 兒童節·清明 같은 날은 전날(목요일이면 다음 날), 3일 이상 연휴의 주말 포함) — 2026·2027 정부 발표 날짜를 그대로 재현함을 확인, 청명은 천문 계산(Google 2029-04-05는 틀림), 調整放假(보충 출근일)는 매년 발표라 넣지 않음, 전부 estimated. 2026-11-22: 주 파일 정정 키는 \"{국가}-{주}\"(예: de-by). de-by 성모승천일(8/15)은 바이에른 가톨릭 다수 자치단체(뮌헨 포함)가 쉬는 날이라 전 연도 추가(Nager는 SL만).",
+  "_readme": "국가코드(소문자) -> [규칙]. 각 규칙은 {\"action\": \"remove\"|\"add\"|\"modify\", \"name\": ..., ...}. remove: name만 있으면 모든 연도에서 제거, from_year가 있으면 그 연도 이전에서만 제거(그 연도부터는 유지), year+date가 있으면 정확히 그 연도·그 날짜의 그 항목 하나만 제거(소스가 특정 연도만 날짜를 잘못 계산한 경우). add: year+date로 그 연도에 없으면 추가(두 소스 모두 놓친 임시공휴일, 또는 remove로 지운 잘못된 날짜 대신 올바른 날짜를 넣을 때). modify: name+to+year+date로 정확히 그 연도·그 날짜의 그 이름과 일치하는 항목의 이름만 바꿈(날짜는 그대로) — 소스가 대체공휴일을 원래 공휴일과 같은 이름으로 표시하는 경우 등. 관련 규칙을 같은 나라 목록에 나란히 적어두면 하나의 정정으로 같이 관리하기 쉬움. update_holidays.py의 apply_corrections()가 처리한다. 지역 한정 공휴일(\"(regional holiday)\" 표기)은 is_public_holiday()에서 자동으로 걸러지므로 여기 등록할 필요 없음. from_year 항목들은 2026-09-20 46개국 역사 조사 결과, 2016-02-06 kr 항목은 2026-09-21 발견, 어린이날 대체휴일(kr) 항목들은 2026-09-23 발견(근거는 refactoring-log.md 참고). 2026-10-14: hk 청명·윤달 음력 날짜 오류와 2015-09-03 특별휴일·2033 국경일·중양절 겹침 대체일, vn 2015·2018 누락 휴일, 베트남 음력 2030 설(중국과 하루 차이), 국경일 2일째·대체휴일, Ngày Văn hoá Việt Nam(2026-07-01 시행, 국회 결의 28/2026/QH16), Google 미제공 2032~2035 법정 공휴일 추정값 추가. 2026-10-18: mx 1월 1일·5월 1일 날짜 고정(LFT 제74조), id 종교 공휴일 전 연도(SKB 3 Menteri·대통령령 선거일), th 2021~2031 누락 불교 절기·대체휴일. \"estimated\": true는 정부 발표 전 추정값(이슬람력 ±1일, 태국 음력 일부 ±1일) — 발표되면 고칠 것(apply_corrections는 이 필드를 읽지 않음). 2026-11-14: in·eg 정정 삭제 — in·eg·ph·uy는 manual/{code}.json이 소스. 2026-10-31: pt 2015 정지 공휴일 4일 제거(2013~2015 정지, Lei 8/2016로 2016 복원), nl 성금요일·해방기념일(5/5) 매년(rijksoverheid 공식 목록), pe 6월 7일(Ley 31788, 2024~), cl 이동 공휴일(Ley 19.668)·9/17·9/20(Ley 20.215·20.983)·1월 2일 이름·원주민의 날 2031~2035·2017 인구조사·2022-09-16, tr 2027~2035 라마단·쿠르반 바이람(움 알쿠라 = 디야넷 2027 발표, 2028~ 추정). 2026-11-22: tw 2028~2035 紀念日及節日實施條例(2025-05-28) 규칙으로 계산(小年夜·教師節·光復節·行憲紀念日, 토→앞 근무일·일→다음 근무일 補假, 설 補假는 연휴 뒤, 兒童節·清明 같은 날은 전날(목요일이면 다음 날), 3일 이상 연휴의 주말 포함) — 2026·2027 정부 발표 날짜를 그대로 재현함을 확인, 청명은 천문 계산(Google 2029-04-05는 틀림), 調整放假(보충 출근일)는 매년 발표라 넣지 않음, 전부 estimated. 2026-11-22: 주 파일 정정 키는 \"{국가}-{주}\"(예: de-by). de-by 성모승천일(8/15)은 바이에른 가톨릭 다수 자치단체(뮌헨 포함)가 쉬는 날이라 전 연도 추가(Nager는 SL만). 2026-11-22 2027~2030 전수조사: ru 1월 8일(노동법 112조), cn 2028~2030 법정일+주말 补假(2025 개정 办法, 调休 제외), sa·ae 2027~2030 이슬람 명절(움 알쿠라 — sa: 라마단 29일 다음 날부터 4일·아라파부터 4일, 2030-02-21 건국기념일 금요일 대체, ae: 라마단 29일~샤왈 3일·아라파+3일·새해·마울리드), my 2027 JPM 발표·2028~ MABIMS 추정, sg 2028~ 하리라야·하지(MABIMS)·와이삭·디파발리(나라카 차투르다시), id 2028~2030 이슬람 명절을 MABIMS(아체 일몰, 이각은 지구 중심)로 — 2026·2027 확정일로 검증.",
   "vn": [
     {
       "action": "remove",
@@ -4073,6 +4073,181 @@
       "name": "国庆节",
       "year": "2027",
       "date": "10-07"
+    },
+    {
+      "action": "add",
+      "name": "元旦",
+      "year": "2028",
+      "date": "01-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2028",
+      "date": "01-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2028",
+      "date": "01-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2028",
+      "date": "01-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2028",
+      "date": "05-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2028",
+      "date": "05-29",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2028",
+      "date": "10-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2028",
+      "date": "10-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2028",
+      "date": "10-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2029",
+      "date": "02-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2029",
+      "date": "02-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2029",
+      "date": "05-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "端午节",
+      "year": "2029",
+      "date": "06-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "中秋节",
+      "year": "2029",
+      "date": "09-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2029",
+      "date": "10-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2029",
+      "date": "10-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2030",
+      "date": "02-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2030",
+      "date": "02-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "春节",
+      "year": "2030",
+      "date": "02-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "劳动节",
+      "year": "2030",
+      "date": "05-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2030",
+      "date": "10-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "国庆节",
+      "year": "2030",
+      "date": "10-03",
+      "estimated": true
     }
   ],
   "pl": [
@@ -9145,7 +9320,7 @@
       "action": "add",
       "name": "Hari Raya Idul Fitri",
       "year": "2028",
-      "date": "02-26",
+      "date": "02-28",
       "estimated": true
     },
     {
@@ -9180,7 +9355,7 @@
       "action": "add",
       "name": "Maulid Nabi Muhammad",
       "year": "2028",
-      "date": "08-03",
+      "date": "08-04",
       "estimated": true
     },
     {
@@ -9194,7 +9369,7 @@
       "action": "add",
       "name": "Tahun Baru Islam",
       "year": "2028",
-      "date": "05-25",
+      "date": "05-26",
       "estimated": true
     },
     {
@@ -9208,7 +9383,7 @@
       "action": "add",
       "name": "Hari Raya Idul Fitri",
       "year": "2029",
-      "date": "02-14",
+      "date": "02-16",
       "estimated": true
     },
     {
@@ -9257,7 +9432,7 @@
       "action": "add",
       "name": "Tahun Baru Islam",
       "year": "2029",
-      "date": "05-14",
+      "date": "05-15",
       "estimated": true
     },
     {
@@ -9320,7 +9495,7 @@
       "action": "add",
       "name": "Tahun Baru Islam",
       "year": "2030",
-      "date": "05-03",
+      "date": "05-04",
       "estimated": true
     },
     {
@@ -11140,6 +11315,865 @@
       "name": "Mariä Himmelfahrt",
       "year": "2035",
       "date": "08-15"
+    }
+  ],
+  "ae": [
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2027",
+      "date": "03-08",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2027",
+      "date": "03-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2027",
+      "date": "03-10",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2027",
+      "date": "03-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "يوم عرفة",
+      "year": "2027",
+      "date": "05-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2027",
+      "date": "05-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2027",
+      "date": "05-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2027",
+      "date": "05-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2028",
+      "date": "02-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2028",
+      "date": "02-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2028",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2028",
+      "date": "02-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "يوم عرفة",
+      "year": "2028",
+      "date": "05-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2028",
+      "date": "05-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2028",
+      "date": "05-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2029",
+      "date": "02-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2029",
+      "date": "02-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2029",
+      "date": "02-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "يوم عرفة",
+      "year": "2029",
+      "date": "04-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2029",
+      "date": "04-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2029",
+      "date": "04-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2029",
+      "date": "04-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2030",
+      "date": "02-02",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2030",
+      "date": "02-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الفطر",
+      "year": "2030",
+      "date": "02-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "يوم عرفة",
+      "year": "2030",
+      "date": "04-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2030",
+      "date": "04-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2030",
+      "date": "04-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "عيد الأضحى",
+      "year": "2030",
+      "date": "04-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الهجرية",
+      "year": "2027",
+      "date": "06-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "مولد النبي",
+      "year": "2027",
+      "date": "08-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الهجرية",
+      "year": "2028",
+      "date": "05-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "مولد النبي",
+      "year": "2028",
+      "date": "08-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الهجرية",
+      "year": "2029",
+      "date": "05-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "مولد النبي",
+      "year": "2029",
+      "date": "07-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الهجرية",
+      "year": "2030",
+      "date": "05-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "مولد النبي",
+      "year": "2030",
+      "date": "07-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الميلادية",
+      "year": "2028",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2028",
+      "date": "12-02"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2028",
+      "date": "12-03"
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الميلادية",
+      "year": "2029",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2029",
+      "date": "12-02"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2029",
+      "date": "12-03"
+    },
+    {
+      "action": "add",
+      "name": "رأس السنة الميلادية",
+      "year": "2030",
+      "date": "01-01"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2030",
+      "date": "12-02"
+    },
+    {
+      "action": "add",
+      "name": "اليوم الوطني",
+      "year": "2030",
+      "date": "12-03"
+    }
+  ],
+  "my": [
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2027",
+      "date": "03-10"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa Holiday Day 2",
+      "year": "2027",
+      "date": "03-11"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2027",
+      "date": "05-17"
+    },
+    {
+      "action": "add",
+      "name": "Wesak Day",
+      "year": "2027",
+      "date": "05-20"
+    },
+    {
+      "action": "add",
+      "name": "Muharram",
+      "year": "2027",
+      "date": "06-06"
+    },
+    {
+      "action": "add",
+      "name": "The Prophet Muhammad's Birthday",
+      "year": "2027",
+      "date": "08-15"
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2028",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa Holiday Day 2",
+      "year": "2028",
+      "date": "02-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Wesak Day",
+      "year": "2028",
+      "date": "05-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Muharram",
+      "year": "2028",
+      "date": "05-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "The Prophet Muhammad's Birthday",
+      "year": "2028",
+      "date": "08-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa Holiday Day 2",
+      "year": "2029",
+      "date": "02-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2029",
+      "date": "04-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Wesak Day",
+      "year": "2029",
+      "date": "05-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Muharram",
+      "year": "2029",
+      "date": "05-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "The Prophet Muhammad's Birthday",
+      "year": "2029",
+      "date": "07-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa Holiday Day 2",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2030",
+      "date": "04-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Wesak Day",
+      "year": "2030",
+      "date": "05-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Muharram",
+      "year": "2030",
+      "date": "05-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "The Prophet Muhammad's Birthday",
+      "year": "2030",
+      "date": "07-13",
+      "estimated": true
+    }
+  ],
+  "ru": [
+    {
+      "action": "add",
+      "name": "Новогодние каникулы",
+      "year": "2027",
+      "date": "01-08"
+    },
+    {
+      "action": "add",
+      "name": "Новогодние каникулы",
+      "year": "2028",
+      "date": "01-08"
+    },
+    {
+      "action": "add",
+      "name": "Новогодние каникулы",
+      "year": "2029",
+      "date": "01-08"
+    },
+    {
+      "action": "add",
+      "name": "Новогодние каникулы",
+      "year": "2030",
+      "date": "01-08"
+    }
+  ],
+  "sa": [
+    {
+      "action": "add",
+      "name": "Eid al-Fitr",
+      "year": "2027",
+      "date": "03-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2027",
+      "date": "03-10",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2027",
+      "date": "03-11",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2027",
+      "date": "03-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Arafat Day",
+      "year": "2027",
+      "date": "05-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha",
+      "year": "2027",
+      "date": "05-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2027",
+      "date": "05-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2027",
+      "date": "05-18",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr",
+      "year": "2028",
+      "date": "02-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2028",
+      "date": "02-27",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2028",
+      "date": "02-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2028",
+      "date": "02-29",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Arafat Day",
+      "year": "2028",
+      "date": "05-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2028",
+      "date": "05-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2028",
+      "date": "05-07",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr",
+      "year": "2029",
+      "date": "02-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2029",
+      "date": "02-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2029",
+      "date": "02-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Arafat Day",
+      "year": "2029",
+      "date": "04-23",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha",
+      "year": "2029",
+      "date": "04-24",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2029",
+      "date": "04-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2029",
+      "date": "04-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2030",
+      "date": "02-03",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Fitr Holiday",
+      "year": "2030",
+      "date": "02-06",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Arafat Day",
+      "year": "2030",
+      "date": "04-12",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha",
+      "year": "2030",
+      "date": "04-13",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2030",
+      "date": "04-14",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Eid al-Adha Holiday",
+      "year": "2030",
+      "date": "04-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Day off for Founding Day",
+      "year": "2030",
+      "date": "02-21",
+      "estimated": true
+    }
+  ],
+  "sg": [
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2028",
+      "date": "02-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2028",
+      "date": "05-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Vesak Day",
+      "year": "2028",
+      "date": "05-09",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Deepavali",
+      "year": "2028",
+      "date": "10-17",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2029",
+      "date": "02-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2029",
+      "date": "04-25",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Vesak Day",
+      "year": "2029",
+      "date": "05-28",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Deepavali",
+      "year": "2029",
+      "date": "11-05",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Puasa",
+      "year": "2030",
+      "date": "02-04",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Hari Raya Haji",
+      "year": "2030",
+      "date": "04-15",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Vesak Day",
+      "year": "2030",
+      "date": "05-16",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Deepavali",
+      "year": "2030",
+      "date": "10-26",
+      "estimated": true
+    },
+    {
+      "action": "add",
+      "name": "Chinese New Year",
+      "year": "2030",
+      "date": "02-05",
+      "estimated": true
     }
   ]
 }

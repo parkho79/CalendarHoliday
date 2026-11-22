@@ -1,5 +1,5 @@
 {
-  "_source": "우루과이 공휴일. 유급 법정 공휴일(1/1·5/1·7/18·8/25·12/25)과 학교·공공기관·은행이 쉬는 나머지 feriados(1/6, 카니발 월·화, Semana de Turismo 월~금, 4/19, 5/18, 6/19, 10/12, 11/2). 4/19·5/18·10/12는 Ley 16.805·17.414대로 화·수면 직전 월요일, 목·금이면 다음 월요일로 옮김(Nager는 옮기지 않아 2027 5/18·10/12가 틀림). python holidays 0.83 Uruguay(public+bank) + 대통령 취임일 2015-03-01·2025-03-01. 다음 취임일 2030-03-01은 2030년이 오면 추가.",
+  "_source": "우루과이 공휴일. 유급 법정 공휴일(1/1·5/1·7/18·8/25·12/25)과 학교·공공기관·은행이 쉬는 나머지 feriados(1/6, 카니발 월·화, Semana de Turismo 월~금, 4/19, 5/18, 6/19, 10/12, 11/2). 4/19·5/18·10/12는 Ley 16.805·17.414대로 화·수면 직전 월요일, 목·금이면 다음 월요일로 옮김(Nager는 옮기지 않아 2027 5/18·10/12가 틀림). python holidays 0.83 Uruguay(public+bank) + 대통령 취임일 2015-03-01·2025-03-01. 2030-03-01 취임일은 estimated(2026-11-22 추가 — 헌법상 5년마다 3월 1일, 휴일 지정은 당해 법령).",
   "2015": [
     {"date": "01-01", "name": "Año Nuevo"},
     {"date": "01-06", "name": "Día de los Niños"},
@@ -306,6 +306,7 @@
   "2030": [
     {"date": "01-01", "name": "Año Nuevo"},
     {"date": "01-06", "name": "Día de los Niños"},
+    {"date": "03-01", "name": "Inauguración del Presidente de la República", "estimated": true},
     {"date": "03-04", "name": "Carnaval"},
     {"date": "03-05", "name": "Carnaval"},
     {"date": "04-15", "name": "Semana de Turismo"},

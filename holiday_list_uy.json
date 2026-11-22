@@ -310,6 +310,7 @@
     "2030": [
       { "date": "01-01", "name": "Año Nuevo" },
       { "date": "01-06", "name": "Día de los Niños" },
+      { "date": "03-01", "name": "Inauguración del Presidente de la República" },
       { "date": "03-04", "name": "Carnaval" },
       { "date": "03-05", "name": "Carnaval" },
       { "date": "04-15", "name": "Semana de Turismo" },
