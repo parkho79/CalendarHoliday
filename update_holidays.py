@@ -96,6 +96,10 @@ REGION_COUNTRIES = {
     'de': ['BW', 'BY', 'BE', 'BB', 'HB', 'HH', 'HE', 'MV', 'NI', 'NW', 'RP', 'SL', 'SN', 'ST', 'SH', 'TH'],
 }
 
+# 현지 이름(localName) 대신 영어 이름(name)을 쓰는 나라 — 아일랜드는 localName이 아일랜드어(게일어)인데
+# 사용자 대부분이 영어를 쓴다(2026-11-22, 공휴일 노출 때).
+NAGER_ENGLISH_NAME = {'IE'}
+
 # Nager 미지원(또는 데이터 결측으로 제외) 7개국(in은 manual로 옮김): Google Calendar 방식
 GOOGLE_ONLY_CALENDARS = {
     'tw': {'id': 'zh-tw.taiwan#holiday@group.v.calendar.google.com'},
@@ -321,7 +325,10 @@ def fetch_nager_year(nager_code, year, regional_out=None):
         if 'Public' not in types and not (include_type and include_type in types):
             continue
         date = item.get('date', '')  # "YYYY-MM-DD"
-        name = item.get('localName') or item.get('name', '')
+        if nager_code in NAGER_ENGLISH_NAME:
+            name = item.get('name') or item.get('localName', '')
+        else:
+            name = item.get('localName') or item.get('name', '')
         if len(date) != 10:
             continue
         counties = item.get('counties') or []
