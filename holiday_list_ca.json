@@ -10,7 +10,6 @@
       { "date": "05-18", "name": "Victoria Day" },
       { "date": "07-01", "name": "Canada Day" },
       { "date": "09-07", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-12", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -20,7 +19,6 @@
       { "date": "05-23", "name": "Victoria Day" },
       { "date": "07-01", "name": "Canada Day" },
       { "date": "09-05", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-10", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -30,7 +28,6 @@
       { "date": "05-22", "name": "Victoria Day" },
       { "date": "07-01", "name": "Canada Day" },
       { "date": "09-04", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-09", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -39,7 +36,6 @@
       { "date": "03-30", "name": "Good Friday" },
       { "date": "05-21", "name": "Victoria Day" },
       { "date": "09-03", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-08", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -49,7 +45,6 @@
       { "date": "05-20", "name": "Victoria Day" },
       { "date": "07-01", "name": "Canada Day" },
       { "date": "09-02", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-14", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -59,7 +54,6 @@
       { "date": "05-18", "name": "Victoria Day" },
       { "date": "07-01", "name": "Canada Day" },
       { "date": "09-07", "name": "Labour Day" },
-      { "date": "09-30", "name": "National Day for Truth and Reconciliation" },
       { "date": "10-12", "name": "Thanksgiving" },
       { "date": "12-25", "name": "Christmas Day" }
     ],

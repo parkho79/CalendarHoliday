@@ -55,6 +55,7 @@
       { "date": "11-11", "name": "Veterans Day" },
       { "date": "11-12", "name": "Veterans Day (observed)" },
       { "date": "11-22", "name": "Thanksgiving Day" },
+      { "date": "12-05", "name": "National Day of Mourning" },
       { "date": "12-24", "name": "Christmas Eve" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
@@ -88,7 +89,6 @@
     "2021": [
       { "date": "01-01", "name": "New Year's Day" },
       { "date": "01-18", "name": "Martin Luther King, Jr. Day" },
-      { "date": "01-20", "name": "Inauguration Day" },
       { "date": "02-15", "name": "Washington's Birthday" },
       { "date": "05-31", "name": "Memorial Day" },
       { "date": "06-18", "name": "Juneteenth National Independence Day (observed)" },

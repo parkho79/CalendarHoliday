@@ -10,7 +10,13 @@
       { "date": "02-20", "name": "Chinese New Year" },
       { "date": "04-03", "name": "Good Friday" },
       { "date": "05-01", "name": "Labour Day" },
+      { "date": "06-01", "name": "Vesak Day" },
+      { "date": "07-17", "name": "Hari Raya Puasa" },
+      { "date": "08-07", "name": "SG50 Public Holiday" },
       { "date": "08-10", "name": "National Day" },
+      { "date": "09-11", "name": "Polling Day" },
+      { "date": "09-24", "name": "Hari Raya Haji" },
+      { "date": "11-10", "name": "Deepavali" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2016": [
@@ -19,7 +25,11 @@
       { "date": "02-09", "name": "Chinese New Year" },
       { "date": "03-25", "name": "Good Friday" },
       { "date": "05-02", "name": "Labour Day" },
+      { "date": "05-21", "name": "Vesak Day" },
+      { "date": "07-06", "name": "Hari Raya Puasa" },
       { "date": "08-09", "name": "National Day" },
+      { "date": "09-12", "name": "Hari Raya Haji" },
+      { "date": "10-29", "name": "Deepavali" },
       { "date": "12-26", "name": "Christmas Day" }
     ],
     "2017": [
@@ -69,6 +79,7 @@
       { "date": "05-01", "name": "Labour Day" },
       { "date": "05-07", "name": "Vesak Day" },
       { "date": "05-25", "name": "Hari Raya Puasa" },
+      { "date": "07-10", "name": "Polling Day" },
       { "date": "07-31", "name": "Hari Raya Haji" },
       { "date": "08-10", "name": "National Day" },
       { "date": "11-14", "name": "Deepavali" },
@@ -103,6 +114,7 @@
     "2023": [
       { "date": "01-02", "name": "New Year's Day" },
       { "date": "01-23", "name": "Chinese New Year" },
+      { "date": "01-24", "name": "Chinese New Year" },
       { "date": "04-07", "name": "Good Friday" },
       { "date": "04-22", "name": "Hari Raya Puasa" },
       { "date": "05-01", "name": "Labour Day" },
@@ -133,10 +145,11 @@
       { "date": "03-31", "name": "Hari Raya Puasa" },
       { "date": "04-18", "name": "Good Friday" },
       { "date": "05-01", "name": "Labour Day" },
+      { "date": "05-03", "name": "Polling Day" },
       { "date": "05-12", "name": "Vesak Day" },
       { "date": "06-07", "name": "Hari Raya Haji" },
       { "date": "08-09", "name": "National Day" },
-      { "date": "10-21", "name": "Deepavali" },
+      { "date": "10-20", "name": "Deepavali" },
       { "date": "12-25", "name": "Christmas Day" }
     ],
     "2026": [

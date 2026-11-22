@@ -5,16 +5,74 @@
   },
   "holidays": {
     "2015": [
+      { "date": "03-17", "name": "Election Day" },
+      { "date": "04-04", "name": "Passover (Day 1)" },
+      { "date": "04-10", "name": "Passover (Day 7)" },
+      { "date": "04-23", "name": "Yom HaAtzmaut" },
+      { "date": "05-24", "name": "Shavuot" },
+      { "date": "09-14", "name": "Rosh Hashana" },
+      { "date": "09-15", "name": "Rosh Hashana (Day 2)" },
+      { "date": "09-23", "name": "Yom Kippur" },
+      { "date": "09-28", "name": "Sukkot (Day 1)" },
+      { "date": "10-05", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2016": [
+      { "date": "04-23", "name": "Passover (Day 1)" },
+      { "date": "04-29", "name": "Passover (Day 7)" },
+      { "date": "05-12", "name": "Yom HaAtzmaut" },
+      { "date": "06-12", "name": "Shavuot" },
+      { "date": "10-03", "name": "Rosh Hashana" },
+      { "date": "10-04", "name": "Rosh Hashana (Day 2)" },
+      { "date": "10-12", "name": "Yom Kippur" },
+      { "date": "10-17", "name": "Sukkot (Day 1)" },
+      { "date": "10-24", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2017": [
+      { "date": "04-11", "name": "Passover (Day 1)" },
+      { "date": "04-17", "name": "Passover (Day 7)" },
+      { "date": "05-02", "name": "Yom HaAtzmaut" },
+      { "date": "05-31", "name": "Shavuot" },
+      { "date": "09-21", "name": "Rosh Hashana" },
+      { "date": "09-22", "name": "Rosh Hashana (Day 2)" },
+      { "date": "09-30", "name": "Yom Kippur" },
+      { "date": "10-05", "name": "Sukkot (Day 1)" },
+      { "date": "10-12", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2018": [
+      { "date": "03-31", "name": "Passover (Day 1)" },
+      { "date": "04-06", "name": "Passover (Day 7)" },
+      { "date": "04-19", "name": "Yom HaAtzmaut" },
+      { "date": "05-20", "name": "Shavuot" },
+      { "date": "09-10", "name": "Rosh Hashana" },
+      { "date": "09-11", "name": "Rosh Hashana (Day 2)" },
+      { "date": "09-19", "name": "Yom Kippur" },
+      { "date": "09-24", "name": "Sukkot (Day 1)" },
+      { "date": "10-01", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2019": [
+      { "date": "04-09", "name": "Election Day" },
+      { "date": "04-20", "name": "Passover (Day 1)" },
+      { "date": "04-26", "name": "Passover (Day 7)" },
+      { "date": "05-09", "name": "Yom HaAtzmaut" },
+      { "date": "06-09", "name": "Shavuot" },
+      { "date": "09-17", "name": "Election Day" },
+      { "date": "09-30", "name": "Rosh Hashana" },
+      { "date": "10-01", "name": "Rosh Hashana (Day 2)" },
+      { "date": "10-09", "name": "Yom Kippur" },
+      { "date": "10-14", "name": "Sukkot (Day 1)" },
+      { "date": "10-21", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2020": [
+      { "date": "03-02", "name": "Election Day" },
+      { "date": "04-09", "name": "Passover (Day 1)" },
+      { "date": "04-15", "name": "Passover (Day 7)" },
+      { "date": "04-29", "name": "Yom HaAtzmaut" },
+      { "date": "05-29", "name": "Shavuot" },
+      { "date": "09-19", "name": "Rosh Hashana" },
+      { "date": "09-20", "name": "Rosh Hashana (Day 2)" },
+      { "date": "09-28", "name": "Yom Kippur" },
+      { "date": "10-03", "name": "Sukkot (Day 1)" },
+      { "date": "10-10", "name": "Shemini Atzeret / Simchat Torah" }
     ],
     "2021": [
       { "date": "03-23", "name": "Election Day" },

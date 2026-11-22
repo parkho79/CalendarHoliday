@@ -9,6 +9,7 @@
       { "date": "01-26", "name": "Australia Day" },
       { "date": "04-03", "name": "Good Friday" },
       { "date": "04-06", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],
@@ -53,6 +54,7 @@
       { "date": "01-27", "name": "Australia Day" },
       { "date": "04-10", "name": "Good Friday" },
       { "date": "04-13", "name": "Easter Monday" },
+      { "date": "04-25", "name": "Anzac Day" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-28", "name": "Boxing Day" }
     ],

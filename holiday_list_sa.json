@@ -5,16 +5,69 @@
   },
   "holidays": {
     "2015": [
+      { "date": "07-17", "name": "Eid al-Fitr" },
+      { "date": "07-18", "name": "Eid al-Fitr Holiday" },
+      { "date": "07-19", "name": "Eid al-Fitr Holiday" },
+      { "date": "07-20", "name": "Eid al-Fitr Holiday" },
+      { "date": "09-22", "name": "Arafat Day" },
+      { "date": "09-23", "name": "Eid al-Adha·Saudi National Day" },
+      { "date": "09-24", "name": "Eid al-Adha Holiday" },
+      { "date": "09-25", "name": "Eid al-Adha Holiday" }
     ],
     "2016": [
+      { "date": "07-05", "name": "Eid al-Fitr Holiday" },
+      { "date": "07-06", "name": "Eid al-Fitr" },
+      { "date": "07-07", "name": "Eid al-Fitr Holiday" },
+      { "date": "07-08", "name": "Eid al-Fitr Holiday" },
+      { "date": "09-10", "name": "Arafat Day" },
+      { "date": "09-11", "name": "Eid al-Adha" },
+      { "date": "09-12", "name": "Eid al-Adha Holiday" },
+      { "date": "09-13", "name": "Eid al-Adha Holiday" },
+      { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2017": [
+      { "date": "06-25", "name": "Eid al-Fitr" },
+      { "date": "06-26", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-27", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-28", "name": "Eid al-Fitr Holiday" },
+      { "date": "08-31", "name": "Arafat Day" },
+      { "date": "09-01", "name": "Eid al-Adha" },
+      { "date": "09-02", "name": "Eid al-Adha Holiday" },
+      { "date": "09-03", "name": "Eid al-Adha Holiday" },
+      { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2018": [
+      { "date": "06-14", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-15", "name": "Eid al-Fitr" },
+      { "date": "06-16", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-17", "name": "Eid al-Fitr Holiday" },
+      { "date": "08-20", "name": "Arafat Day" },
+      { "date": "08-21", "name": "Eid al-Adha" },
+      { "date": "08-22", "name": "Eid al-Adha Holiday" },
+      { "date": "08-23", "name": "Eid al-Adha Holiday" },
+      { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2019": [
+      { "date": "06-04", "name": "Eid al-Fitr" },
+      { "date": "06-05", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-06", "name": "Eid al-Fitr Holiday" },
+      { "date": "06-07", "name": "Eid al-Fitr Holiday" },
+      { "date": "08-10", "name": "Arafat Day" },
+      { "date": "08-11", "name": "Eid al-Adha" },
+      { "date": "08-12", "name": "Eid al-Adha Holiday" },
+      { "date": "08-13", "name": "Eid al-Adha Holiday" },
+      { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2020": [
+      { "date": "05-23", "name": "Eid al-Fitr Holiday" },
+      { "date": "05-24", "name": "Eid al-Fitr" },
+      { "date": "05-25", "name": "Eid al-Fitr Holiday" },
+      { "date": "05-26", "name": "Eid al-Fitr Holiday" },
+      { "date": "07-30", "name": "Arafat Day" },
+      { "date": "07-31", "name": "Eid al-Adha" },
+      { "date": "08-01", "name": "Eid al-Adha Holiday" },
+      { "date": "08-02", "name": "Eid al-Adha Holiday" },
+      { "date": "09-23", "name": "Saudi National Day" }
     ],
     "2021": [
       { "date": "05-08", "name": "Eid al-Fitr Holiday" },

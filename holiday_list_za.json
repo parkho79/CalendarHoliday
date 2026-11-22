@@ -26,11 +26,12 @@
       { "date": "04-27", "name": "Freedom Day" },
       { "date": "05-02", "name": "Workers' Day" },
       { "date": "06-16", "name": "Youth Day" },
+      { "date": "08-03", "name": "Local Government Elections" },
       { "date": "08-09", "name": "National Women's Day" },
       { "date": "09-24", "name": "Heritage Day" },
       { "date": "12-16", "name": "Day of Reconciliation" },
-      { "date": "12-27", "name": "Christmas Day" },
-      { "date": "12-26", "name": "St. Stephen's Day" }
+      { "date": "12-26", "name": "St. Stephen's Day" },
+      { "date": "12-27", "name": "Christmas Day" }
     ],
     "2017": [
       { "date": "01-02", "name": "New Year's Day" },
@@ -67,6 +68,7 @@
       { "date": "04-22", "name": "Family Day" },
       { "date": "04-27", "name": "Freedom Day" },
       { "date": "05-01", "name": "Workers' Day" },
+      { "date": "05-08", "name": "National and Provincial Government Elections" },
       { "date": "06-17", "name": "Youth Day" },
       { "date": "08-09", "name": "National Women's Day" },
       { "date": "09-24", "name": "Heritage Day" },
@@ -98,6 +100,7 @@
       { "date": "06-16", "name": "Youth Day" },
       { "date": "08-09", "name": "National Women's Day" },
       { "date": "09-24", "name": "Heritage Day" },
+      { "date": "11-01", "name": "Municipal Elections" },
       { "date": "12-16", "name": "Day of Reconciliation" },
       { "date": "12-25", "name": "Christmas Day" },
       { "date": "12-27", "name": "St. Stephen's Day" }
